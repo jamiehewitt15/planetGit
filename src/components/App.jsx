@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import './App.css';
+import DirectoryListing from './directoryListing.jsx';
 
 class App extends Component {
   render() {
@@ -29,8 +30,14 @@ class App extends Component {
                 </a>
                 <h1>Welcome to Planet Git!</h1>
                 
-                Upload your git repo to IPFS & Ethereum!
+                Upload your git repo to IPFS & Ethereum! <br /><br />
+                <form>
+                    <input type="file" id="filepicker1" name="fileList" webkitdirectory="true" multiple />
+                    <input type='submit' />
+                </form>
+              <DirectoryListing />
               </div>
+              
             </main>
           </div>
         </div>
