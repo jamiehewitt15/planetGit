@@ -21,20 +21,12 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                
                   <img src={logo} className="App-logo" alt="logo" />
-                </a>
+                
                 <h1>Welcome to Planet Git!</h1>
                 
                 Upload your git repo to IPFS & Ethereum! <br /><br />
-                <form>
-                    <input type="file" id="filepicker1" name="fileList" webkitdirectory="true" multiple />
-                    <input type='submit' />
-                </form>
               <DirectoryListing />
               </div>
               
