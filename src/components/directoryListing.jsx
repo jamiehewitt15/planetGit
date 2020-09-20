@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+const ipfsClient = require('ipfs-http-client')
+// connect to ipfs daemon API server
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
 
 class DirectoryListing extends Component {
     constructor(props) {
@@ -25,8 +28,19 @@ class DirectoryListing extends Component {
   onSubmit = (event) => {
   event.preventDefault();
   console.log('The file has been Submitted!');
-  
-}
+  let data = this.state.buffer;
+  console.log('Submit this: ', data);
+  if (data){
+    ipfs.add(data, (error, result) => {
+      console.log('IPFS Result: ', result);
+      if(error){
+          console.error(error);
+      }
+    })
+  } else{
+      console.log('ERROR: No data to submit');
+  }
+  }
 
   render() {
     return (
