@@ -22,6 +22,7 @@ class DirectoryListing extends Component {
     reader.onloadend = () => {
         console.log('load end...');
         console.log('Buffer: ', Buffer(reader.result));
+        this.setState({ buffer: reader.result })
     }
   }
 
@@ -29,6 +30,8 @@ class DirectoryListing extends Component {
   event.preventDefault();
   console.log('The file has been Submitted!');
   let data = this.state.buffer;
+  console.log('Submit this: ', this);
+  console.log('Submit this: ', this.state);
   console.log('Submit this: ', data);
   if (data){
     ipfs.add(data, (error, result) => {
