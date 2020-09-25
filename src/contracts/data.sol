@@ -1,4 +1,4 @@
-pragma solidity 0.7.0;
+pragma solidity >=0.7.1;
 
 contract Data {
     string dataHash;
@@ -8,4 +8,7 @@ contract Data {
         dataHash = _dataHash;
     }
     // Read function
+    function get() public view returns(string memory) {
+        return dataHash;
+    }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "eth-marketplace",
+  "name": "planet-git",
   "version": "0.1.0",
-  "description": "An Ethereum Marketplace",
-  "author": "gregory@dappuniversity.com",
+  "description": "A git repository hosted on IPFS and Ethereum",
+  "author": "Jamie Hewitt",
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
@@ -19,7 +19,7 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "16.8.4",
     "react-scripts": "2.1.3",
-    "truffle": "^5.1.45",
+    "truffle": "^5.1.46",
     "web3": "1.0.0-beta.55"
   },
   "scripts": {
