@@ -35,6 +35,9 @@ class DirectoryListing extends Component {
       try{
         const postResponse = await ipfs.add(data) 
         console.log("postResponse", postResponse);
+        const submitHash = postResponse.path;
+        console.log('submitHash: ', submitHash);
+        this.setState({imgHash: submitHash});
       } catch(e){
         console.log("Error: ", e)
       }
