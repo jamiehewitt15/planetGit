@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 const ipfsClient = require('ipfs-http-client')
-// connect to ipfs daemon API server
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
 class DirectoryListing extends Component {
     constructor(props) {
       super(props);
       this.state = {
-          buffer: null
+          buffer: null,
+          imgHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah'
       };
     }
 
@@ -26,28 +26,30 @@ class DirectoryListing extends Component {
     }
   }
 
-  onSubmit = (event) => {
-  event.preventDefault();
-  console.log('The file has been Submitted!');
-  let data = this.state.buffer;
-  console.log('Submit this: ', this);
-  console.log('Submit this: ', this.state);
-  console.log('Submit this: ', data);
-  if (data){
-    ipfs.add(data, (error, result) => {
-      console.log('IPFS Result: ', result);
-      if(error){
-          console.error(error);
+  onSubmit = async (event) => {
+    event.preventDefault();
+    console.log('The file will be Submitted!');
+    let data = this.state.buffer;
+    console.log('Submit this: ', data);
+    if (data){
+      try{
+        const postResponse = await ipfs.add(data) 
+        console.log("postResponse", postResponse);
+      } catch(e){
+        console.log("Error: ", e)
       }
-    })
-  } else{
+    } else{
+      alert("No files submitted. Please try again.");
       console.log('ERROR: No data to submit');
-  }
+    }
   }
 
   render() {
     return (
       <div>
+      <img src={`https://ipfs.infura.io/ipfs/${this.state.imgHash}`} className="App-logo" alt="logo" />
+      <h1>Welcome to Planet Git!</h1>
+      <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
           {/* <input type="file" id="filepicker" name="fileList" webkitdirectory="true" multiple /> */}
           <input type="file" id="filepicker" name="fileList" onChange={this.captureFile}/>
@@ -60,20 +62,3 @@ class DirectoryListing extends Component {
 }
 
 export default DirectoryListing;
-
-// function showList(event){
-//     console.log('fileUpload 1');
-//     console.log('fileUpload 2');
-//     let output = document.getElementById("listing");
-//     console.log('fileUpload 3');
-//     let files = event.target.files;
-//     console.log('fileUpload 4');
-    
-//     for (let i=0; i<files.length; i++) {
-//         console.log('fileUpload 5');
-//         let item = document.createElement("li");
-//         item.innerHTML = files[i].webkitRelativePath;
-//         output.appendChild(item);
-//     };
-      
-//   }
