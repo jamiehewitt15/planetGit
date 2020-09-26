@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
-import Web3 from 'web3';
 import './App.css';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
 class DirectoryListing extends Component {
-    
-    async componentWillMount(){
-      await this.loadWeb3();
-      await this.loadBlockchainData();
-    }
-
-    async loadBlockchainData(){
-      const web3 = window.web3;
-      // Load the ethereum account
-      const accounts = await web3.eth.getAccounts();
-      console.log(accounts);
-    }
 
     constructor(props) {
       super(props);
@@ -27,16 +14,7 @@ class DirectoryListing extends Component {
       };
     }
 
-    async loadWeb3(){
-      if(window.ethereum){
-        window.web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
-      } if(window.web3){
-        window.web3 = new Web3(window.web3.currentProvider);
-      } else {
-        window.alert("Please install and use Metamask");
-      }
-    }
+    
 
     captureFile = (event) => {
     event.preventDefault();
@@ -75,7 +53,13 @@ class DirectoryListing extends Component {
 
   render() {
     return (
+    <div className="content mr-auto ml-auto">
       <div>
+        <ul className="navbar-nav px-3">
+          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+            <small>Your account: {this.props.account}</small>
+          </li>
+        </ul>
       <img src={`https://ipfs.infura.io/ipfs/${this.state.imgHash}`} className="App-logo" alt="logo" />
       <h1>Welcome to Planet Git!</h1>
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
@@ -86,6 +70,7 @@ class DirectoryListing extends Component {
       </form>
         <ul id="listing"></ul>
       </div>
+    </div>
     );
   }
 }
