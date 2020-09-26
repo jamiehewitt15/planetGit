@@ -8,9 +8,17 @@ const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https
 class DirectoryListing extends Component {
     
     async componentWillMount(){
-      await this.loadWeb3()
+      await this.loadWeb3();
+      await this.loadBlockchainData();
     }
-    
+
+    async loadBlockchainData(){
+      const web3 = window.web3;
+      // Load the ethereum account
+      const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+    }
+
     constructor(props) {
       super(props);
       this.state = {
