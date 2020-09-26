@@ -41,7 +41,11 @@ class DirectoryListing extends Component {
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
         console.log('submitHash: ', submitHash);
-        this.setState({imgHash: submitHash});
+        
+        this.state.contract.methods.set(submitHash).send({from: this.props.account}).then((r) => {
+          this.setState({dataHash: submitHash});
+          console.log('submitHash Success! : ', submitHash);
+        })
       } catch(e){
         console.log("Error: ", e)
       }
