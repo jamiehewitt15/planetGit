@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
+import Web3 from 'web3';
 import './App.css';
+
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
 class DirectoryListing extends Component {
+    
+    async componentWillMount(){
+      await this.loadWeb3()
+    }
+    
     constructor(props) {
       super(props);
       this.state = {
           buffer: null,
           imgHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah'
       };
+    }
+
+    async loadWeb3(){
+      if(window.ethereum){
+        window.web3 = new Web3(window.ethereum);
+        await window.ethereum.enable();
+      } if(window.web3){
+        window.web3 = new Web3(window.web3.currentProvider);
+      } else {
+        window.alert("Please install and use Metamask");
+      }
     }
 
     captureFile = (event) => {
