@@ -1,4 +1,4 @@
-// const { assert, before, contract } = require('chai');
+const { assert } = require('chai');
 
 const Data = artifacts.require("Data");
 
@@ -10,13 +10,13 @@ contract('Data', (accounts)=>{
     // Testing the Data smart contract
     let data;
 
-    before(async() => {
+    before(async () => {
         // Fetch the smart contract before running tests
         data = await Data.deployed();
     })
 
     describe('deployment', async()=> { 
-        it('deploys successfully', async () => {
+        it('Deploys successfully', async () => {
             const address = data.address;
             console.log(address);
             // Test the smart contract has been deployed with a valid address
@@ -28,8 +28,11 @@ contract('Data', (accounts)=>{
     })
 
     describe('storage', async () => {
-        it('updates the dataHash', async () => {
-
+        it('Updates the dataHash', async () => {
+            let dataHash = 'abc123';
+            await data.set(dataHash);
+            const result = await data.get();
+            assert.equal(result, dataHash);
         })
     })
 })
