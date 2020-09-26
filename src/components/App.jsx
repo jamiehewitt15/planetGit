@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Web3 from 'web3';
 import './App.css';
+import Data from '../abis/Data.json';
 import DirectoryListing from './directoryListing.jsx';
 import Header from './Header.jsx';
-import Web3 from 'web3';
 
 class App extends Component {
     
@@ -17,6 +18,22 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts();
     console.log("Accounts: ", accounts);
     this.setState({ account: accounts[0] })
+    // Get smart contract network
+    const networkId = await web3.eth.net.getId();
+    // Get netwrok address
+    const networkData = Data.networks[networkId];
+    if (networkData){
+      const abi = Data.abi;
+      const address= networkData.address;
+      // Fetch Contract Data
+      const contract = web3.eth.Contract(abi, address);
+      this.setState({ contract });
+      const dataHash = await contract.methods.get().call();
+      this.setState({ dataHash })
+      console.log("dataHash", dataHash)
+    } else {
+      window.alert("Sorry, the smart contract not deploy to the current network.")
+    }
   }
 
   async loadWeb3(){
@@ -34,6 +51,8 @@ class App extends Component {
     super(props);
     this.state = {
         account: '',
+        contract: null,
+        dataHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah',
     };
   }
 
@@ -44,10 +63,10 @@ class App extends Component {
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
+              
                 
-              <DirectoryListing account={this.state.account}/>
-              </div>
+              <DirectoryListing account={this.state.account} dataHash={this.state.dataHash}/>
+              
               
             </main>
           </div>

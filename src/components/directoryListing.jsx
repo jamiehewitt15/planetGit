@@ -57,10 +57,10 @@ class DirectoryListing extends Component {
       <div>
         <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small>Your account: {this.props.account}</small>
+            {/* <small>Your account: {this.props.account}</small> */}
           </li>
         </ul>
-      <img src={`https://ipfs.infura.io/ipfs/${this.state.imgHash}`} className="App-logo" alt="logo" />
+      <img src={`https://ipfs.infura.io/ipfs/${this.props.dataHash}`} className="App-logo" alt="logo" />
       <h1>Welcome to Planet Git!</h1>
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
