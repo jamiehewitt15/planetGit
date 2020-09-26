@@ -1,5 +1,4 @@
-const { contracts_build_directory } = require('../truffle-config');
-const { assert } = require('chai');
+// const { assert, before, contract } = require('chai');
 
 const Data = artifacts.require("Data");
 
@@ -7,19 +6,30 @@ require('chai')
     .use(require('chai-as-promised'))
     .should()
 
-contracts_build_directory('Data', (accounts)=>{
+contract('Data', (accounts)=>{
     // Testing the Data smart contract
     let data;
 
-    describe('deployment', async()=> {
+    before(async() => {
+        // Fetch the smart contract before running tests
+        data = await Data.deployed();
+    })
+
+    describe('deployment', async()=> { 
         it('deploys successfully', async () => {
-            data = await Data.deployed();
             const address = data.address;
             console.log(address);
+            // Test the smart contract has been deployed with a valid address
             assert.notEqual(address, 0x0);
             assert.notEqual(address, '');
             assert.notEqual(address, null);
             assert.notEqual(address, undefined);
+        })
+    })
+
+    describe('storage', async () => {
+        it('updates the dataHash', async () => {
+
         })
     })
 })
