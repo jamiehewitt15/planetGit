@@ -20,17 +20,32 @@ class App extends Component {
     this.setState({ account: accounts[0] })
     // Get smart contract network
     const networkId = await web3.eth.net.getId();
+    console.log("networkId", networkId)
     // Get netwrok address
     const networkData = Data.networks[networkId];
     if (networkData){
+      console.log("networkData", networkData);
       const abi = Data.abi;
+      console.log("abi: ", abi);
       const address= networkData.address;
+      console.log("address: ", address);
       // Fetch Contract Data
       const contract = web3.eth.Contract(abi, address);
       this.setState({ contract });
-      const dataHash = await contract.methods.get().call();
-      this.setState({ dataHash })
-      console.log("dataHash", dataHash)
+      console.log("Contract", contract);
+      try{
+        const dataHash = await contract.methods.get().call();
+        console.log("dataHash", dataHash)
+        if(dataHash){
+          this.setState({ dataHash })
+          console.log("this.state.dataHash", this.state.dataHash)
+        } else{
+          console.log("No data Hash recieved")
+        }
+      } catch(e){
+        console.log("Error", e)
+      }
+      
     } else {
       window.alert("Sorry, the smart contract not deploy to the current network.")
     }
