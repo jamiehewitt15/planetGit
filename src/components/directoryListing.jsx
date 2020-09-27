@@ -17,6 +17,7 @@ class DirectoryListing extends Component {
         buffer: null,
         contract: null,
         dataHash: '',
+        imgHash: '',
     };
   }
     
@@ -38,11 +39,13 @@ class DirectoryListing extends Component {
       this.setState({ contract });
       console.log("Contract", contract);
       try{
-        const dataHash = await contract.methods.get().call();
+        const dataHash = await contract.methods.getData().call();
+        // const imgHash = await contract.methods.getImg().call();
         console.log("dataHash", dataHash)
         if(dataHash){
           console.log("Data Hash recieved")
           this.setState({ dataHash })
+          // this.setState({ imgHash })
           console.log("this.state.dataHash", this.state.dataHash)
         } else{
           console.log("No data Hash recieved")
@@ -73,32 +76,33 @@ class DirectoryListing extends Component {
   }
 
   onSubmit = async (event) => {
-    event.preventDefault();
+    console.log("Event: ", event);
     console.log('The file will be Submitted!');
     let data = this.state.buffer;
     console.log('Submit this: ', data);
+    // const projectName = document.getElementById("textInput").value
+    // console.log(">> projectName: ", projectName);
     if (data){
       try{
-        const postResponse = await ipfs.add(data) 
+        const postResponse = await ipfs.add(data);
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
-        console.log('submitHash: ', submitHash);
-        console.log("contract", this.state.contract);
+        console.log("submitHash", submitHash);
         this.state.contract.methods.set(submitHash).send({from: this.props.account})
         .on('error', function(error){ 
-          console.log("error");
-          window.alert("Sorry, there was an error!");
+          console.log("error 1", error);
+          alert("Sorry, there was an error!");
          })
         .on('confirmation', function(){ 
           this.setState({dataHash: submitHash});
          }.bind(this))
        
       } catch(e){
-        console.log("Error: ", e)
+        console.log("Error 2: ", e)
       }
     } else{
       alert("No files submitted. Please try again.");
-      console.log('ERROR: No data to submit');
+      console.log('ERROR 3: No data to submit');
     }
   }
 
@@ -116,7 +120,8 @@ class DirectoryListing extends Component {
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
           {/* <input type="file" id="filepicker" name="fileList" webkitdirectory="true" multiple /> */}
-          <input type="file" id="filepicker" name="fileList" onChange={this.captureFile}/>
+          {/* Project Name: <input type="text" id="textInput" name="textInput" /><br /> */}
+          Project Logo: <input type="file" id="filepicker" name="fileList" onChange={this.captureFile}/><br />
           <input type='submit'  />
       </form>
         <ul id="listing"></ul>

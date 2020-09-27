@@ -31,8 +31,17 @@ contract('Data', (accounts)=>{
         it('Updates the dataHash', async () => {
             let dataHash = 'abc123';
             await data.set(dataHash);
-            const result = await data.get();
+            const result = await data.getData();
             assert.equal(result, dataHash);
+        })
+        it('Updates Everything', async () => {
+            let dataHash = 'abc123';
+            let imgHash = 'abc12321092190';
+            await data.setAll(dataHash, imgHash);
+            const resultImg = await data.getImg();
+            const resultData = await data.getData();
+            assert.equal(resultData, dataHash);
+            assert.equal(resultImg, imgHash);
         })
     })
 })
