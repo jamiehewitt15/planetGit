@@ -10,7 +10,7 @@ class DirectoryListing extends Component {
       super(props);
       this.state = {
           buffer: null,
-          imgHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah'
+          dataHash: this.props.dataHash
       };
     }
 
@@ -41,11 +41,22 @@ class DirectoryListing extends Component {
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
         console.log('submitHash: ', submitHash);
-        
-        this.state.contract.methods.set(submitHash).send({from: this.props.account}).then((r) => {
+        console.log("contract", this.props.contract)
+        this.props.contract.methods.set(submitHash).send({from: this.props.account})
+        .on('error', function(error){ 
+          console.log("error");
+          window.alert("Sorry, there was an error!");
+         })
+        .on('confirmation', function(){ 
           this.setState({dataHash: submitHash});
-          console.log('submitHash Success! : ', submitHash);
-        })
+         }.bind(this))
+        
+        // .then((r) => {
+        //   console.log('submitHash Success!');
+        //   console.log("response", r)
+        //   this.setState({dataHash: submitHash});
+        //   console.log('submitHash Success! : ', submitHash);
+        // })
       } catch(e){
         console.log("Error: ", e)
       }
@@ -64,7 +75,7 @@ class DirectoryListing extends Component {
             {/* <small>Your account: {this.props.account}</small> */}
           </li>
         </ul>
-      <img src={`https://ipfs.infura.io/ipfs/${this.props.dataHash}`} className="App-logo" alt="logo" />
+      <img src={`https://ipfs.infura.io/ipfs/${this.state.dataHash}`} className="App-logo" alt="logo" />
       <h1>Welcome to Planet Git!</h1>
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
