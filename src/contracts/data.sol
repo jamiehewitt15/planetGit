@@ -1,21 +1,21 @@
 pragma solidity >=0.7.0;
 
 contract Data {
-    string dataHash = 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah';
-    string imgHash;
+    string projectName;
+    string imgHash = 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah';
 
     // Write function
-    function set(string memory _dataHash) public{
-        dataHash = _dataHash;
+    function setName(string memory _projectName) public{
+        projectName = _projectName;
     }
     // Write function
-    function setAll(string memory _dataHash, string memory _imgHash) public{
-        dataHash = _dataHash;
+    function setAll(string memory _projectName, string memory _imgHash) public{
+        projectName = _projectName;
         imgHash = _imgHash;
     }
     // Read function
-    function getData() public view returns(string memory) {
-        return dataHash;
+    function getName() public view returns(string memory) {
+        return projectName;
     }
     // Read function
     function getImg() public view returns(string memory) {

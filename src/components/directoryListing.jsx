@@ -16,7 +16,7 @@ class DirectoryListing extends Component {
     this.state = {
         buffer: null,
         contract: null,
-        dataHash: '',
+        projectName: '',
         imgHash: '',
     };
   }
@@ -39,17 +39,17 @@ class DirectoryListing extends Component {
       this.setState({ contract });
       console.log("Contract", contract);
       try{
-        const dataHash = await contract.methods.getData().call();
-        // const imgHash = await contract.methods.getImg().call();
-        console.log("dataHash", dataHash)
-        if(dataHash){
+        const projectName = await contract.methods.getName().call();
+        const imgHash = await contract.methods.getImg().call();
+        console.log("projectName", projectName)
+        if(projectName){
           console.log("Data Hash recieved")
-          this.setState({ dataHash })
-          // this.setState({ imgHash })
-          console.log("this.state.dataHash", this.state.dataHash)
+          this.setState({ projectName })
+          this.setState({ imgHash })
+          console.log("this.state.projectName", this.state.projectName)
         } else{
           console.log("No data Hash recieved")
-          this.setState({ dataHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah' })
+          this.setState({ imgHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah' })
         }
       } catch(e){
         console.log("Error", e)
@@ -76,25 +76,26 @@ class DirectoryListing extends Component {
   }
 
   onSubmit = async (event) => {
-    console.log("Event: ", event);
+    event.preventDefault();
     console.log('The file will be Submitted!');
     let data = this.state.buffer;
     console.log('Submit this: ', data);
-    // const projectName = document.getElementById("textInput").value
-    // console.log(">> projectName: ", projectName);
+    const projectName = document.getElementById("textInput").value
+    console.log(">> projectName: ", projectName);
     if (data){
       try{
         const postResponse = await ipfs.add(data);
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
         console.log("submitHash", submitHash);
-        this.state.contract.methods.set(submitHash).send({from: this.props.account})
+        this.state.contract.methods.setAll(submitHash, projectName).send({from: this.props.account})
         .on('error', function(error){ 
           console.log("error 1", error);
           alert("Sorry, there was an error!");
          })
         .on('confirmation', function(){ 
-          this.setState({dataHash: submitHash});
+          this.setState({imgHash: submitHash});
+          this.setState({projectName: projectName});
          }.bind(this))
        
       } catch(e){
@@ -112,15 +113,15 @@ class DirectoryListing extends Component {
       <div>
         <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            {/* <small>Your account: {this.props.account}</small> */}
+            <small>Your Project: {this.state.projectName}</small>
           </li>
         </ul>
-      <img src={`https://ipfs.infura.io/ipfs/${this.state.dataHash}`} className="App-logo" alt="logo" />
+      <img src={`https://ipfs.infura.io/ipfs/${this.state.imgHash}`} className="App-logo" alt="logo" />
       <h1>Welcome to Planet Git!</h1>
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
           {/* <input type="file" id="filepicker" name="fileList" webkitdirectory="true" multiple /> */}
-          {/* Project Name: <input type="text" id="textInput" name="textInput" /><br /> */}
+          Project Name: <input type="text" id="textInput" name="textInput" /><br />
           Project Logo: <input type="file" id="filepicker" name="fileList" onChange={this.captureFile}/><br />
           <input type='submit'  />
       </form>

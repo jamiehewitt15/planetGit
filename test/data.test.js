@@ -28,19 +28,19 @@ contract('Data', (accounts)=>{
     })
 
     describe('storage', async () => {
-        it('Updates the dataHash', async () => {
-            let dataHash = 'abc123';
-            await data.set(dataHash);
-            const result = await data.getData();
-            assert.equal(result, dataHash);
+        it('Updates the projectName', async () => {
+            let projectName = 'abc123';
+            await data.setName(projectName);
+            const result = await data.getName();
+            assert.equal(result, projectName);
         })
         it('Updates Everything', async () => {
-            let dataHash = 'abc123';
+            let projectName = 'abc123';
             let imgHash = 'abc12321092190';
-            await data.setAll(dataHash, imgHash);
+            await data.setAll(projectName, imgHash);
             const resultImg = await data.getImg();
-            const resultData = await data.getData();
-            assert.equal(resultData, dataHash);
+            const resultData = await data.getName();
+            assert.equal(resultData, projectName);
             assert.equal(resultImg, imgHash);
         })
     })
