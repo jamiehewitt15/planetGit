@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
-import FileBrowser, {Icons} from 'react-keyed-file-browser'
 import './App.css';
 import Data from '../abis/Data.json';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
-
-function FileList(props) {
-  if (props.repo != null) {
-    return <FileBrowser files={props.repo} icons={Icons.FontAwesome(4)} />;
-  } else{
-    return <br />
-  }
-}
 
 class DirectoryListing extends Component {
  
@@ -82,16 +73,15 @@ class DirectoryListing extends Component {
       this.setState({ imgBuffer: reader.result })
     }
   }
-  captureRepo = (event) => {
+  captureRepo = async (event) => {
     event.preventDefault();
     console.log('The file has been captured!');
     console.log('event: ', event);
     console.log('event.target: ', event.target);
     console.log('event.target: ', event.target.files);
-    let obj = event.target.files;
-    var result = Object.keys(obj).map((key) => [Number(key), obj[key]]);
-    console.log("Submit result: ", result)
-    this.setState({repoBuffer: result})
+    const data = event.target.files;
+    const postResponse = await ipfs.add(data, { recursive: true });
+    console.log("postResponse", postResponse)
     // const file = event.target.files[0];
     // console.log('This is the upload: ', file);
     // const reader = new window.FileReader();
@@ -154,7 +144,6 @@ class DirectoryListing extends Component {
           <input type='submit'  />
       </form>
         <ul id="listing"></ul>
-        <FileList repo={this.state.repoBuffer} />,
       </div>
     </div>
     );
