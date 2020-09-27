@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import FileBrowser, {Icons} from 'react-keyed-file-browser'
 import './App.css';
 import Data from '../abis/Data.json';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
+
+function FileList(props) {
+  if (props.repo != null) {
+    return <FileBrowser files={props.repo} icons={Icons.FontAwesome(4)} />;
+  } else{
+    return <br />
+  }
+}
 
 class DirectoryListing extends Component {
  
@@ -14,13 +23,14 @@ class DirectoryListing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        buffer: null,
+        imgBuffer: null,
+        repoBuffer: null,
         contract: null,
         projectName: '',
         imgHash: '',
     };
   }
-    
+ 
   async loadBlockchainData(){
     const web3 = window.web3;
     // Get smart contract network
@@ -59,26 +69,44 @@ class DirectoryListing extends Component {
       window.alert("Sorry, the smart contract not deploy to the current network.")
     }
   }
-
-
-    captureFile = (event) => {
-    event.preventDefault();
-    console.log('The file has been captured!');
-    const file = event.target.files[0];
-    console.log('This is the upload: ', file);
-    const reader = new window.FileReader();
-    reader.readAsArrayBuffer(file);
-    reader.onloadend = () => {
-        console.log('load end...');
-        console.log('Buffer: ', Buffer(reader.result));
-        this.setState({ buffer: reader.result })
+  captureImg = (event) => {
+  event.preventDefault();
+  console.log('The file has been captured!');
+  const file = event.target.files[0];
+  console.log('This is the upload: ', file);
+  const reader = new window.FileReader();
+  reader.readAsArrayBuffer(file);
+  reader.onloadend = () => {
+      console.log('load end...');
+      console.log('Buffer: ', Buffer(reader.result));
+      this.setState({ imgBuffer: reader.result })
     }
   }
+  captureRepo = (event) => {
+    event.preventDefault();
+    console.log('The file has been captured!');
+    console.log('event: ', event);
+    console.log('event.target: ', event.target);
+    console.log('event.target: ', event.target.files);
+    let obj = event.target.files;
+    var result = Object.keys(obj).map((key) => [Number(key), obj[key]]);
+    console.log("Submit result: ", result)
+    this.setState({repoBuffer: result})
+    // const file = event.target.files[0];
+    // console.log('This is the upload: ', file);
+    // const reader = new window.FileReader();
+    // reader.readAsArrayBuffer(file);
+    // reader.onloadend = () => {
+    //     console.log('load end...');
+    //     console.log('Buffer: ', Buffer(reader.result));
+    //     this.setState({ repoBuffer: reader.result })
+    //   }
+    }
 
   onSubmit = async (event) => {
     event.preventDefault();
     console.log('The file will be Submitted!');
-    let data = this.state.buffer;
+    let data = this.state.imgBuffer;
     console.log('Submit this: ', data);
     const projectName = document.getElementById("textInput").value
     console.log(">> projectName: ", projectName);
@@ -120,12 +148,13 @@ class DirectoryListing extends Component {
       <h1>Welcome to Planet Git!</h1>
       <p>Upload your git repo to IPFS & Ethereum!</p> <br /><br />
       <form onSubmit={this.onSubmit} >
-          {/* <input type="file" id="filepicker" name="fileList" webkitdirectory="true" multiple /> */}
           Project Name: <input type="text" id="textInput" name="textInput" /><br />
-          Project Logo: <input type="file" id="filepicker" name="fileList" onChange={this.captureFile}/><br />
+          Project Logo: <input type="file" id="filepicker" name="fileList" onChange={this.captureImg}/><br />
+          Project Repo: <input type="file" id="repoInput" name="fileList" webkitdirectory="true" multiple onChange={this.captureRepo}/><br />
           <input type='submit'  />
       </form>
         <ul id="listing"></ul>
+        <FileList repo={this.state.repoBuffer} />,
       </div>
     </div>
     );
