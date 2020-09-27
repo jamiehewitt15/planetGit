@@ -1,20 +1,62 @@
 import React, { Component } from 'react';
 import './App.css';
+import Data from '../abis/Data.json';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
 class DirectoryListing extends Component {
+ 
+  async componentWillMount(){
+    await this.loadBlockchainData();
+  }
 
-    constructor(props) {
-      super(props);
-      this.state = {
-          buffer: null,
-          dataHash: this.props.dataHash
-      };
-    }
-
+  constructor(props) {
+    super(props);
+    this.state = {
+        buffer: null,
+        contract: null,
+        dataHash: '',
+    };
+  }
     
+  async loadBlockchainData(){
+    const web3 = window.web3;
+    // Get smart contract network
+    const networkId = await web3.eth.net.getId();
+    console.log("networkId", networkId)
+    // Get netwrok address
+    const networkData = Data.networks[networkId];
+    if (networkData){
+      console.log("networkData", networkData);
+      const abi = Data.abi;
+      console.log("abi: ", abi);
+      const address= networkData.address;
+      console.log("address: ", address);
+      // Fetch Contract Data
+      const contract = web3.eth.Contract(abi, address);
+      this.setState({ contract });
+      console.log("Contract", contract);
+      try{
+        const dataHash = await contract.methods.get().call();
+        console.log("dataHash", dataHash)
+        if(dataHash){
+          console.log("Data Hash recieved")
+          this.setState({ dataHash })
+          console.log("this.state.dataHash", this.state.dataHash)
+        } else{
+          console.log("No data Hash recieved")
+          this.setState({ dataHash: 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah' })
+        }
+      } catch(e){
+        console.log("Error", e)
+      }
+      
+    } else {
+      window.alert("Sorry, the smart contract not deploy to the current network.")
+    }
+  }
+
 
     captureFile = (event) => {
     event.preventDefault();
@@ -41,8 +83,8 @@ class DirectoryListing extends Component {
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
         console.log('submitHash: ', submitHash);
-        console.log("contract", this.props.contract)
-        this.props.contract.methods.set(submitHash).send({from: this.props.account})
+        console.log("contract", this.state.contract);
+        this.state.contract.methods.set(submitHash).send({from: this.props.account})
         .on('error', function(error){ 
           console.log("error");
           window.alert("Sorry, there was an error!");
@@ -50,13 +92,7 @@ class DirectoryListing extends Component {
         .on('confirmation', function(){ 
           this.setState({dataHash: submitHash});
          }.bind(this))
-        
-        // .then((r) => {
-        //   console.log('submitHash Success!');
-        //   console.log("response", r)
-        //   this.setState({dataHash: submitHash});
-        //   console.log('submitHash Success! : ', submitHash);
-        // })
+       
       } catch(e){
         console.log("Error: ", e)
       }
