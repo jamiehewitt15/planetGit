@@ -1,0 +1,30 @@
+{
+  "name": "ftproject",
+  "version": "1.0.0",
+  "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
+  "main": "index.js",
+  "scripts": {
+    "bash-hello": "bash hello.sh",
+    "clone": "git clone http://127.0.0.1:8080/ipfs/QmYgyahQoikJEbZEkiubwxm16xjCAZs2RUd1qfuus2Zyeq",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiehewitt15/FTPackage.git"
+  },
+  "keywords": [
+    "Javascript",
+    "node",
+    "npm"
+  ],
+  "author": "Anonymous User",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamiehewitt15/FTPackage/issues"
+  },
+  "homepage": "https://github.com/jamiehewitt15/FTPackage#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "user": "0.0.0"
+  }
+}
