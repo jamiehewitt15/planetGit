@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
-function UserGreeting(props) {
-return <h1>Welcome back!</h1>;
-}
-
-function GuestGreeting(props) {
-  return <h1>Please sign up.</h1>;
-}
-
-function Greeting(props) {
-  if (props.userName === '') {
-    return <GuestGreeting />;
-  }
-  return <UserGreeting />;
-}
+import Greeting from './User.jsx';
 
 class Header extends Component {
     
@@ -32,10 +18,10 @@ class Header extends Component {
           </a>
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <Greeting userName={this.props.userName}/>
+              <small className="text-white">Your address: {this.props.account}</small>
             </li>
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white">Your account: {this.props.account}</small>
+            <Greeting userName={this.props.userName} account={this.props.account}/>
             </li>
           </ul>
         </nav>
