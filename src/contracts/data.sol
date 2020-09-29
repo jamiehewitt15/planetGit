@@ -9,7 +9,11 @@ contract Data {
         address _address;
         string userName;
     }
-    
+
+    struct Repo {
+        string userName;
+    }
+
     // mapping address to User 
     mapping (address => User) users;
 
