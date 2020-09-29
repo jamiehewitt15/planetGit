@@ -106,7 +106,7 @@ class DirectoryListing extends Component {
         console.log("postResponse", postResponse);
         const submitHash = postResponse.path;
         console.log("submitHash", submitHash);
-        this.state.contract.methods.setAll(submitHash, projectName).send({from: this.props.account})
+        this.state.contract.methods.setAll(submitHash, projectName, "uhiashiuihuiuh3ihu243ihu243hiu").send({from: this.props.account})
         .on('error', function(error){ 
           console.log("error 1", error);
           alert("Sorry, there was an error!");

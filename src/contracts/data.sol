@@ -1,9 +1,6 @@
 pragma solidity >=0.7.0;
 
 contract Data {
-    string projectName;
-    string repoHash;
-    string imgHash = 'QmNWxPVpr26ichSV9jBdPrFdjPTXBx5f1XQG4roZtVNrah';
     
     struct User {
         address _address;
@@ -11,46 +8,40 @@ contract Data {
     }
 
     struct Repo {
-        string userName;
+        string repoName;
+        string imgHash;
+        string repoHash;
     }
 
     // mapping address to User 
     mapping (address => User) users;
+    // mapping address to User to Repo
+    mapping (string => Repo) repos;
+    // mapping address to User to Repo
+    mapping (address => mapping (string => Repo)) userRepos;
 
     // Create User
     function createUser(string memory _userName) public{
         users[msg.sender] = User(msg.sender, _userName);
     }
+    // Create Repo
+    function createRepo(string memory _projectSlug, string memory _projectName, string memory _imgHash, string memory _repoHash) public{
+        userRepos[msg.sender][_projectSlug] = Repo(_projectName, _imgHash, _repoHash);
+    }
 
-    // Write Project Name function
-    function setName(string memory _projectName) public{
-        projectName = _projectName;
+   // Get Repo Name
+    function getRepoName(string memory _projectSlug) public view returns(string memory) {
+        return repos[_projectSlug].repoName;
     }
-    // Write REPO function
-    function setImg(string memory _imgHash) public{
-        imgHash = _imgHash;
+    
+   // Get Repo Name
+    function getRepoImg(string memory _projectSlug) public view returns(string memory) {
+        return repos[_projectSlug].repoHash;
     }
-    // Write REPO function
-    function setRepo(string memory _repoHash) public{
-        repoHash = _repoHash;
-    }
-    // Write ALL function
-    function setAll(string memory _projectName, string memory _imgHash, string memory _repoHash) public{
-        projectName = _projectName;
-        imgHash = _imgHash;
-        repoHash = _repoHash;
-    }
-    // Read function
-    function getName() public view returns(string memory) {
-        return projectName;
-    }
-    // Read function
-    function getImg() public view returns(string memory) {
-        return imgHash;
-    }
-    // Read function
-    function getRepo() public view returns(string memory) {
-        return repoHash;
+    
+   // Get Repo Name
+    function getRepoHash(string memory _projectSlug) public view returns(string memory) {
+        return repos[_projectSlug].imgHash;
     }
     // Read function
     function getUser() public view returns(string memory) {

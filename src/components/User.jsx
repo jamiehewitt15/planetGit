@@ -97,7 +97,7 @@ export default class User extends Component {
                     </form>
                     </div>
     } else{
-        greeting = <h1>Welcome back {this.state.userName}!</h1>
+        greeting = <h3>Welcome back {this.state.userName}!</h3>
         
     }
     return (
