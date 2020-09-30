@@ -28,6 +28,7 @@
     "node-fetch": "^2.6.0",
     "readline-sync": "^1.4.10",
     "shelljs": "^0.8.4",
+    "start-ipfs-daemon": "^1.2.1",
     "user": "0.0.0"
   }
 }
