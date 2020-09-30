@@ -9,8 +9,8 @@ const pushRepo = async() => {
   console.log("pwd: ", pwd)
   shell.exec(`cd ../..`);
   pwd = shell.pwd().stdout;
-  shell.exec(`git clone --bare ${pwd} ../testGitClone`);
-  shell.cd('../testGitClone');
+  shell.exec(`git clone --bare ${pwd} ../tempPlanetGit`);
+  shell.cd('../tempPlanetGit');
   pwd = shell.pwd().stdout;
   console.log("pwd: ", pwd)
   shell.exec(`git update-server-info`);
@@ -18,6 +18,9 @@ const pushRepo = async() => {
   const file = await ipfs.add(globSource('./', { recursive: true }));
   const cid = new CID(file.cid)
   console.log("Repo Hash:", cid.toString());
+  shell.cd('../');
+  shell.pwd();
+  shell.rm('-rf', './tempPlanetGit');
   console.log("Finished")
 }
 
@@ -31,7 +34,6 @@ const startPush = async() => {
     shell.exit(1);
   } else{
     if (shell.which('ipfs')) { // check if user has IPFS installed
-      console.warn("We recomend installing IPFS");
       shell.exec(`ipfs daemon`, {async:true, silent:true});
       ipfs = ipfsClient({ host: 'localhost', port: '5001', protocol: 'http' })
       await sleep(2000); // wait for IPFS Daemon to start
