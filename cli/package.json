@@ -4,8 +4,8 @@
   "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
   "main": "index.js",
   "scripts": {
-    "bash-hello": "bash hello.sh",
     "clone": "node clone.js",
+    "push": "node push.js",
     "pull": "node pull.js"
   },
   "repository": {
