@@ -6,7 +6,8 @@
   "scripts": {
     "bash-hello": "bash hello.sh",
     "clone": "git clone http://127.0.0.1:8080/ipfs/QmYgyahQoikJEbZEkiubwxm16xjCAZs2RUd1qfuus2Zyeq",
-    "test": "test"
+    "test": "node index.js"
+
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/jamiehewitt15/FTPackage#readme",
   "dependencies": {
     "node-fetch": "^2.6.0",
+    "shelljs": "^0.8.4",
     "user": "0.0.0"
   }
 }
