@@ -1,9 +1,6 @@
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
-const ipfsClient = require('ipfs-http-client');
-const swarm = require('ipfs-http-client/src/swarm');
 const argv = require('minimist')(process.argv.slice(2));
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
 // Assign arguments
 let newFolder = argv._[0];
@@ -41,12 +38,10 @@ const startClone = async() => {
       shell.exec(`ipfs daemon`, {async:true, silent:true});
       try{
         await sleep(2000);
-        console.log("attempt 1")
         await cloneRepo();
       } catch(e){
         console.log("Waiting for IPFS daemon to start...")
-        await sleep(2000);
-        console.log("attempt 2")
+        await sleep(4000);
         await cloneRepo();
       }
       }
