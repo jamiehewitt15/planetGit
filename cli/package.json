@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "bash-hello": "bash hello.sh",
-    "clone": "node clone.js"
+    "clone": "node clone.js",
+    "pull": "node pull.js"
   },
   "repository": {
     "type": "git",
