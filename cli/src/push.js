@@ -4,7 +4,6 @@ const { globSource } = ipfsClient;
 const { CID } = require('ipfs-http-client');
 let ipfs;
 let repoHash = '';
-let pwdHome = shell.pwd().stdout;
 
 const pushRepo = async() => {
   let pwd = shell.pwd().stdout;
@@ -67,10 +66,10 @@ const web3 = new Web3js(web3Provider);
 
 const { abi, networks } = require('../abis/RepoContract.json');
 
-let accountAddress = '';
+let accountAddress = shell.cat("accountAddress.txt").stdout;
 let privateKey = '';
-let repoName = '';
-let repoSlug = '';
+let repoSlug = shell.cat("reposlug.txt").stdout;
+console.log("repoSlug", repoSlug);
 
 const loadContractAddress = async () => {
     // Get smart contract network
@@ -86,25 +85,11 @@ const loadContract = async (contractAddress) => {
 async function setup(){
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
-    let uniqueSlug;
-    repoName = readlineSync.question('\n\nPlease enter a name for your repo:\n\n');
-    do {
-        repoSlug = readlineSync.question('\n\nPlease enter a unique slug for your repo:\nYour repo will be available at planetgit.com/repos/[slug]\n\n');
-        uniqueSlug = await contract.methods.uniqueRepoSlug(repoSlug).call();
-        console.log("uniqueSlug", uniqueSlug);
-        if (uniqueSlug === false) {
-            console.log("Sorry, that slug is already taken. Please choose another one.")
-        }
-    } while (uniqueSlug !== true);
-    shell.cd(pwdHome);
-    shell.ShellString(repoSlug).to('repoSlug.txt')
-    accountAddress = readlineSync.question('\n\nPlease enter you public address:\n\n');
-    shell.ShellString(accountAddress).to('accountAddress.txt')
     privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
 }
 
-async function createRepo(){
-    console.log("createRepo")
+async function updateRepo(){
+    console.log("updateRepo")
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
     console.log("accountAddress", accountAddress);
@@ -124,7 +109,7 @@ async function createRepo(){
         "from":accountAddress, 
         "gasLimit":web3.utils.toHex(2100000),
         "to":contractAddress,"value":"0x0",
-        "data":contract.methods.createRepo(repoSlug, repoName, repoHash).encodeABI(), 
+        "data":contract.methods.updateRepo(repoSlug, repoHash).encodeABI(), 
         "nonce":web3.utils.toHex(count)
         }
     console.log("rawTransaction", rawTransaction);
@@ -154,8 +139,8 @@ async function run(){
     console.log("startPush finished");
     console.log("Repo Hash:", repoHash);
     await setup();
-    await createRepo();
-    console.log("createRepo finished");
+    await updateRepo();
+    console.log("updateRepo finished");
 }
 
 run();
