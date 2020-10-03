@@ -7,6 +7,7 @@
     "start": "node ./src/createUser.js",
     "clone": "node ./src/clone.js",
     "push": "node ./src/push.js",
+    "init": "node ./src/init.js",
     "pull": "node ./src/pull.js"
   },
   "repository": {

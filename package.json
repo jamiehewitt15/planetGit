@@ -31,6 +31,7 @@
     "eject": "react-scripts eject",
     "clone": "node ./cli/src/clone.js",
     "push": "node ./cli/src/push.js",
+    "init": "node ./cli/src/init.js",
     "pull": "node ./cli/src/pull.js"
   },
   "eslintConfig": {
