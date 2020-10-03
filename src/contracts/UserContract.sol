@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
 
-contract User {
+contract userContract {
     
     struct User {
         address _address;

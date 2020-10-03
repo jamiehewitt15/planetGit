@@ -2,9 +2,9 @@
 pragma solidity >=0.7.0;
 
 // Import User from User.sol
-import "./User.sol";
+import "./UserContract.sol";
 
-contract Repo {
+contract repoContract {
 
     struct Repo {
         address owner;
@@ -37,9 +37,10 @@ contract Repo {
     }
     // Update Repo
     function updateRepo(bytes15 _projectSlug, bytes memory _repoHash) public{
-        if()
+        if(msg.sender == repoNames[_projectSlug].owner){
         userRepos[msg.sender][_projectSlug].repoHash =  _repoHash;
-        repoNames[msg.sender][_projectSlug].repoHash =  _repoHash;
+        repoNames[_projectSlug].repoHash =  _repoHash;
+        }
     }
    // Get Repo Name
     function getRepoName(bytes15 _projectSlug) public view returns(bytes15) {
@@ -49,7 +50,7 @@ contract Repo {
     function getRepoHash(bytes15 _projectSlug) public view returns(bytes memory) {
         return repoNames[_projectSlug].repoHash;
     }
-    // Get All Users
+    // Get All Repos
     function getAllRepos() public view returns(bytes15[] memory) {
         return allRepos;
     }
