@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
 
 contract User {
@@ -6,7 +7,7 @@ contract User {
         address _address;
         bytes15 userName;
         bytes imgHash;
-        bool valid;
+        bool exists;
     }
 
     // mapping address to User 
@@ -19,7 +20,12 @@ contract User {
     
     // Check Username is unique
     function uniqueUsername(bytes15 _userName) public view returns(bool isUnique) {
-        return (userNameMap[_userName].valid != true);
+        if(userNameMap[_userName].exists != true){
+            return true;
+        } else{
+            return false;
+        }
+        
     }
     // Create User
     function createUser(bytes15 _userName, bytes memory _imgHash) public{
