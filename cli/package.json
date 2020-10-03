@@ -4,9 +4,10 @@
   "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
   "main": "index.js",
   "scripts": {
-    "clone": "node clone.js",
-    "push": "node push.js",
-    "pull": "node pull.js"
+    "start": "node ./src/createUser.js",
+    "clone": "node ./src/clone.js",
+    "push": "node ./src/push.js",
+    "pull": "node ./src/pull.js"
   },
   "repository": {
     "type": "git",
