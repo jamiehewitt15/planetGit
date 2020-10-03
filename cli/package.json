@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/jamiehewitt15/FTPackage#readme",
   "dependencies": {
+    "ethereumjs-tx": "^2.1.2",
+    "express": "^4.17.1",
     "ipfs-http-client": "^47.0.1",
     "minimist": "^1.2.5",
     "node-fetch": "^2.6.0",

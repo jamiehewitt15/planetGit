@@ -29,9 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clone": "node ./cli/clone.js",
-    "push": "node ./cli/push.js",
-    "pull": "node ./cli/pull.js"
+    "clone": "node ./cli/src/clone.js",
+    "push": "node ./cli/src/push.js",
+    "pull": "node ./cli/src/pull.js"
   },
   "eslintConfig": {
     "extends": "react-app"
