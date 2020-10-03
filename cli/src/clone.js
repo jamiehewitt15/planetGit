@@ -8,23 +8,27 @@ let projectSlug;
 shell.ShellString(projectSlug).to('repoSlug.txt')
 // Ask for user input
 if (!argv._[0]){
-  repoHash = readlineSync.question('Please enter the new folder name: ');
+  newFolder = readlineSync.question('Please enter the new folder name: ');
 } else{
-  newFolder = argv._[0];
+  newFolder = argv._[0].toString();
 }
 if (!argv._[1]){
-  repoHash = readlineSync.question('Please enter the Slug of the repository you would like to clone: ').toString();
+  projectSlug = readlineSync.question('Please enter the Slug of the repository you would like to clone: ').toString();
 } else{
-  projectSlug = argv._[1];
+  projectSlug = argv._[1]
 }
 
 const cloneRepo = async() => {
-  console.log('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash, newFolder);
-  if (shell.exec(`git clone http://127.0.0.1:8080/ipfs/${repoHash} ${newFolder}`).code !== 0) {
+  const folder = newFolder.replace(/(\r\n|\n|\r)/gm, "");
+  repoHash = repoHash.replace(/(\r\n|\n|\r)/gm, "");
+  console.log('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash, folder);
+  let clonecommand = `git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`;
+  console.log("clonecommand", clonecommand)
+  if (shell.exec(clonecommand).code !== 0) {
     console.log("Waiting for IPFS daemon to start...")
     await sleep(4000);
     shell.echo('Trying again...');
-    shell.exec(`git clone http://127.0.0.1:8080/ipfs/${repoHash} ${newFolder}`)
+    shell.exec(`git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`)
   }
   console.log("Finished");
 }
