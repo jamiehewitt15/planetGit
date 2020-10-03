@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
+pragma experimental ABIEncoderV2;
 
-contract userContract {
+contract UserContract {
     
     struct User {
         address _address;
-        bytes15 userName;
-        bytes imgHash;
+        string userName;
+        string imgHash;
         bool exists;
     }
 
@@ -14,21 +15,20 @@ contract userContract {
     mapping (address => User) UserAddrsMap;
     address[] public allUserAddrs;
     // mapping address to User 
-    mapping (bytes15 => User) userNameMap;
-    bytes15[] public allUserNames;
+    mapping (string => User) userNameMap;
+    string[] public allUserNames;
     
     
     // Check Username is unique
-    function uniqueUsername(bytes15 _userName) public view returns(bool isUnique) {
+    function uniqueUsername(string memory _userName) public view returns(bool isUnique) {
         if(userNameMap[_userName].exists != true){
             return true;
         } else{
             return false;
         }
-        
     }
-    // Create User
-    function createUser(bytes15 _userName, bytes memory _imgHash) public{
+    // Create User with Img
+    function createUser(string memory _userName, string memory _imgHash) public{
         if(uniqueUsername(_userName)){
         UserAddrsMap[msg.sender] = User(msg.sender, _userName, _imgHash, true);
         userNameMap[_userName] = User(msg.sender, _userName, _imgHash, true);
@@ -37,15 +37,15 @@ contract userContract {
         }
     }
     // Get Username with Address function
-    function getUserName() public view returns(bytes15) {
+    function getUserName() public view returns(string memory) {
         return UserAddrsMap[msg.sender].userName;
     }
     // Get User Img with Address function
-    function getUserImg() public view returns(bytes15) {
-        return UserAddrsMap[msg.sender].userName;
+    function getUserImg() public view returns(string memory) {
+        return UserAddrsMap[msg.sender].imgHash;
     }
     // Get All Users
-    function getAllUser() public view returns(bytes15[] memory) {
+    function getAllUsers() public view returns(string[] memory) {
         return allUserNames;
     }
 }

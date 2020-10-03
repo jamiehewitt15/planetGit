@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
+pragma experimental ABIEncoderV2;
 
 // Import User from User.sol
 import "./UserContract.sol";
@@ -8,18 +9,18 @@ contract repoContract {
 
     struct Repo {
         address owner;
-        bytes15 repoName;
-        bytes repoHash;
+        string repoName;
+        string repoHash;
         bool exists;
     }
     // mapping repo slug to Repo
-    mapping (bytes15 => Repo) repoNames;
+    mapping (string => Repo) repoNames;
     // mapping User address to Repo
-    mapping (address => mapping (bytes15 => Repo)) userRepos;
-    bytes15[] public allRepos;
+    mapping (address => mapping (string => Repo)) userRepos;
+    string[] public allRepos;
 
     // Check RepoName is unique
-    function uniqueRepoName(bytes15 _userName) public view returns(bool isUnique) {
+    function uniqueRepoName(string memory _userName) public view returns(bool isUnique) {
         if(repoNames[_userName].exists != true){
             return true;
         } else{
@@ -27,7 +28,7 @@ contract repoContract {
         }
     }
     // Create Repo
-    function createRepo(bytes15 _projectSlug, bytes15 _projectName, bytes memory _repoHash) public{
+    function createRepo(string memory _projectSlug, string memory _projectName, string memory _repoHash) public{
         if(uniqueRepoName(_projectSlug)){
             Repo memory newRepo = Repo(msg.sender, _projectName, _repoHash, true);
             userRepos[msg.sender][_projectSlug] = newRepo;
@@ -36,22 +37,22 @@ contract repoContract {
         }
     }
     // Update Repo
-    function updateRepo(bytes15 _projectSlug, bytes memory _repoHash) public{
+    function updateRepo(string memory _projectSlug, string memory _repoHash) public{
         if(msg.sender == repoNames[_projectSlug].owner){
         userRepos[msg.sender][_projectSlug].repoHash =  _repoHash;
         repoNames[_projectSlug].repoHash =  _repoHash;
         }
     }
    // Get Repo Name
-    function getRepoName(bytes15 _projectSlug) public view returns(bytes15) {
+    function getRepoName(string memory _projectSlug) public view returns(string memory) {
         return repoNames[_projectSlug].repoName;
     }
    // Get Repo Name
-    function getRepoHash(bytes15 _projectSlug) public view returns(bytes memory) {
+    function getRepoHash(string memory _projectSlug) public view returns(string memory) {
         return repoNames[_projectSlug].repoHash;
     }
     // Get All Repos
-    function getAllRepos() public view returns(bytes15[] memory) {
+    function getAllRepos() public view returns(string[] memory) {
         return allRepos;
     }
 }
