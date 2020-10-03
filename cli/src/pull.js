@@ -1,16 +1,10 @@
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
-
+let repoHash = '';
 // Assign arguments
-let newFolder = argv._[0];
-let repoHash = argv._[1];
-console.log('newFolder', newFolder);
-console.log('repoHash', repoHash);
+let repoSlug = shell.cat("reposlug.txt").stdout;
 // Ask for user input
-if (!repoHash){
-  repoHash = readlineSync.question('Please enter the Hash of the repository you would like to clone: ');
-}
 
 const pullRepo = async() => {
   console.log('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash);
@@ -40,17 +34,51 @@ const startPull = async() => {
       else{ // Use public IPFS node
       console.log("We recomend installing IPFS")
       console.log("Attempting: requesting repo through INFURA public node")
-      shell.exec(`git clone https://${repoHash}.ipfs.infura-ipfs.io/ ${newFolder}`);
+      shell.exec(`git pull https://${repoHash}.ipfs.infura-ipfs.io/`);
     }
   }
 }
 
-startPull();
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// GET LATEST FROM HASH ETHEREUM ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
+const Web3js = require('web3');
+const EthereumTx = require('ethereumjs-tx').Transaction
+const provider = 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const web3Provider = new Web3js.providers.WebsocketProvider(provider);
+const web3 = new Web3js(web3Provider);
 
-// QmYgyahQoikJEbZEkiubwxm16xjCAZs2RUd1qfuus2Zyeq
+const { abi, networks } = require('../abis/RepoContract.json');
+
+let accountAddress = shell.cat("accountAddress.txt").stdout;
+let privateKey = '';
+
+const loadContractAddress = async () => {
+    // Get smart contract network
+    const networkId = await web3.eth.net.getId();
+    // Get contract address
+    return networks[networkId].address;
+}
+const loadContract = async (contractAddress) => {
+    const contract = web3.eth.Contract(abi, contractAddress);
+    return contract;
+}
+
+async function setup(){
+    const contractAddress = await loadContractAddress();
+    const contract = await loadContract(contractAddress);
+    repoHash = await contract.methods.getRepoHash(repoSlug).call();
+}
+
+async function run(){
+    await setup();
+    startPull();
+}
+
+run();
   
 
 
