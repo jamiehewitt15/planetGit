@@ -20,8 +20,8 @@ contract repoContract {
     string[] public allRepos;
 
     // Check RepoName is unique
-    function uniqueRepoName(string memory _userName) public view returns(bool isUnique) {
-        if(repoNames[_userName].exists != true){
+    function uniqueRepoSlug(string memory _projectSlug) public view returns(bool isUnique) {
+        if(repoNames[_projectSlug].exists != true){
             return true;
         } else{
             return false;
@@ -29,7 +29,7 @@ contract repoContract {
     }
     // Create Repo
     function createRepo(string memory _projectSlug, string memory _projectName, string memory _repoHash) public{
-        if(uniqueRepoName(_projectSlug)){
+        if(uniqueRepoSlug(_projectSlug)){
             Repo memory newRepo = Repo(msg.sender, _projectName, _repoHash, true);
             userRepos[msg.sender][_projectSlug] = newRepo;
             repoNames[_projectSlug] = newRepo;

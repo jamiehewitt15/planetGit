@@ -31,9 +31,11 @@ contract('UserContract', (accounts)=>{
         // Test uniqueUsername function
         it('Checks unique username', async () => {
             let username = 'johnTest0000000';
+            const result1 = await user.uniqueUsername(username);
+            assert.equal(result1, true);
             await user.createUser(username, "X243OJNOIUND98243RNJK24R9");
-            const result = await user.uniqueUsername(username);
-            assert.equal(result, false);
+            const result2 = await user.uniqueUsername(username);
+            assert.equal(result2, false);
         })
         // Test createUser and getUserName functions
         it('Creates User and gets username', async () => {
