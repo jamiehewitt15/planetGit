@@ -4,23 +4,26 @@ const { globSource } = ipfsClient;
 const { CID } = require('ipfs-http-client');
 let ipfs;
 let repoHash = '';
-let pwdHome = shell.pwd().stdout;
+const pwdHome = shell.pwd().stdout;
 
 const pushRepo = async() => {
-  let pwd = shell.pwd().stdout;
-  console.log("pwd: ", pwd)
-  shell.exec(`cd ../..`);
-  pwd = shell.pwd().stdout;
-  shell.exec(`git clone --bare ${pwd} ../tempPlanetGit`);
-  shell.cd('../tempPlanetGit');
-  pwd = shell.pwd().stdout;
-  console.log("pwd: ", pwd)
-  shell.exec(`git update-server-info`);
-  // const ipfsHash = await shell.exec(`ipfs add -r .`, {async:true, silent:true});
-  const file = await ipfs.add(globSource('./', { recursive: true }));
-  const cid = new CID(file.cid)
-  repoHash = cid.toString();
-  console.log("Repo Hash:", repoHash);
+  await shell.exec(`git clone --bare ${pwdHome} ../tempPlanetGit`, {async:true, silent: true});
+  
+  let file;
+  try {
+      await sleep(6000);
+      shell.cd('../tempPlanetGit');
+      const pwdTemp = shell.pwd().stdout;
+      shell.exec(`git update-server-info`);
+      repoHash = shell.exec(`ipfs add -r -Q .`).stdout; // await ipfs.add(globSource('./', { recursive: true, hidden: true }));
+      console.log("repoHash", repoHash);
+  } catch (error) {
+      await sleep(4000); // wait for IPFS Daemon to start
+      console.log("Waiting for IPFS to start")
+      file = await ipfs.add(globSource('./', { recursive: true, hidden: true }));
+      repoHash = shell.exec(`ipfs files stat --hash `).stdout;
+      console.log("repoHash", repoHash);
+  }
   shell.cd('../');
   shell.pwd();
   shell.rm('-rf', './tempPlanetGit');
