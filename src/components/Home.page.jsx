@@ -1,0 +1,15 @@
+import React, { Component } from 'react';
+import {  Link } from "react-router-dom";
+import './App.css';
+
+export default function Header() {
+      return (
+        <div id="home" className="home">
+            <h1>Welcome to PLANET GIT</h1>
+            <h2>The fully distributed git repository</h2>
+            <p>Push you code to IPFS and Ethereum</p>
+            <Link to="/signup" >Sign Up</Link><p>-</p>
+            <Link to="/newrepo" >Create a New Repo</Link>
+        </div>
+      );
+    }

@@ -21,7 +21,7 @@ class Header extends Component {
               <small className="text-white">Your address: {this.props.account}</small>
             </li>
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <Greeting userName={this.props.userName} account={this.props.account}/>
+            {/* <Greeting userName={this.props.userName} account={this.props.account}/> */}
             </li>
           </ul>
         </nav>

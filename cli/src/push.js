@@ -141,6 +141,7 @@ async function run(){
     await setup();
     await updateRepo();
     console.log("updateRepo finished");
+    shell.exit(0);
 }
 
 run();

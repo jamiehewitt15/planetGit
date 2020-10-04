@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Web3 from 'web3';
 import './App.css';
 import DirectoryListing from './directoryListing.jsx';
 import Header from './Header.jsx';
-import Data from '../abis/Data.json';
+import UserContract from '../abis/UserContract.json';
+/**
+ * Import all page components here
+ */
+import Home from './Home.page.jsx';
+import Signup from './Signup.page.jsx';
+import NewRepo from './NewRepo.page.jsx';
+import Repo from './Repo.page.jsx';
+
 
 class App extends Component {
     
@@ -26,10 +39,10 @@ class App extends Component {
     const networkId = await web3.eth.net.getId();
     console.log("networkId", networkId)
     // Get netwrok address
-    const networkData = Data.networks[networkId];
+    const networkData = UserContract.networks[networkId];
     if (networkData){
       console.log("networkData", networkData);
-      const abi = Data.abi;
+      const abi = UserContract.abi;
       console.log("abi: ", abi);
       const address= networkData.address;
       console.log("address: ", address);
@@ -38,7 +51,7 @@ class App extends Component {
       this.setState({ contract });
       console.log("Contract", contract);
       try{
-        const userName = await contract.methods.getUser().call();
+        const userName = await contract.methods.getUserName().call();
         console.log("getUser", userName)
         if(userName){
           this.setState({ userName })
@@ -81,7 +94,14 @@ class App extends Component {
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
-              <DirectoryListing account={this.state.account} />
+            <Router>
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/repo/*"  component={Repo} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/services" component={NewRepo} />
+            </Switch>
+            </Router>
             </main>
           </div>
         </div>

@@ -93,7 +93,8 @@ async function setup(){
 
 async function run(){
     await setup();
-    startClone();
+    await startClone();
+    shell.exit(0);
 }
 
 run();

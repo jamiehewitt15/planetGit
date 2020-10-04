@@ -75,10 +75,13 @@ async function setup(){
 
 async function run(){
     await setup();
-    startPull();
+    await startPull();
+    shell.exit(0);
 }
 
 run();
+
+
   
 
 

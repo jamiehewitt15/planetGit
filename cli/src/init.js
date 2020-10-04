@@ -159,6 +159,8 @@ async function run(){
     await setup();
     await createRepo();
     console.log("createRepo finished");
+    shell.exit(0);
 }
+
 
 run();

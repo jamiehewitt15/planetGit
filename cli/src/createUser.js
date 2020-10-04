@@ -104,7 +104,9 @@ async function run(){
     console.log("Setup finished");
     await createUser();
     console.log("createUser finished");
+    shell.exit(0);
 }
+
 
 run();
 

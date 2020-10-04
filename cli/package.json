@@ -1,6 +1,6 @@
 {
-  "name": "ftproject",
-  "version": "1.0.0",
+  "name": "planet-git",
+  "version": "1.0.1",
   "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
   "main": "index.js",
   "scripts": {
