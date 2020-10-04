@@ -4,3 +4,13 @@
     padding-top: 10%;
     margin: auto;
 }
+.form{
+    width:90%;
+    padding-top: 10%;
+    margin: auto;
+    /* float:left; */
+    text-align: left;
+}
+.form-left {
+/* float: left; */
+}

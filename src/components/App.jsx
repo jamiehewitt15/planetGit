@@ -16,6 +16,7 @@ import Home from './Home.page.jsx';
 import Signup from './Signup.page.jsx';
 import NewRepo from './NewRepo.page.jsx';
 import Repo from './Repo.page.jsx';
+import User from './User.jsx';
 
 
 class App extends Component {
@@ -52,7 +53,9 @@ class App extends Component {
       console.log("Contract", contract);
       try{
         const userName = await contract.methods.getUserName().call();
-        console.log("getUser", userName)
+        console.log("getUser", userName);
+        const allUsers = await contract.methods.getAllUsers().call();
+        console.log("getAllUsers", allUsers);
         if(userName){
           this.setState({ userName })
           console.log("this.state.projectName", this.state.userName)
@@ -96,10 +99,11 @@ class App extends Component {
             <main role="main" className="col-lg-12 d-flex text-center">
             <Router>
             <Switch>
+              <Route path="/repo/*"  component={() => <Repo account={this.state.account} />}  />
+              <Route path="/user/:username"  component={() => <User account={this.state.account} />}  />
+              <Route path="/signup" component={() => <Signup account={this.state.account} />} />
+              <Route path="/newrepo" component={() => <NewRepo account={this.state.account} />} />
               <Route path="/" component={Home} />
-              <Route path="/repo/*"  component={Repo} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/services" component={NewRepo} />
             </Switch>
             </Router>
             </main>
