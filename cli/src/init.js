@@ -7,20 +7,17 @@ let repoHash = '';
 const pwdHome = shell.pwd().stdout;
 
 const pushRepo = async() => {
-  await shell.exec(`git clone --bare ${pwdHome} ../tempPlanetGit`, {async:true, silent: true});
-  
-  let file;
+  shell.exec(`git clone --bare ${pwdHome} ../tempPlanetGit`, {async:true, silent: true});
   try {
       await sleep(6000);
       shell.cd('../tempPlanetGit');
-      const pwdTemp = shell.pwd().stdout;
       shell.exec(`git update-server-info`);
-      repoHash = shell.exec(`ipfs add -r -Q .`).stdout; // await ipfs.add(globSource('./', { recursive: true, hidden: true }));
+      repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
       console.log("repoHash", repoHash);
   } catch (error) {
       await sleep(4000); // wait for IPFS Daemon to start
       console.log("Waiting for IPFS to start")
-      file = await ipfs.add(globSource('./', { recursive: true, hidden: true }));
+      let file = await ipfs.add(globSource('./', { recursive: true, hidden: true }));
       repoHash = shell.exec(`ipfs files stat --hash `).stdout;
       console.log("repoHash", repoHash);
   }

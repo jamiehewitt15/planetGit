@@ -1,4 +1,7 @@
 /* Styles go here */
+body{
+    background: lightgray
+}
 #home{
     width:50%;
     padding-top: 10%;

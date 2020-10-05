@@ -8,8 +8,8 @@ export default function Header() {
             <h1>Welcome to PLANET GIT</h1>
             <h2>The fully distributed git repository</h2>
             <p>Push you code to IPFS and Ethereum</p>
-            <Link to="/signup" >Sign Up</Link><p>-</p>
-            <Link to="/newrepo" >Create a New Repo</Link>
+            <Link to="/signup" ><button>Sign Up</button></Link><br /><br />
+            <Link to="/newrepo" ><button>Create a New Repo</button></Link>
         </div>
       );
     }

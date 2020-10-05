@@ -13,9 +13,12 @@ contract UserContract {
 
     // mapping address to User 
     mapping (address => User) UserAddrsMap;
+    // mapping username to User 
+    mapping (string => User) userNameMap;
+    
     address[] public allUserAddrs;
     // mapping address to User 
-    mapping (string => User) userNameMap;
+    
     string[] public allUserNames;
     
     
