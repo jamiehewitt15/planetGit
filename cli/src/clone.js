@@ -6,7 +6,7 @@ let repoHash = '';
 let newFolder;
 let projectSlug;
 shell.ShellString(projectSlug).to('repoSlug.txt')
-// Ask for user input
+// Ask for user input if arguments are missing
 if (!argv._[0]){
   newFolder = readlineSync.question('Please enter the new folder name: ');
 } else{

@@ -78,7 +78,7 @@ class App extends Component {
     } if(window.web3){
       window.web3 = new Web3(window.web3.currentProvider);
     } else {
-      window.alert("Please install and use Metamask");
+      window.alert("Please install and use Metamask to interact with this web app. Visit metamask.io");
     }
   }
 

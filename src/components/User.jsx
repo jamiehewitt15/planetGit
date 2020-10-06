@@ -103,8 +103,7 @@ export default class User extends Component {
   render() {
       let greeting;
     if(this.state.userName === ''){
-        greeting =  <div><h1>No user called</h1>
-                    <Username />
+        greeting =  <div><h1>Create and Account:</h1>
                     <CreateUser account={this.props.account}/>
                     </div>
     } else{

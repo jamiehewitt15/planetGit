@@ -38,7 +38,7 @@ async function setup(){
             console.log("Sorry, that username is already taken. Please choose another one.")
         }
     } while (uniqueName !== true);
-    newUser = readlineSync.question('\n\nDo you already have an ethereum account?\nEnter y or n\n\n');
+    let newUser = readlineSync.question('\n\nDo you already have an ethereum account?\nEnter y or n\n\n');
     if(newUser === 'n'){
     const account = await web3.eth.accounts.create();
     accountAddress = account.address.toString();

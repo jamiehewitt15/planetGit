@@ -100,11 +100,11 @@ async function updateRepo(){
     } catch (error) {
         console.log(">>> error 1", error)
     }
-    // get transaction count, later will used as nonce
+    // get transaction count to used as nonce
     console.log("getTransactionCount")
     const count = await web3.eth.getTransactionCount(accountAddress);
     console.log("getTransactionCount", count)
-    //creating raw tranaction
+    // creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
         "gasLimit":web3.utils.toHex(2100000),
@@ -113,11 +113,11 @@ async function updateRepo(){
         "nonce":web3.utils.toHex(count)
         }
     console.log("rawTransaction", rawTransaction);
-    //creating tranaction via ethereumjs-tx
+    // creating tranaction via ethereumjs-tx
     const transaction = await new EthereumTx(rawTransaction);
     //signing transaction with private key
     transaction.sign(privateKeyBuffer);
-    //sending transacton via web3 module
+    //sending transacton to ethereum via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
     .on('transactionHash', () => {
         getAll();
