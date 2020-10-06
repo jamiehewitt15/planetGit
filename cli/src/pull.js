@@ -7,7 +7,7 @@ let repoSlug = shell.cat("reposlug.txt").stdout;
 // Ask for user input
 
 const pullRepo = async() => {
-  console.log('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash);
+  console.log('Pulling from: ', 'http://127.0.0.1:8080/ipfs/' + repoHash);
   if (shell.exec(`git pull http://127.0.0.1:8080/ipfs/${repoHash}`).code !== 0) {
     console.log("Waiting for IPFS daemon to start...")
     await sleep(4000);

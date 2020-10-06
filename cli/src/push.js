@@ -15,11 +15,8 @@ const pushRepo = async() => {
   pwd = shell.pwd().stdout;
   console.log("pwd: ", pwd)
   shell.exec(`git update-server-info`);
-  // const ipfsHash = await shell.exec(`ipfs add -r .`, {async:true, silent:true});
-  const file = await ipfs.add(globSource('./', { recursive: true }));
-  const cid = new CID(file.cid)
-  repoHash = cid.toString();
-  console.log("Repo Hash:", repoHash);
+  repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
+  console.log("repoHash", repoHash);
   shell.cd('../');
   shell.pwd();
   shell.rm('-rf', './tempPlanetGit');
