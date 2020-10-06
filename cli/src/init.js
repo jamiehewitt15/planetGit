@@ -9,7 +9,6 @@ const pwdHome = shell.pwd().stdout;
 const pushRepo = async() => {
   shell.exec(`git clone --bare ${pwdHome} ../tempPlanetGit`, {async:true, silent: true});
   try {
-      await sleep(6000);
       shell.cd('../tempPlanetGit');
       shell.exec(`git update-server-info`);
       repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
@@ -39,7 +38,7 @@ const startPush = async() => {
     if (shell.which('ipfs')) { // check if user has IPFS installed
       shell.exec(`ipfs daemon`, {async:true, silent:true});
       ipfs = ipfsClient({ host: 'localhost', port: '5001', protocol: 'http' })
-      await sleep(2000); // wait for IPFS Daemon to start
+      await sleep(8000); // wait for IPFS Daemon to start
       await pushRepo();
       }
       else{ // Use public IPFS node
