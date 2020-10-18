@@ -1,7 +1,10 @@
 const GLDToken = artifacts.require("GLDToken");
 const { assert } = require('chai');
+
+const BigNumber = web3.BigNumber;
+
 require('chai')
-    .use(require('chai-as-promised'))
+    .use(require('chai-bignumber')(BigNumber))
     .should()
 
 contract('GLDToken', accounts => {
@@ -30,6 +33,11 @@ contract('GLDToken', accounts => {
     })
 
     describe('Token attributes', function(){
+        it('Has the correct initial balance', async function(){
+            const balance = (await this.token.balanceOf('0x99B4C57083C2842adc571f0609aa3e1e8Eed5DbD')).toNumber();
+            console.log("balance", balance);
+            balance.should.be.bignumber.equal(_supply);
+        });
         it('Has the correct name', async function(){
             const name = await this.token.name();
             name.should.equal("Gold");
@@ -39,7 +47,9 @@ contract('GLDToken', accounts => {
             symbol.should.equal("GLD");
         });
         it('Has the correct decimals', async function(){
-
+            const decimals = (await this.token.decimals()).toNumber();
+            console.log("decimals: ", decimals);
+            decimals.should.be.bignumber.equal(18);
         });
     })
 })
