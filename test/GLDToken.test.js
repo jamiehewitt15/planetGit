@@ -56,5 +56,12 @@ contract('GLDToken', accounts => {
             console.log("decimals: ", decimals);
             decimals.should.be.bignumber.equal(18);
         });
+        it('Minting can only be done by owner', async function(){
+            const minerReward = '0xB68D74e5432a36D689296dC4d468129AEc0E77e1';
+            await this.token.mintMinerReward(minerReward);
+            const balance = (await this.token.balanceOf(minerReward)).toNumber();
+            console.log("balance", balance);
+            balance.should.be.bignumber.equal(0);
+        });
     })
 })
