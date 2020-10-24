@@ -9,4 +9,5 @@ contract GLDToken is ERC20, Ownable {
     constructor(uint256 initialSupply) public ERC20("Gold", "GLD") {
         _mint(msg.sender, initialSupply);
     }
+
 }

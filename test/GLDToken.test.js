@@ -42,9 +42,9 @@ contract('GLDToken', accounts => {
             const name = await this.token.name();
             name.should.equal("Gold");
         });
-        it('Has the correct owner', async function(){
+        it('Has the correct initial owner', async function(){
             const owner = await this.token.owner();
-            owner.should.equal("0x4E8305E210943C924BA25F904D156297053f88Ae");
+            owner.should.equal("0x2d6edDF06b63F53DAa6Cd9727aD40eB90Dab8559");
         });
         it('Has the correct symbol', async function(){
             const symbol = await this.token.symbol();

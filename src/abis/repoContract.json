@@ -3957,12 +3957,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xB3E12D397bFCa0355fe346c36A22fd36b19236f5",
-      "transactionHash": "0xcd2555f79a814f09abc47f6174be33b029e1dbc375a1e1baf85868fedc03e823"
+      "address": "0x6f98552701c0172bA7E5Cf4B1C439FD527096773",
+      "transactionHash": "0x41cb9b330066749a755ed69af13faa39b72b0846dbce102593595d111ab5e31e"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-18T09:01:00.196Z",
+  "updatedAt": "2020-10-24T10:16:19.229Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
