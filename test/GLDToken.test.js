@@ -1,6 +1,6 @@
 const GLDToken = artifacts.require("GLDToken");
 const { assert } = require('chai');
-
+const web3 = require('web3');
 const BigNumber = web3.BigNumber;
 
 require('chai')
@@ -34,8 +34,16 @@ contract('GLDToken', accounts => {
 
     describe('Token attributes', function(){
         it('Has the correct initial balance', async function(){
-            const balance = (await this.token.balanceOf('0x99B4C57083C2842adc571f0609aa3e1e8Eed5DbD')).toNumber();
+            console.log("START TEST")
+            
+            const balanceOf = await this.token.balanceOf()
+            console.log("balance", balanceOf );
+            
+            console.log("balance", await this.token.balanceOf() );
+            const balance = (await this.token.balanceOf( web3.eth.getCoinbase() ) ).toNumber();
+            const balance2 = await this.token.balanceOf( web3.eth.getCoinbase() ).toNumber();
             console.log("balance", balance);
+            console.log("balance2", balance2);
             balance.should.be.bignumber.equal(_supply);
         });
         it('Has the correct name', async function(){
