@@ -34,13 +34,17 @@ contract('GLDToken', accounts => {
 
     describe('Token attributes', function(){
         it('Has the correct initial balance', async function(){
-            const balance = (await this.token.balanceOf('0x99B4C57083C2842adc571f0609aa3e1e8Eed5DbD')).toNumber();
+            const balance = (await this.token.balanceOf('0x4E8305E210943C924BA25F904D156297053f88Ae')).toNumber();
             console.log("balance", balance);
             balance.should.be.bignumber.equal(_supply);
         });
         it('Has the correct name', async function(){
             const name = await this.token.name();
             name.should.equal("Gold");
+        });
+        it('Has the correct owner', async function(){
+            const owner = await this.token.owner();
+            owner.should.equal("0x4E8305E210943C924BA25F904D156297053f88Ae");
         });
         it('Has the correct symbol', async function(){
             const symbol = await this.token.symbol();
