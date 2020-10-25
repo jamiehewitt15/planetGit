@@ -1,4 +1,5 @@
 const GLDToken = artifacts.require("GLDToken");
+const RepoContract = artifacts.require("RepoContract");
 const { assert } = require('chai');
 
 const BigNumber = web3.BigNumber;
@@ -8,7 +9,7 @@ require('chai')
     .should()
 
 contract('GLDToken', accounts => {
-    const _supply = 100000000000;
+    
     let token;
 
     before(async () => {
@@ -29,15 +30,10 @@ contract('GLDToken', accounts => {
     })
 
     beforeEach(async function() {
-        this.token = await GLDToken.new(_supply)
+        this.token = await GLDToken.new()
     })
 
     describe('Token attributes', function(){
-        it('Has the correct initial balance', async function(){
-            const balance = (await this.token.balanceOf('0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd')).toNumber();
-            console.log("balance", balance);
-            balance.should.be.bignumber.equal(_supply);
-        });
         it('Has the correct name', async function(){
             const name = await this.token.name();
             name.should.equal("Gold");
@@ -51,17 +47,9 @@ contract('GLDToken', accounts => {
             console.log("decimals: ", decimals);
             decimals.should.be.bignumber.equal(18);
         });
-        it('Has the correct initial owner', async function(){
-            const owner = await this.token.owner();
-            console.log("owner = ", owner)
-            // owner.should.equal(newOwner);
+        it('Has the correct initial balance', async function(){
+            const balance = (await this.token.balanceOf('0xCC97Ed04b5b8912694a9254205ad5b9316755fF0')).toNumber();
+            balance.should.be.bignumber.equal(0);
         });
-        // it('Minting can only be done by owner', async function(){
-        //     const minerReward = '0xB68D74e5432a36D689296dC4d468129AEc0E77e1';
-        //     await this.token.mintMinerReward(minerReward);
-        //     const balance = (await this.token.balanceOf(minerReward)).toNumber();
-        //     console.log("balance", balance);
-        //     balance.should.be.bignumber.equal(0);
-        // });
     })
 })

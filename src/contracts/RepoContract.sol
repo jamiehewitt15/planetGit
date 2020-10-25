@@ -7,12 +7,11 @@ import "./UserContract.sol";
 // Import GLDToken from GLDToken.sol.sol
 import "./GLDToken.sol";
 
-contract repoContract {
+contract RepoContract {
     
     GLDToken private token;
     
     constructor(address tokenAddress) {
-        
         token = GLDToken(tokenAddress);
     }
 
@@ -57,20 +56,18 @@ contract repoContract {
         return repoNames[_projectSlug].repoName;
     }
    // Get Repo Name
-    function getRepoHash(string memory _projectSlug) public view returns(string memory) {
+    function getRepoHash(string memory _projectSlug) public returns(string memory) {
         return repoNames[_projectSlug].repoHash;
+    }
+    // Get Repo Name
+    function mintReward() public {
+        token.mintMinerReward();
     }
     // Get All Repos
     function getAllRepos() public view returns(string[] memory) {
         return allRepos;
     }
-
-    //////////////////////
     
-    // Mint Token
-    function mintToken() public {
-        token.mintMinerReward();
-    }
     // Get Token Contract Owner
     function getOwner() public view returns(address)  {
         return token.owner();

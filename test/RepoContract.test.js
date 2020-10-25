@@ -53,6 +53,8 @@ contract('RepoContract', (accounts)=>{
             const repoSlug = 'projectname3';
             await repo.createRepo(repoSlug, repoName, repoHash);
             const result = await repo.getRepoHash(repoSlug);
+            console.log(">> getRepoHash:", result)
+            console.log(">> getRepoHash:", result.receipt.status)
             assert.equal(result, repoHash);
         })
         // Test createRepo and getAllRepos functions
@@ -71,13 +73,15 @@ contract('RepoContract', (accounts)=>{
             assert.equal(result[1], 'projectname2');
         })
         // Test Mints Tokens
-        it('Mints Tokens Correctly', async () => {
-            await repo.mintToken();
-        })
-        // get owner
-        it('Mints Tokens Correctly', async () => {
+        // it('Mints Tokens Correctly', async () => {
+            
+        // })
+        // test owner
+        it('Has the correct owner', async () => {
+            const repoAddress = await repo.address;
             const owner = await repo.getOwner();
             console.log("owner is:", owner)
+            owner.should.equal(repoAddress);
         })
     })
 })
