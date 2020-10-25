@@ -8,11 +8,14 @@ module.exports = async function(deployer) {
 
 
   await deployer.deploy(GLDToken, _initialSupply);
-  const tokenAddress = await Repo.deployed();
-  console.log("repoAddress: ", tokenAddress.address)
+  const token = await GLDToken.deployed();
+  console.log(">>> Token Address: ", token.address)
+  
+  await deployer.deploy(Repo, token.address);
+  const repo = await Repo.deployed();
+  console.log(">>> Repo Address: ", repo.address);
+  
+  await token._transferOwnership(repo.address);
 
   
-  deployer.deploy(Repo, tokenAddress.address);
-  // const repoAddress = await Repo.deployed();
-  // console.log("repoAddress: ", repoAddress.address);
 };
