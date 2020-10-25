@@ -1,41 +1,55 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
 
-// import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol"; 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract GLDToken is ERC20, Ownable {
-    int tokensDistributed;
+    using SafeMath for uint256;
+
+    address private systemOwner;
+    uint distribution;
+    uint tokenReward;
+    uint systemReward;
+    uint tokenTarget;
 
     constructor(uint256 initialSupply) ERC20("Gold", "GLD") {
+        systemOwner = msg.sender;
         _mint(msg.sender, initialSupply);
-        // transferOwnership(newOwner);
-        tokensDistributed = 0;
+        distribution   =    0;
+        tokenReward         =    1000000000000000000;
+        systemReward        =    100000000000000000; 
+        tokenTarget         =    1000;
     }
 
     function mintMinerReward() public onlyOwner {
-        address repoOwner = msg.sender;
-        if(tokensDistributed < 1000){
-            _mint(repoOwner, 1);
-        } else if(tokensDistributed < 10000){
-            if(tokensDistributed % 2 == 0 ){
-                _mint(repoOwner, 1);
-            }
-        } else if(tokensDistributed < 100000){
-            if(tokensDistributed % 4 == 0 ){
-                _mint(repoOwner, 1);
-            }
-        } else if(tokensDistributed < 1000000){
-            if(tokensDistributed % 8 == 0 ){
-                _mint(repoOwner, 1);
-            }
-        } else {
-            if(tokensDistributed % 16 == 0 ){
-                _mint(repoOwner, 1);
-            }
-        }
-        tokensDistributed++;
+        address repoOwner = msg.sender; // temp
+
+        _mint(repoOwner, tokenReward);
+        _mint(systemOwner, systemReward);
+
+        if(distribution == tokenTarget){
+            tokenReward = tokenReward.div(10);
+            tokenTarget = tokenTarget.mul(10);
+        } 
+        distribution = distribution.add(1);
     }
-    
+
+    // Get Token Reward
+    function getReward() public view returns(uint) {
+        return tokenReward;
+    }
+    // Get Token Distribution
+    function getDistribution() public view returns(uint) {
+        return distribution;
+    }
+    // Get Token System Reward
+    function getSystemReward() public view returns(uint) {
+        return systemReward;
+    }
+    // Get Token Target
+    function getTarget() public view returns(uint) {
+        return tokenTarget;
+    }
 }
