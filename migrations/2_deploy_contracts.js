@@ -3,19 +3,19 @@ const Repo = artifacts.require("RepoContract");
 const GLDToken = artifacts.require("GLDToken");
 
 module.exports = async function(deployer) {
-  const _initialSupply = 1000000000;
+  // Deploying User Contract
   deployer.deploy(User);
 
-
-  await deployer.deploy(GLDToken, _initialSupply);
+  // Deploying Token Contract
+  await deployer.deploy(GLDToken);
   const token = await GLDToken.deployed();
   console.log(">>> Token Address: ", token.address)
   
+  // Deploying Repo Contract
   await deployer.deploy(Repo, token.address);
   const repo = await Repo.deployed();
   console.log(">>> Repo Address: ", repo.address);
   
+  // Transfering ownership of the Token contract to the Repo contract
   await token.transferOwnership(repo.address);
-
-  
 };
