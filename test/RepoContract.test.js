@@ -57,7 +57,6 @@ contract('RepoContract', (accounts)=>{
             await repo.createRepo(repoSlug1, repoName1, repoHash1);
             await repo.createRepo(repoSlug2, repoName2, repoHash2);
             const result = await repo.getAllRepos();
-            console.log(">> getAllRepos:", result)
             assert.equal(result[0], 'projectname1');
             assert.equal(result[1], 'projectname2');
         })

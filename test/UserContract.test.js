@@ -18,7 +18,6 @@ contract('UserContract', (accounts)=>{
     describe('deployment', async()=> { 
         it('Deploys successfully', async () => {
             const address = user.address;
-            console.log(address);
             // Test the smart contract has been deployed with a valid address
             assert.notEqual(address, 0x0);
             assert.notEqual(address, '');
@@ -61,7 +60,6 @@ contract('UserContract', (accounts)=>{
             await user.createUser(username1, imgHash1);
             await user.createUser(username2, imgHash2);
             const result = await user.getAllUsers();
-            console.log(">> getAllUsers:", result)
             assert.equal(result[0], 'johnTest0000000');
             assert.equal(result[1], 'SarahTest000000');
         })

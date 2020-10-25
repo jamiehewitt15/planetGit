@@ -10,24 +10,40 @@ const GLDToken = artifacts.require("GLDToken");
 const provider = 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 const web3Provider = new Web3.providers.WebsocketProvider(provider);
 const web3 = new Web3(web3Provider);
-// const eventProvider = new Web3.providers.WebsocketProvider('ws://localhost:7545');
-// web3.setProvider(eventProvider);
+const BigNumber = web3.BigNumber;
+
 
 require('chai')
+    .use(require('chai-bignumber')(BigNumber))
     .use(require('chai-as-promised'))
     .should()
 
 contract('MintReward', (accounts)=>{
     // Testing the Data smart contract
+    const walletAddress = '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'
     let mintReward;
     let repo;
     let token;
+    let abi;
+    let address;
+    let rewardContract; 
+    let repoName;
+    let repoHash;
+    let repoSlug;
+    
 
     before(async () => {
         // Fetch the smart contract before running tests
         mintReward = await MintReward.deployed();
         repo = await RepoContract.deployed();
         token = await GLDToken.deployed();
+        abi = contractImport.abi;
+        address = mintReward.address;
+        rewardContract = web3.eth.Contract(abi, address); 
+        repoName = 'TomTest00000000';
+        repoHash = '21X243OJNOI12092189443RNJK24R9';
+        repoSlug = 'projectname3';
+        await repo.createRepo(repoSlug, repoName, repoHash);
     })
 
     describe('deployment', async()=> { 
@@ -42,22 +58,24 @@ contract('MintReward', (accounts)=>{
     })
 
     describe('Functions', async () => {
-        
+        it('Repo has the correct owner', async () => {
+            const mintRewardAddress = await mintReward.address;
+            const repoOwner = await repo.owner();
+            repoOwner.should.equal(mintRewardAddress);
+        })
+
+        it('Token has the correct owner', async () => {
+            const mintRewardAddress = await mintReward.address;
+            const tokenOwner = await token.owner();
+            tokenOwner.should.equal(mintRewardAddress);
+        });
         // Test createRepo and getRepoHash functions
         it('Creates Repo and gets RepoHash', async () => {
-            const abi = contractImport.abi;
-            const address = mintReward.address;
-            const rewardContract = web3.eth.Contract(abi, address); 
-
-            const repoName = 'TomTest00000000';
-            const repoHash = '21X243OJNOI12092189443RNJK24R9';
-            const repoSlug = 'projectname3';
-            await repo.createRepo(repoSlug, repoName, repoHash);
             // Get Repo Hash
             await mintReward.mintReward(repoSlug);
            
             await rewardContract.events.Hash({
-                filter: {_from: '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'}, 
+                filter: {_from: walletAddress}, 
                 fromBlock: 0
             })
             .on("connected", function(subscriptionId){
@@ -72,16 +90,16 @@ contract('MintReward', (accounts)=>{
             });
         })
         
-        it('Repo has the correct owner', async () => {
-            const mintRewardAddress = await mintReward.address;
-            const repoOwner = await repo.owner();
-            repoOwner.should.equal(mintRewardAddress);
-        })
+        it('Tokens are sent to the correct repo owner', async () => {
+            // Call balanceOf function
+            const initialBalance = (await token.balanceOf(walletAddress)).toString();
+            const currentReward = await token.getReward();
 
-        it('Token has the correct owner', async () => {
-            const mintRewardAddress = await mintReward.address;
-            const tokenOwner = await token.owner();
-            tokenOwner.should.equal(mintRewardAddress);
-        })
+            await mintReward.mintReward(repoSlug);
+            const finalBalance = (await token.balanceOf(walletAddress)).toString();
+            // initialBalance.should.not.be.bignumber.equal(finalBalance);
+            assert.notEqual(initialBalance, finalBalance);
+            assert.isAbove(parseInt(finalBalance), parseInt(initialBalance), 'final balance is greater than initial balance');
+        })    
     })
 })
