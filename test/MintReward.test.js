@@ -1,14 +1,22 @@
 const { assert } = require('chai');
+const Web3 = require('web3');
 
+const contractImport = require('../src/abis/MintReward.json');
 const MintReward = artifacts.require("MintReward");
 const RepoContract = artifacts.require("RepoContract");
 const GLDToken = artifacts.require("GLDToken");
+
+
+
+const web3 = new Web3();
+// const eventProvider = new Web3.providers.WebsocketProvider('ws://localhost:7545');
+// web3.setProvider(eventProvider);
 
 require('chai')
     .use(require('chai-as-promised'))
     .should()
 
-contract('RepoContract', (accounts)=>{
+contract('MintReward', (accounts)=>{
     // Testing the Data smart contract
     let mintReward;
     let repo;
@@ -36,16 +44,29 @@ contract('RepoContract', (accounts)=>{
     describe('storage', async () => {
         
         // Test createRepo and getRepoHash functions
-        // it('Creates Repo and gets RepoHash', async () => {
-        //     const repoName = 'TomTest00000000';
-        //     const repoHash = '21X243OJNOI12092189443RNJK24R9';
-        //     const repoSlug = 'projectname3';
-        //     await repo.createRepo(repoSlug, repoName, repoHash);
-        //     const result = await repo.getRepoHash(repoSlug);
-        //     console.log(">> getRepoHash:", result)
-        //     console.log(">> getRepoHash:", result.receipt.status)
-        //     assert.equal(result, repoHash);
-        // })
+        it('Creates Repo and gets RepoHash', async () => {
+            const abi = contractImport.abi;
+            const address = mintReward.address;
+            const rewardContract = web3.eth.Contract(abi, address); 
+
+            const repoName = 'TomTest00000000';
+            const repoHash = '21X243OJNOI12092189443RNJK24R9';
+            const repoSlug = 'projectname3';
+            await repo.createRepo(repoSlug, repoName, repoHash);
+            // Get Repo Hash
+            await mintReward.mintReward(repoSlug);
+           
+            rewardContract.events.Hash({
+                filter: {_from: '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'}, 
+                fromBlock: 0
+            }, function(error, event){ console.log(event); })
+            .on("connected", function(subscriptionId){
+                console.log(subscriptionId);
+            })
+            .on('data', function(event){
+                console.log(event); // same results as the optional callback above
+            })
+        })
         
         it('Repo has the correct owner', async () => {
             const mintRewardAddress = await mintReward.address;
