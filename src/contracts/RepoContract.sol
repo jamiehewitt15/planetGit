@@ -6,8 +6,9 @@ pragma experimental ABIEncoderV2;
 import "./UserContract.sol";
 // Import GLDToken from GLDToken.sol.sol
 import "./GLDToken.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract RepoContract {
+contract RepoContract is Ownable {
     
     GLDToken private token;
     
@@ -56,12 +57,8 @@ contract RepoContract {
         return repoNames[_projectSlug].repoName;
     }
    // Get Repo Name
-    function getRepoHash(string memory _projectSlug) public returns(string memory) {
+    function getRepoHash(string memory _projectSlug) public onlyOwner view returns(string memory) {
         return repoNames[_projectSlug].repoHash;
-    }
-    // Get Repo Name
-    function mintReward() public {
-        token.mintMinerReward();
     }
     // Get All Repos
     function getAllRepos() public view returns(string[] memory) {

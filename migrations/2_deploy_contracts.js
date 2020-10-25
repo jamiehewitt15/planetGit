@@ -22,6 +22,9 @@ module.exports = async function(deployer) {
   const mintReward = await MintReward.deployed();
   console.log(">>> mintReward Address: ", mintReward.address);
   
-  // Transfering ownership of the Token contract to the Repo contract
+  // Transfering ownership of the Token contract to the MintReward contract
   await token.transferOwnership(mintReward.address);
+  
+  // Transfering ownership of the Repo contract to the MintReward contract
+  await repo.transferOwnership(mintReward.address);
 };

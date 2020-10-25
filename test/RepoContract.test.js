@@ -72,16 +72,5 @@ contract('RepoContract', (accounts)=>{
             assert.equal(result[0], 'projectname1');
             assert.equal(result[1], 'projectname2');
         })
-        // Test Mints Tokens
-        // it('Mints Tokens Correctly', async () => {
-            
-        // })
-        // test owner
-        it('Has the correct owner', async () => {
-            const repoAddress = await repo.address;
-            const owner = await repo.getOwner();
-            console.log("owner is:", owner)
-            owner.should.equal(repoAddress);
-        })
     })
 })
