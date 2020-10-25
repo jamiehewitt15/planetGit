@@ -46,17 +46,6 @@ contract('RepoContract', (accounts)=>{
             const result = await repo.getRepoName(repoSlug);
             assert.equal(result, repoName);
         })
-        // Test createRepo and getRepoHash functions
-        it('Creates Repo and gets RepoHash', async () => {
-            const repoName = 'TomTest00000000';
-            const repoHash = '21X243OJNOI12092189443RNJK24R9';
-            const repoSlug = 'projectname3';
-            await repo.createRepo(repoSlug, repoName, repoHash);
-            const result = await repo.getRepoHash(repoSlug);
-            console.log(">> getRepoHash:", result)
-            console.log(">> getRepoHash:", result.receipt.status)
-            assert.equal(result, repoHash);
-        })
         // Test createRepo and getAllRepos functions
         it('Creates Repo and gets all repos', async () => {
             const repoSlug1 = 'projectname4';
