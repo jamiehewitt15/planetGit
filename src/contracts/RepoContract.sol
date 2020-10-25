@@ -4,8 +4,17 @@ pragma experimental ABIEncoderV2;
 
 // Import User from User.sol
 import "./UserContract.sol";
+// Import GLDToken from GLDToken.sol.sol
+import "./GLDToken.sol";
 
 contract repoContract {
+    
+    GLDToken private token;
+    
+    constructor(address tokenAddress) {
+        
+        token = GLDToken(tokenAddress);
+    }
 
     struct Repo {
         address owner;
@@ -55,4 +64,16 @@ contract repoContract {
     function getAllRepos() public view returns(string[] memory) {
         return allRepos;
     }
+
+    //////////////////////
+    
+    // Mint Token
+    function mintToken() public {
+        token.mintMinerReward();
+    }
+    // Get Token Contract Owner
+    function getOwner() public view returns(address)  {
+        return token.owner();
+    }
+    
 }

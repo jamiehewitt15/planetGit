@@ -9,7 +9,6 @@ require('chai')
 
 contract('GLDToken', accounts => {
     const _supply = 100000000000;
-    const newOwner = '0xCD3a0e9Aedbf973c385Ff0b6720C0B316C0a580c';
     let token;
 
     before(async () => {
@@ -30,7 +29,7 @@ contract('GLDToken', accounts => {
     })
 
     beforeEach(async function() {
-        this.token = await GLDToken.new(_supply, newOwner)
+        this.token = await GLDToken.new(_supply)
     })
 
     describe('Token attributes', function(){

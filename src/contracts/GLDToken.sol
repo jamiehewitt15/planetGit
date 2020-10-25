@@ -8,13 +8,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract GLDToken is ERC20, Ownable {
     int tokensDistributed;
 
-    constructor(uint256 initialSupply, address newOwner) public ERC20("Gold", "GLD") {
+    constructor(uint256 initialSupply) ERC20("Gold", "GLD") {
         _mint(msg.sender, initialSupply);
-        transferOwnership(newOwner);
+        // transferOwnership(newOwner);
         tokensDistributed = 0;
     }
 
-    function mintMinerReward(address repoOwner) public onlyOwner {
+    function mintMinerReward() public onlyOwner {
+        address repoOwner = msg.sender;
         if(tokensDistributed < 1000){
             _mint(repoOwner, 1);
         } else if(tokensDistributed < 10000){
