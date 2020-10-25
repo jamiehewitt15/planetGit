@@ -15,7 +15,7 @@ module.exports = async function(deployer) {
   const repo = await Repo.deployed();
   console.log(">>> Repo Address: ", repo.address);
   
-  await token._transferOwnership(repo.address);
+  await token.transferOwnership(repo.address);
 
   
 };

@@ -38,7 +38,4 @@ contract GLDToken is ERC20, Ownable {
         tokensDistributed++;
     }
     
-    function _transferOwnership(address newOwner) public onlyOwner {
-        transferOwnership(newOwner);
-    }
 }

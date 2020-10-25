@@ -3272,12 +3272,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xfA1D40F3C3cE501497aa81b35FE2689C808feD95",
-      "transactionHash": "0x9e0eb25e80522e096c8d8ade4842202c051571a0f3833086e4064e1a3e4d948f"
+      "address": "0xb2AC56c4F7483FC79Ef71683Fd551B9b17794b38",
+      "transactionHash": "0x5b2da4535412e1ad1dc8baacaa2c18c92e23c44f84a4aaf346252931a33b6cb2"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-25T11:27:12.091Z",
+  "updatedAt": "2020-10-25T11:28:00.766Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
