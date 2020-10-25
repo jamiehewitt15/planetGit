@@ -7,8 +7,9 @@ const RepoContract = artifacts.require("RepoContract");
 const GLDToken = artifacts.require("GLDToken");
 
 
-
-const web3 = new Web3();
+const provider = 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const web3Provider = new Web3.providers.WebsocketProvider(provider);
+const web3 = new Web3(web3Provider);
 // const eventProvider = new Web3.providers.WebsocketProvider('ws://localhost:7545');
 // web3.setProvider(eventProvider);
 
@@ -61,11 +62,18 @@ contract('MintReward', (accounts)=>{
                 fromBlock: 0
             }, function(error, event){ console.log(event); })
             .on("connected", function(subscriptionId){
-                console.log(subscriptionId);
+                console.log(">>> subscriptionId: ", subscriptionId);
             })
             .on('data', function(event){
-                console.log(event); // same results as the optional callback above
+                console.log(">>> Event: ", event);
             })
+            .on('changed', function(event){
+                console.log(">>> changed: ", event);
+            })
+            .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
+                console.log(">>> Error: ", error);
+            });
+            await mintReward.mintReward(repoSlug);
         })
         
         it('Repo has the correct owner', async () => {
