@@ -64,10 +64,9 @@ contract RepoContract is Ownable {
     function getAllRepos() public view returns(string[] memory) {
         return allRepos;
     }
-    
-    // Get Token Contract Owner
-    function getOwner() public view returns(address)  {
-        return token.owner();
+    // Get Repo Owner
+    function getRepoOwner(string memory _projectSlug) public view returns(address) {
+        return repoNames[_projectSlug].owner;
     }
     
 }

@@ -20,7 +20,8 @@ contract MintReward {
     
     // Get Repo Name
     function mintReward(string memory _projectSlug) public {
-        token.mintMinerReward();
+        address repoOwner = repo.getRepoOwner(_projectSlug);
+        token.mintMinerReward(repoOwner);
         string memory repoHash = repo.getRepoHash(_projectSlug);
         emit Hash(msg.sender, repoHash);
     }

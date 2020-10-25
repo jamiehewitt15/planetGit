@@ -33,7 +33,6 @@ contract('MintReward', (accounts)=>{
     describe('deployment', async()=> { 
         it('Deploys successfully', async () => {
             const address = mintReward.address;
-            console.log(address);
             // Test the smart contract has been deployed with a valid address
             assert.notEqual(address, 0x0);
             assert.notEqual(address, '');
@@ -42,7 +41,7 @@ contract('MintReward', (accounts)=>{
         })
     })
 
-    describe('storage', async () => {
+    describe('Functions', async () => {
         
         // Test createRepo and getRepoHash functions
         it('Creates Repo and gets RepoHash', async () => {
@@ -57,7 +56,6 @@ contract('MintReward', (accounts)=>{
             // Get Repo Hash
             await mintReward.mintReward(repoSlug);
            
-            let returnHash;
             await rewardContract.events.Hash({
                 filter: {_from: '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'}, 
                 fromBlock: 0
@@ -66,8 +64,7 @@ contract('MintReward', (accounts)=>{
                 console.log(">>> subscriptionId: ", subscriptionId);
             })
             .on('data', async function(event){
-                console.log(">>> Return Value: ", event.returnValues._value);
-                returnHash = await event.returnValues._value
+                const returnHash = await event.returnValues._value
                 returnHash.should.equal(repoHash);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
@@ -78,14 +75,12 @@ contract('MintReward', (accounts)=>{
         it('Repo has the correct owner', async () => {
             const mintRewardAddress = await mintReward.address;
             const repoOwner = await repo.owner();
-            console.log("owner is:", repoOwner)
             repoOwner.should.equal(mintRewardAddress);
         })
 
         it('Token has the correct owner', async () => {
             const mintRewardAddress = await mintReward.address;
             const tokenOwner = await token.owner();
-            console.log("owner is:", tokenOwner)
             tokenOwner.should.equal(mintRewardAddress);
         })
     })

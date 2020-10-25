@@ -20,7 +20,6 @@ contract('GLDToken', accounts => {
     describe('deployment', async()=> { 
         it('Deploys successfully', async () => {
             const address = token.address;
-            console.log(address);
             // Test the smart contract has been deployed with a valid address
             assert.notEqual(address, 0x0);
             assert.notEqual(address, '');
@@ -44,7 +43,6 @@ contract('GLDToken', accounts => {
         });
         it('Has the correct decimals', async function(){
             const decimals = (await this.token.decimals()).toNumber();
-            console.log("decimals: ", decimals);
             decimals.should.be.bignumber.equal(18);
         });
         it('Has the correct initial balance', async function(){

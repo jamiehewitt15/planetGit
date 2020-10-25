@@ -50,27 +50,27 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"repoAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_value\",\"type\":\"string\"}],\"name\":\"Hash\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"mintReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol\":\"MintReward\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol\":{\"keccak256\":\"0x09f3a8ecc64838a504c1155dbe29c60c32f43bc30f38d36cead9253103a16a74\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://03e40f84e2811165da445c02e4c7088ec88e9f061f12f9139a891b41aca1b964\",\"dweb:/ipfs/QmUVd1Lyx4TjMsif6TxqNSDrxwtMopJXtsLjtceqM9UfnH\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol\":{\"keccak256\":\"0x2817939ba6811d1c0973df423d70f1f1512bb92ab183b27c67e81a33ff6dd02d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7980efe251dc5f17410dac752853a4bbd6d4226517b5e9d71d33fafb99c13422\",\"dweb:/ipfs/QmdNNzrpBfwGpyUDFn5d7YaV8S1FHA952Lvg6hyCGvvWAD\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/RepoContract.sol\":{\"keccak256\":\"0x0297c209f8db671ede01d0e909d4fa621ba7fc4cfb8b008b5c1153abd9388b22\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://58d43676557115ffebfea7417580a673fb49438a24ee0be8ae97dadd37a1c444\",\"dweb:/ipfs/QmPaF8bgN9gFeUngncPesJvhVSZF8EtzXkPKufiWjdozDa\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol\":{\"keccak256\":\"0x6a3fb614e0cd68dec847b34505479725d88fe0f911cd81a7e95b9da748df8657\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://086b94e9caa21b0473b225517246a470b13faf39d3d7faad99dfe7b1c72e66eb\",\"dweb:/ipfs/QmS9bLNY3Z3vE2yXPgHsm2GspyQuPeL2Mz8aJYQukd5mYJ\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x910a2e625b71168563edf9eeef55a50d6d699acfe27ceba3921f291829a8f938\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://248246ac66e6479dce1ad7d4945ec5540c98ceb09881e93c93f7c48d5772925c\",\"dweb:/ipfs/QmXr8tmUiZgEYid6ixeeBRmTdUnASWjKzhP3KRxMPy8fRt\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x74b0525c81e47810f1bd795755962bdb84de3a4f71cfcb063f4c4d4999a3e96b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1cd0b71a794900681c8bcc255599fac53c211fc6a530a58d7dd7246bfde6c4f5\",\"dweb:/ipfs/QmdAB1mFyuN2i25DRf9szWgp1FLCByqJ4F8aYzXWe3mfTR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xba96bc371ba999f452985a98717cca1e4c4abb598dc038a9a9c3db08129b1ba4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e50e3f7b6482fb6f598f2e006994a74aa492687daa4b3eee7fd4fb5398ce7f\",\"dweb:/ipfs/QmZudqoPSkA4USLMFsBBmt19dDPZFS8aaAmL5R7pECXu6t\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xaeb6a782d9ae2dd3b4070369ffb74c7503e17b00f478bf184a8db2ab9654a527\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc4b19578e6b2f133126923f038d1844963b3e15ccfc742f9b2bdefff5ba6ea7\",\"dweb:/ipfs/QmfAHZRtkzVkBHVdTGnowxvGJuXYQdwq6Je3tnj7auqB9s\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xbd74f587ab9b9711801baf667db1426e4a03fd2d7f15af33e0e0d0394e7cef76\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d0913dfbfce90d170df0d496ad7596c0778518e5fa7aba6c32562522546f66b\",\"dweb:/ipfs/QmR6B8nLj2PJf5e1JWD9Nk7ErkAwkqUwadCnvE82FJr1RU\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x698f929f1097637d051976b322a2d532c27df022b09010e8d091e2888a5ebdf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bd4c9419d1182612ef415c60a83a9039b227fccb799937963448114c0473b58\",\"dweb:/ipfs/Qmat1U571v55F5JDDHHX7igGcmLF8Ehk9CzsWpjbdx3RTH\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161050d38038061050d8339818101604052604081101561003357600080fd5b81019080805190602001909291908051906020019092919050505081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505061042d806100e06000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80639a9ff08414610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d63c88a66040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561015557600080fd5b505af1158015610169573d6000803e3d6000fd5b50505050606060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f4845d87836040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b838110156101fb5780820151818401526020810190506101e0565b50505050905090810190601f1680156102285780820380516001836020036101000a031916815260200191505b509250505060006040518083038186803b15801561024557600080fd5b505afa158015610259573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561028357600080fd5b81019080805160405193929190846401000000008211156102a357600080fd5b838201915060208201858111156102b957600080fd5b82518660018202830111640100000000821117156102d657600080fd5b8083526020830192505050908051906020019080838360005b8381101561030a5780820151818401526020810190506102ef565b50505050905090810190601f1680156103375780820380516001836020036101000a031916815260200191505b5060405250505090503373ffffffffffffffffffffffffffffffffffffffff167f13301278af128780e704cb535cdfe8a60e7c85783ddc1e2c9b3033197f35c29a826040518080602001828103825283818151815260200191508051906020019080838360005b838110156103b957808201518184015260208101905061039e565b50505050905090810190601f1680156103e65780820380516001836020036101000a031916815260200191505b509250505060405180910390a2505056fea26469706673582212202bfc6309d4240dc5cb0ed4c1d09ffdb0a3f34f829e47a1e24adaf6b8f3e63aac64736f6c63430007010033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80639a9ff08414610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d63c88a66040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561015557600080fd5b505af1158015610169573d6000803e3d6000fd5b50505050606060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f4845d87836040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b838110156101fb5780820151818401526020810190506101e0565b50505050905090810190601f1680156102285780820380516001836020036101000a031916815260200191505b509250505060006040518083038186803b15801561024557600080fd5b505afa158015610259573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561028357600080fd5b81019080805160405193929190846401000000008211156102a357600080fd5b838201915060208201858111156102b957600080fd5b82518660018202830111640100000000821117156102d657600080fd5b8083526020830192505050908051906020019080838360005b8381101561030a5780820151818401526020810190506102ef565b50505050905090810190601f1680156103375780820380516001836020036101000a031916815260200191505b5060405250505090503373ffffffffffffffffffffffffffffffffffffffff167f13301278af128780e704cb535cdfe8a60e7c85783ddc1e2c9b3033197f35c29a826040518080602001828103825283818151815260200191508051906020019080838360005b838110156103b957808201518184015260208101905061039e565b50505050905090810190601f1680156103e65780820380516001836020036101000a031916815260200191505b509250505060405180910390a2505056fea26469706673582212202bfc6309d4240dc5cb0ed4c1d09ffdb0a3f34f829e47a1e24adaf6b8f3e63aac64736f6c63430007010033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"repoAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_value\",\"type\":\"string\"}],\"name\":\"Hash\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"mintReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol\":\"MintReward\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol\":{\"keccak256\":\"0xd6abafdd839ff1dde6436fb490e64530dd994f20830f987b28a87dc8551d3c12\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://badbd85fbfd7c791540403645f86cd970893d94cb4b35ce1423ea7e443ff6f90\",\"dweb:/ipfs/QmRwkKN1nPcY3DLv4qYzftvKgZVQMumDrSNoDYaHcyYA4b\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol\":{\"keccak256\":\"0x3162c3cfbdad9ddb3e2d3f7570384cc775184e9b45d2b72eb43688aabb082327\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2936d98052598b5678ee6eb6856e70d01a58bf81655e603fe552f60128a16df1\",\"dweb:/ipfs/QmVe48CyQ8CoRGyScovc15An9XKfu7aQ5MFeGY7ETn5zfg\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/RepoContract.sol\":{\"keccak256\":\"0x4119ef1ce0338a943d859cdb2bca4e4f8cc0195942876dbff7c452bd092a7562\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bfd4d40769288f6f67eec92a5a9806285956ac6d1f1e65fa47c1648baabb20d8\",\"dweb:/ipfs/QmVh9JWpk1tZ4HA2B8a7Qj3pWCDwSGR8fthBggDfxZ8HFF\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol\":{\"keccak256\":\"0x6a3fb614e0cd68dec847b34505479725d88fe0f911cd81a7e95b9da748df8657\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://086b94e9caa21b0473b225517246a470b13faf39d3d7faad99dfe7b1c72e66eb\",\"dweb:/ipfs/QmS9bLNY3Z3vE2yXPgHsm2GspyQuPeL2Mz8aJYQukd5mYJ\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x910a2e625b71168563edf9eeef55a50d6d699acfe27ceba3921f291829a8f938\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://248246ac66e6479dce1ad7d4945ec5540c98ceb09881e93c93f7c48d5772925c\",\"dweb:/ipfs/QmXr8tmUiZgEYid6ixeeBRmTdUnASWjKzhP3KRxMPy8fRt\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x74b0525c81e47810f1bd795755962bdb84de3a4f71cfcb063f4c4d4999a3e96b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1cd0b71a794900681c8bcc255599fac53c211fc6a530a58d7dd7246bfde6c4f5\",\"dweb:/ipfs/QmdAB1mFyuN2i25DRf9szWgp1FLCByqJ4F8aYzXWe3mfTR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xba96bc371ba999f452985a98717cca1e4c4abb598dc038a9a9c3db08129b1ba4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e50e3f7b6482fb6f598f2e006994a74aa492687daa4b3eee7fd4fb5398ce7f\",\"dweb:/ipfs/QmZudqoPSkA4USLMFsBBmt19dDPZFS8aaAmL5R7pECXu6t\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xaeb6a782d9ae2dd3b4070369ffb74c7503e17b00f478bf184a8db2ab9654a527\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc4b19578e6b2f133126923f038d1844963b3e15ccfc742f9b2bdefff5ba6ea7\",\"dweb:/ipfs/QmfAHZRtkzVkBHVdTGnowxvGJuXYQdwq6Je3tnj7auqB9s\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xbd74f587ab9b9711801baf667db1426e4a03fd2d7f15af33e0e0d0394e7cef76\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d0913dfbfce90d170df0d496ad7596c0778518e5fa7aba6c32562522546f66b\",\"dweb:/ipfs/QmR6B8nLj2PJf5e1JWD9Nk7ErkAwkqUwadCnvE82FJr1RU\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x698f929f1097637d051976b322a2d532c27df022b09010e8d091e2888a5ebdf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bd4c9419d1182612ef415c60a83a9039b227fccb799937963448114c0473b58\",\"dweb:/ipfs/Qmat1U571v55F5JDDHHX7igGcmLF8Ehk9CzsWpjbdx3RTH\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106453803806106458339818101604052604081101561003357600080fd5b81019080805190602001909291908051906020019092919050505081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050610565806100e06000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80639a9ff08414610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663e2c782a2836040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b8381101561017a57808201518184015260208101905061015f565b50505050905090810190601f1680156101a75780820380516001836020036101000a031916815260200191505b509250505060206040518083038186803b1580156101c457600080fd5b505afa1580156101d8573d6000803e3d6000fd5b505050506040513d60208110156101ee57600080fd5b81019080805190602001909291905050509050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166352d7bc96826040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff168152602001915050600060405180830381600087803b15801561028c57600080fd5b505af11580156102a0573d6000803e3d6000fd5b50505050606060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f4845d87846040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610332578082015181840152602081019050610317565b50505050905090810190601f16801561035f5780820380516001836020036101000a031916815260200191505b509250505060006040518083038186803b15801561037c57600080fd5b505afa158015610390573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156103ba57600080fd5b81019080805160405193929190846401000000008211156103da57600080fd5b838201915060208201858111156103f057600080fd5b825186600182028301116401000000008211171561040d57600080fd5b8083526020830192505050908051906020019080838360005b83811015610441578082015181840152602081019050610426565b50505050905090810190601f16801561046e5780820380516001836020036101000a031916815260200191505b5060405250505090503373ffffffffffffffffffffffffffffffffffffffff167f13301278af128780e704cb535cdfe8a60e7c85783ddc1e2c9b3033197f35c29a826040518080602001828103825283818151815260200191508051906020019080838360005b838110156104f05780820151818401526020810190506104d5565b50505050905090810190601f16801561051d5780820380516001836020036101000a031916815260200191505b509250505060405180910390a250505056fea2646970667358221220660bd54763900315ae61df9a1c1f9f30ffb04ad935cfa7b60b15cb9a575c306064736f6c63430007010033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80639a9ff08414610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663e2c782a2836040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b8381101561017a57808201518184015260208101905061015f565b50505050905090810190601f1680156101a75780820380516001836020036101000a031916815260200191505b509250505060206040518083038186803b1580156101c457600080fd5b505afa1580156101d8573d6000803e3d6000fd5b505050506040513d60208110156101ee57600080fd5b81019080805190602001909291905050509050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166352d7bc96826040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff168152602001915050600060405180830381600087803b15801561028c57600080fd5b505af11580156102a0573d6000803e3d6000fd5b50505050606060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663f4845d87846040518263ffffffff1660e01b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610332578082015181840152602081019050610317565b50505050905090810190601f16801561035f5780820380516001836020036101000a031916815260200191505b509250505060006040518083038186803b15801561037c57600080fd5b505afa158015610390573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f8201168201806040525060208110156103ba57600080fd5b81019080805160405193929190846401000000008211156103da57600080fd5b838201915060208201858111156103f057600080fd5b825186600182028301116401000000008211171561040d57600080fd5b8083526020830192505050908051906020019080838360005b83811015610441578082015181840152602081019050610426565b50505050905090810190601f16801561046e5780820380516001836020036101000a031916815260200191505b5060405250505090503373ffffffffffffffffffffffffffffffffffffffff167f13301278af128780e704cb535cdfe8a60e7c85783ddc1e2c9b3033197f35c29a826040518080602001828103825283818151815260200191508051906020019080838360005b838110156104f05780820151818401526020810190506104d5565b50505050905090810190601f16801561051d5780820380516001836020036101000a031916815260200191505b509250505060405180910390a250505056fea2646970667358221220660bd54763900315ae61df9a1c1f9f30ffb04ad935cfa7b60b15cb9a575c306064736f6c63430007010033",
   "immutableReferences": {},
-  "sourceMap": "199:546:2:-:0;;;352:147;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;435:12;418:5;;:30;;;;;;;;;;;;;;;;;;479:11;459:4;;:32;;;;;;;;;;;;;;;;;;352:147;;199:546;;;;;;",
-  "deployedSourceMap": "199:546:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;533:209;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;599:5;;;;;;;;;;;:21;;;:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;633:24;660:4;;;;;;;;;;:16;;;677:12;660:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;633:57;;711:10;706:28;;;723:10;706:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;533:209;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0;\r\n\r\n// Import User from RepoContract.sol\r\nimport \"./RepoContract.sol\";\r\n// Import GLDToken from GLDToken.sol.sol\r\nimport \"./GLDToken.sol\";\r\n\r\ncontract MintReward {\r\n    \r\n    RepoContract private repo;\r\n    GLDToken private token;\r\n\r\n    event Hash(address indexed _from, string _value);\r\n\r\n    constructor(address tokenAddress, address repoAddress) {\r\n        token = GLDToken(tokenAddress);\r\n        repo = RepoContract(repoAddress);\r\n    }\r\n    \r\n    // Get Repo Name\r\n    function mintReward(string memory _projectSlug) public {\r\n        token.mintMinerReward();\r\n        string memory returnHash = repo.getRepoHash(_projectSlug);\r\n        emit Hash(msg.sender, returnHash);\r\n    }\r\n}",
+  "sourceMap": "199:613:2:-:0;;;352:147;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;435:12;418:5;;:30;;;;;;;;;;;;;;;;;;479:11;459:4;;:32;;;;;;;;;;;;;;;;;;352:147;;199:613;;;;;;",
+  "deployedSourceMap": "199:613:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;533:276;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;599:17;619:4;;;;;;;;;;;:17;;;637:12;619:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;599:51;;661:5;;;;;;;;;;;:21;;;683:9;661:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;704:22;729:4;;;;;;;;;;:16;;;746:12;729:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;704:55;;780:10;775:26;;;792:8;775:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;533:276;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0;\r\n\r\n// Import User from RepoContract.sol\r\nimport \"./RepoContract.sol\";\r\n// Import GLDToken from GLDToken.sol.sol\r\nimport \"./GLDToken.sol\";\r\n\r\ncontract MintReward {\r\n    \r\n    RepoContract private repo;\r\n    GLDToken private token;\r\n\r\n    event Hash(address indexed _from, string _value);\r\n\r\n    constructor(address tokenAddress, address repoAddress) {\r\n        token = GLDToken(tokenAddress);\r\n        repo = RepoContract(repoAddress);\r\n    }\r\n    \r\n    // Get Repo Name\r\n    function mintReward(string memory _projectSlug) public {\r\n        address repoOwner = repo.getRepoOwner(_projectSlug);\r\n        token.mintMinerReward(repoOwner);\r\n        string memory repoHash = repo.getRepoHash(_projectSlug);\r\n        emit Hash(msg.sender, repoHash);\r\n    }\r\n}",
   "sourcePath": "C:/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol",
   "ast": {
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol",
     "exportedSymbols": {
       "MintReward": [
-        246
+        251
       ]
     },
-    "id": 247,
+    "id": 252,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 189,
+        "id": 186,
         "literals": [
           "solidity",
           ">=",
@@ -83,10 +83,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/RepoContract.sol",
         "file": "./RepoContract.sol",
-        "id": 190,
+        "id": 187,
         "nodeType": "ImportDirective",
-        "scope": 247,
-        "sourceUnit": 466,
+        "scope": 252,
+        "sourceUnit": 474,
         "src": "99:28:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -94,10 +94,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 191,
+        "id": 188,
         "nodeType": "ImportDirective",
-        "scope": 247,
-        "sourceUnit": 131,
+        "scope": 252,
+        "sourceUnit": 128,
         "src": "171:24:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -108,35 +108,35 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 246,
+        "id": 251,
         "linearizedBaseContracts": [
-          246
+          251
         ],
         "name": "MintReward",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 193,
+            "id": 190,
             "mutability": "mutable",
             "name": "repo",
             "nodeType": "VariableDeclaration",
-            "scope": 246,
+            "scope": 251,
             "src": "232:25:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RepoContract_$465",
+              "typeIdentifier": "t_contract$_RepoContract_$473",
               "typeString": "contract RepoContract"
             },
             "typeName": {
-              "id": 192,
+              "id": 189,
               "name": "RepoContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 465,
+              "referencedDeclaration": 473,
               "src": "232:12:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RepoContract_$465",
+                "typeIdentifier": "t_contract$_RepoContract_$473",
                 "typeString": "contract RepoContract"
               }
             },
@@ -144,26 +144,26 @@
           },
           {
             "constant": false,
-            "id": 195,
+            "id": 192,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 246,
+            "scope": 251,
             "src": "264:22:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_GLDToken_$130",
+              "typeIdentifier": "t_contract$_GLDToken_$127",
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 194,
+              "id": 191,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 130,
+              "referencedDeclaration": 127,
               "src": "264:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GLDToken_$130",
+                "typeIdentifier": "t_contract$_GLDToken_$127",
                 "typeString": "contract GLDToken"
               }
             },
@@ -171,21 +171,21 @@
           },
           {
             "anonymous": false,
-            "id": 201,
+            "id": 198,
             "name": "Hash",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 200,
+              "id": 197,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 197,
+                  "id": 194,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 201,
+                  "scope": 198,
                   "src": "306:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -194,7 +194,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 196,
+                    "id": 193,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "306:7:2",
@@ -208,12 +208,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 199,
+                  "id": 196,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 201,
+                  "scope": 198,
                   "src": "329:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -222,7 +222,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 198,
+                    "id": 195,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "329:6:2",
@@ -240,26 +240,26 @@
           },
           {
             "body": {
-              "id": 220,
+              "id": 217,
               "nodeType": "Block",
               "src": "407:92:2",
               "statements": [
                 {
                   "expression": {
-                    "id": 212,
+                    "id": 209,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 208,
+                      "id": 205,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 195,
+                      "referencedDeclaration": 192,
                       "src": "418:5:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_GLDToken_$130",
+                        "typeIdentifier": "t_contract$_GLDToken_$127",
                         "typeString": "contract GLDToken"
                       }
                     },
@@ -268,11 +268,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 210,
+                          "id": 207,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 203,
+                          "referencedDeclaration": 200,
                           "src": "435:12:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -287,18 +287,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 209,
+                        "id": 206,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 130,
+                        "referencedDeclaration": 127,
                         "src": "426:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GLDToken_$130_$",
+                          "typeIdentifier": "t_type$_t_contract$_GLDToken_$127_$",
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 211,
+                      "id": 208,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -309,36 +309,36 @@
                       "src": "426:22:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_GLDToken_$130",
+                        "typeIdentifier": "t_contract$_GLDToken_$127",
                         "typeString": "contract GLDToken"
                       }
                     },
                     "src": "418:30:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_GLDToken_$130",
+                      "typeIdentifier": "t_contract$_GLDToken_$127",
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 213,
+                  "id": 210,
                   "nodeType": "ExpressionStatement",
                   "src": "418:30:2"
                 },
                 {
                   "expression": {
-                    "id": 218,
+                    "id": 215,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 214,
+                      "id": 211,
                       "name": "repo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 193,
+                      "referencedDeclaration": 190,
                       "src": "459:4:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RepoContract_$465",
+                        "typeIdentifier": "t_contract$_RepoContract_$473",
                         "typeString": "contract RepoContract"
                       }
                     },
@@ -347,11 +347,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 216,
+                          "id": 213,
                           "name": "repoAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 205,
+                          "referencedDeclaration": 202,
                           "src": "479:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -366,18 +366,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 215,
+                        "id": 212,
                         "name": "RepoContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 465,
+                        "referencedDeclaration": 473,
                         "src": "466:12:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RepoContract_$465_$",
+                          "typeIdentifier": "t_type$_t_contract$_RepoContract_$473_$",
                           "typeString": "type(contract RepoContract)"
                         }
                       },
-                      "id": 217,
+                      "id": 214,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -388,39 +388,39 @@
                       "src": "466:25:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RepoContract_$465",
+                        "typeIdentifier": "t_contract$_RepoContract_$473",
                         "typeString": "contract RepoContract"
                       }
                     },
                     "src": "459:32:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RepoContract_$465",
+                      "typeIdentifier": "t_contract$_RepoContract_$473",
                       "typeString": "contract RepoContract"
                     }
                   },
-                  "id": 219,
+                  "id": 216,
                   "nodeType": "ExpressionStatement",
                   "src": "459:32:2"
                 }
               ]
             },
-            "id": 221,
+            "id": 218,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 206,
+              "id": 203,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 203,
+                  "id": 200,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 221,
+                  "scope": 218,
                   "src": "364:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -429,7 +429,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 202,
+                    "id": 199,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "364:7:2",
@@ -443,11 +443,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 205,
+                  "id": 202,
                   "mutability": "mutable",
                   "name": "repoAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 221,
+                  "scope": 218,
                   "src": "386:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -456,7 +456,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 204,
+                    "id": 201,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:2",
@@ -472,12 +472,12 @@
               "src": "363:43:2"
             },
             "returnParameters": {
-              "id": 207,
+              "id": 204,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "407:0:2"
             },
-            "scope": 246,
+            "scope": 251,
             "src": "352:147:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -485,42 +485,93 @@
           },
           {
             "body": {
-              "id": 244,
+              "id": 249,
               "nodeType": "Block",
-              "src": "588:154:2",
+              "src": "588:221:2",
               "statements": [
                 {
-                  "expression": {
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
-                        "id": 226,
-                        "name": "token",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 195,
-                        "src": "599:5:2",
+                  "assignments": [
+                    224
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 224,
+                      "mutability": "mutable",
+                      "name": "repoOwner",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 249,
+                      "src": "599:17:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 223,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "599:7:2",
+                        "stateMutability": "nonpayable",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_GLDToken_$130",
-                          "typeString": "contract GLDToken"
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
                         }
                       },
-                      "id": 228,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 229,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 227,
+                        "name": "_projectSlug",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 220,
+                        "src": "637:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 225,
+                        "name": "repo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "619:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_RepoContract_$473",
+                          "typeString": "contract RepoContract"
+                        }
+                      },
+                      "id": 226,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "mintMinerReward",
+                      "memberName": "getRepoOwner",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 97,
-                      "src": "599:21:2",
+                      "referencedDeclaration": 472,
+                      "src": "619:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
-                        "typeString": "function () external"
+                        "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_address_$",
+                        "typeString": "function (string memory) view external returns (address)"
                       }
                     },
-                    "id": 229,
+                    "id": 228,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -528,30 +579,97 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "599:23:2",
+                    "src": "619:31:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "599:51:2"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 233,
+                        "name": "repoOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 224,
+                        "src": "683:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 230,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 192,
+                        "src": "661:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GLDToken_$127",
+                          "typeString": "contract GLDToken"
+                        }
+                      },
+                      "id": 232,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "mintMinerReward",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 94,
+                      "src": "661:21:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "661:32:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 230,
+                  "id": 235,
                   "nodeType": "ExpressionStatement",
-                  "src": "599:23:2"
+                  "src": "661:32:2"
                 },
                 {
                   "assignments": [
-                    232
+                    237
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 232,
+                      "id": 237,
                       "mutability": "mutable",
-                      "name": "returnHash",
+                      "name": "repoHash",
                       "nodeType": "VariableDeclaration",
-                      "scope": 244,
-                      "src": "633:24:2",
+                      "scope": 249,
+                      "src": "704:22:2",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -559,10 +677,10 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 231,
+                        "id": 236,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
-                        "src": "633:6:2",
+                        "src": "704:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage_ptr",
                           "typeString": "string"
@@ -571,16 +689,16 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 237,
+                  "id": 242,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 235,
+                        "id": 240,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 223,
-                        "src": "677:12:2",
+                        "referencedDeclaration": 220,
+                        "src": "746:12:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -595,32 +713,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 233,
+                        "id": 238,
                         "name": "repo",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 193,
-                        "src": "660:4:2",
+                        "referencedDeclaration": 190,
+                        "src": "729:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_RepoContract_$465",
+                          "typeIdentifier": "t_contract$_RepoContract_$473",
                           "typeString": "contract RepoContract"
                         }
                       },
-                      "id": 234,
+                      "id": 239,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getRepoHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 445,
-                      "src": "660:16:2",
+                      "referencedDeclaration": 450,
+                      "src": "729:16:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) view external returns (string memory)"
                       }
                     },
-                    "id": 236,
+                    "id": 241,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -628,7 +746,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "660:30:2",
+                    "src": "729:30:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
@@ -636,44 +754,44 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "633:57:2"
+                  "src": "704:55:2"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 239,
+                          "id": 244,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "711:3:2",
+                          "src": "780:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 240,
+                        "id": 245,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "711:10:2",
+                        "src": "780:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
                         }
                       },
                       {
-                        "id": 241,
-                        "name": "returnHash",
+                        "id": 246,
+                        "name": "repoHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 232,
-                        "src": "723:10:2",
+                        "referencedDeclaration": 237,
+                        "src": "792:8:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -691,18 +809,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 238,
+                      "id": 243,
                       "name": "Hash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 201,
-                      "src": "706:4:2",
+                      "referencedDeclaration": 198,
+                      "src": "775:4:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (address,string memory)"
                       }
                     },
-                    "id": 242,
+                    "id": 247,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -710,37 +828,37 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "706:28:2",
+                    "src": "775:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 243,
+                  "id": 248,
                   "nodeType": "EmitStatement",
-                  "src": "701:33:2"
+                  "src": "770:31:2"
                 }
               ]
             },
             "functionSelector": "9a9ff084",
-            "id": 245,
+            "id": 250,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mintReward",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 224,
+              "id": 221,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 220,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 245,
+                  "scope": 250,
                   "src": "553:26:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -749,7 +867,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 219,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "553:6:2",
@@ -764,37 +882,37 @@
               "src": "552:28:2"
             },
             "returnParameters": {
-              "id": 225,
+              "id": 222,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "588:0:2"
             },
-            "scope": 246,
-            "src": "533:209:2",
+            "scope": 251,
+            "src": "533:276:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 247,
-        "src": "199:546:2"
+        "scope": 252,
+        "src": "199:613:2"
       }
     ],
-    "src": "33:712:2"
+    "src": "33:779:2"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/MintReward.sol",
     "exportedSymbols": {
       "MintReward": [
-        246
+        251
       ]
     },
-    "id": 247,
+    "id": 252,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 189,
+        "id": 186,
         "literals": [
           "solidity",
           ">=",
@@ -807,10 +925,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/RepoContract.sol",
         "file": "./RepoContract.sol",
-        "id": 190,
+        "id": 187,
         "nodeType": "ImportDirective",
-        "scope": 247,
-        "sourceUnit": 466,
+        "scope": 252,
+        "sourceUnit": 474,
         "src": "99:28:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -818,10 +936,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 191,
+        "id": 188,
         "nodeType": "ImportDirective",
-        "scope": 247,
-        "sourceUnit": 131,
+        "scope": 252,
+        "sourceUnit": 128,
         "src": "171:24:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -832,35 +950,35 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 246,
+        "id": 251,
         "linearizedBaseContracts": [
-          246
+          251
         ],
         "name": "MintReward",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 193,
+            "id": 190,
             "mutability": "mutable",
             "name": "repo",
             "nodeType": "VariableDeclaration",
-            "scope": 246,
+            "scope": 251,
             "src": "232:25:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RepoContract_$465",
+              "typeIdentifier": "t_contract$_RepoContract_$473",
               "typeString": "contract RepoContract"
             },
             "typeName": {
-              "id": 192,
+              "id": 189,
               "name": "RepoContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 465,
+              "referencedDeclaration": 473,
               "src": "232:12:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RepoContract_$465",
+                "typeIdentifier": "t_contract$_RepoContract_$473",
                 "typeString": "contract RepoContract"
               }
             },
@@ -868,26 +986,26 @@
           },
           {
             "constant": false,
-            "id": 195,
+            "id": 192,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 246,
+            "scope": 251,
             "src": "264:22:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_GLDToken_$130",
+              "typeIdentifier": "t_contract$_GLDToken_$127",
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 194,
+              "id": 191,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 130,
+              "referencedDeclaration": 127,
               "src": "264:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GLDToken_$130",
+                "typeIdentifier": "t_contract$_GLDToken_$127",
                 "typeString": "contract GLDToken"
               }
             },
@@ -895,21 +1013,21 @@
           },
           {
             "anonymous": false,
-            "id": 201,
+            "id": 198,
             "name": "Hash",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 200,
+              "id": 197,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 197,
+                  "id": 194,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 201,
+                  "scope": 198,
                   "src": "306:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -918,7 +1036,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 196,
+                    "id": 193,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "306:7:2",
@@ -932,12 +1050,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 199,
+                  "id": 196,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 201,
+                  "scope": 198,
                   "src": "329:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -946,7 +1064,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 198,
+                    "id": 195,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "329:6:2",
@@ -964,26 +1082,26 @@
           },
           {
             "body": {
-              "id": 220,
+              "id": 217,
               "nodeType": "Block",
               "src": "407:92:2",
               "statements": [
                 {
                   "expression": {
-                    "id": 212,
+                    "id": 209,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 208,
+                      "id": 205,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 195,
+                      "referencedDeclaration": 192,
                       "src": "418:5:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_GLDToken_$130",
+                        "typeIdentifier": "t_contract$_GLDToken_$127",
                         "typeString": "contract GLDToken"
                       }
                     },
@@ -992,11 +1110,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 210,
+                          "id": 207,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 203,
+                          "referencedDeclaration": 200,
                           "src": "435:12:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1011,18 +1129,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 209,
+                        "id": 206,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 130,
+                        "referencedDeclaration": 127,
                         "src": "426:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GLDToken_$130_$",
+                          "typeIdentifier": "t_type$_t_contract$_GLDToken_$127_$",
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 211,
+                      "id": 208,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1033,36 +1151,36 @@
                       "src": "426:22:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_GLDToken_$130",
+                        "typeIdentifier": "t_contract$_GLDToken_$127",
                         "typeString": "contract GLDToken"
                       }
                     },
                     "src": "418:30:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_GLDToken_$130",
+                      "typeIdentifier": "t_contract$_GLDToken_$127",
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 213,
+                  "id": 210,
                   "nodeType": "ExpressionStatement",
                   "src": "418:30:2"
                 },
                 {
                   "expression": {
-                    "id": 218,
+                    "id": 215,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 214,
+                      "id": 211,
                       "name": "repo",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 193,
+                      "referencedDeclaration": 190,
                       "src": "459:4:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RepoContract_$465",
+                        "typeIdentifier": "t_contract$_RepoContract_$473",
                         "typeString": "contract RepoContract"
                       }
                     },
@@ -1071,11 +1189,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 216,
+                          "id": 213,
                           "name": "repoAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 205,
+                          "referencedDeclaration": 202,
                           "src": "479:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1090,18 +1208,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 215,
+                        "id": 212,
                         "name": "RepoContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 465,
+                        "referencedDeclaration": 473,
                         "src": "466:12:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RepoContract_$465_$",
+                          "typeIdentifier": "t_type$_t_contract$_RepoContract_$473_$",
                           "typeString": "type(contract RepoContract)"
                         }
                       },
-                      "id": 217,
+                      "id": 214,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1112,39 +1230,39 @@
                       "src": "466:25:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RepoContract_$465",
+                        "typeIdentifier": "t_contract$_RepoContract_$473",
                         "typeString": "contract RepoContract"
                       }
                     },
                     "src": "459:32:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RepoContract_$465",
+                      "typeIdentifier": "t_contract$_RepoContract_$473",
                       "typeString": "contract RepoContract"
                     }
                   },
-                  "id": 219,
+                  "id": 216,
                   "nodeType": "ExpressionStatement",
                   "src": "459:32:2"
                 }
               ]
             },
-            "id": 221,
+            "id": 218,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 206,
+              "id": 203,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 203,
+                  "id": 200,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 221,
+                  "scope": 218,
                   "src": "364:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1153,7 +1271,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 202,
+                    "id": 199,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "364:7:2",
@@ -1167,11 +1285,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 205,
+                  "id": 202,
                   "mutability": "mutable",
                   "name": "repoAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 221,
+                  "scope": 218,
                   "src": "386:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1180,7 +1298,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 204,
+                    "id": 201,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:2",
@@ -1196,12 +1314,12 @@
               "src": "363:43:2"
             },
             "returnParameters": {
-              "id": 207,
+              "id": 204,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "407:0:2"
             },
-            "scope": 246,
+            "scope": 251,
             "src": "352:147:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1209,42 +1327,93 @@
           },
           {
             "body": {
-              "id": 244,
+              "id": 249,
               "nodeType": "Block",
-              "src": "588:154:2",
+              "src": "588:221:2",
               "statements": [
                 {
-                  "expression": {
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
-                        "id": 226,
-                        "name": "token",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 195,
-                        "src": "599:5:2",
+                  "assignments": [
+                    224
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 224,
+                      "mutability": "mutable",
+                      "name": "repoOwner",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 249,
+                      "src": "599:17:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 223,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "599:7:2",
+                        "stateMutability": "nonpayable",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_GLDToken_$130",
-                          "typeString": "contract GLDToken"
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
                         }
                       },
-                      "id": 228,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 229,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 227,
+                        "name": "_projectSlug",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 220,
+                        "src": "637:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 225,
+                        "name": "repo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "619:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_RepoContract_$473",
+                          "typeString": "contract RepoContract"
+                        }
+                      },
+                      "id": 226,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "mintMinerReward",
+                      "memberName": "getRepoOwner",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 97,
-                      "src": "599:21:2",
+                      "referencedDeclaration": 472,
+                      "src": "619:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
-                        "typeString": "function () external"
+                        "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_address_$",
+                        "typeString": "function (string memory) view external returns (address)"
                       }
                     },
-                    "id": 229,
+                    "id": 228,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1252,30 +1421,97 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "599:23:2",
+                    "src": "619:31:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "599:51:2"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 233,
+                        "name": "repoOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 224,
+                        "src": "683:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 230,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 192,
+                        "src": "661:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GLDToken_$127",
+                          "typeString": "contract GLDToken"
+                        }
+                      },
+                      "id": 232,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "mintMinerReward",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 94,
+                      "src": "661:21:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "661:32:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 230,
+                  "id": 235,
                   "nodeType": "ExpressionStatement",
-                  "src": "599:23:2"
+                  "src": "661:32:2"
                 },
                 {
                   "assignments": [
-                    232
+                    237
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 232,
+                      "id": 237,
                       "mutability": "mutable",
-                      "name": "returnHash",
+                      "name": "repoHash",
                       "nodeType": "VariableDeclaration",
-                      "scope": 244,
-                      "src": "633:24:2",
+                      "scope": 249,
+                      "src": "704:22:2",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -1283,10 +1519,10 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 231,
+                        "id": 236,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
-                        "src": "633:6:2",
+                        "src": "704:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage_ptr",
                           "typeString": "string"
@@ -1295,16 +1531,16 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 237,
+                  "id": 242,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 235,
+                        "id": 240,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 223,
-                        "src": "677:12:2",
+                        "referencedDeclaration": 220,
+                        "src": "746:12:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1319,32 +1555,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 233,
+                        "id": 238,
                         "name": "repo",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 193,
-                        "src": "660:4:2",
+                        "referencedDeclaration": 190,
+                        "src": "729:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_RepoContract_$465",
+                          "typeIdentifier": "t_contract$_RepoContract_$473",
                           "typeString": "contract RepoContract"
                         }
                       },
-                      "id": 234,
+                      "id": 239,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getRepoHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 445,
-                      "src": "660:16:2",
+                      "referencedDeclaration": 450,
+                      "src": "729:16:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) view external returns (string memory)"
                       }
                     },
-                    "id": 236,
+                    "id": 241,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1352,7 +1588,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "660:30:2",
+                    "src": "729:30:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
@@ -1360,44 +1596,44 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "633:57:2"
+                  "src": "704:55:2"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 239,
+                          "id": 244,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "711:3:2",
+                          "src": "780:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 240,
+                        "id": 245,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "711:10:2",
+                        "src": "780:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
                         }
                       },
                       {
-                        "id": 241,
-                        "name": "returnHash",
+                        "id": 246,
+                        "name": "repoHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 232,
-                        "src": "723:10:2",
+                        "referencedDeclaration": 237,
+                        "src": "792:8:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1415,18 +1651,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 238,
+                      "id": 243,
                       "name": "Hash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 201,
-                      "src": "706:4:2",
+                      "referencedDeclaration": 198,
+                      "src": "775:4:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (address,string memory)"
                       }
                     },
-                    "id": 242,
+                    "id": 247,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1434,37 +1670,37 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "706:28:2",
+                    "src": "775:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 243,
+                  "id": 248,
                   "nodeType": "EmitStatement",
-                  "src": "701:33:2"
+                  "src": "770:31:2"
                 }
               ]
             },
             "functionSelector": "9a9ff084",
-            "id": 245,
+            "id": 250,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mintReward",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 224,
+              "id": 221,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 220,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 245,
+                  "scope": 250,
                   "src": "553:26:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1473,7 +1709,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 219,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "553:6:2",
@@ -1488,23 +1724,23 @@
               "src": "552:28:2"
             },
             "returnParameters": {
-              "id": 225,
+              "id": 222,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "588:0:2"
             },
-            "scope": 246,
-            "src": "533:209:2",
+            "scope": 251,
+            "src": "533:276:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 247,
-        "src": "199:546:2"
+        "scope": 252,
+        "src": "199:613:2"
       }
     ],
-    "src": "33:712:2"
+    "src": "33:779:2"
   },
   "compiler": {
     "name": "solc",
@@ -1534,12 +1770,12 @@
         }
       },
       "links": {},
-      "address": "0x1bB4E97C01063D7D7715977CD5394d1d03Dd1e0F",
-      "transactionHash": "0xaba7fb0f8492c59e60b7cf49ab775bdbc3c816ee666072a312fc1a170b930bdf"
+      "address": "0xf3462c7ECb4C6556f6c87E524b14Ea3b53b64Efe",
+      "transactionHash": "0xfc40d1e9492e2cd6c8ed50311e72b9a23cb74c2fdbdee8c005bf027fd52211c1"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-25T15:28:21.383Z",
+  "updatedAt": "2020-10-25T18:43:41.745Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

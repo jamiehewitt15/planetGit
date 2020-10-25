@@ -22,8 +22,7 @@ contract GLDToken is ERC20, Ownable {
         tokenTarget         =    1000;
     }
 
-    function mintMinerReward() public onlyOwner {
-        address repoOwner = msg.sender; // temp
+    function mintMinerReward(address repoOwner) public onlyOwner {
 
         _mint(repoOwner, tokenReward);
         _mint(systemOwner, systemReward);
