@@ -57,23 +57,22 @@ contract('MintReward', (accounts)=>{
             // Get Repo Hash
             await mintReward.mintReward(repoSlug);
            
-            rewardContract.events.Hash({
+            let returnHash;
+            await rewardContract.events.Hash({
                 filter: {_from: '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'}, 
                 fromBlock: 0
-            }, function(error, event){ console.log(event); })
+            })
             .on("connected", function(subscriptionId){
                 console.log(">>> subscriptionId: ", subscriptionId);
             })
-            .on('data', function(event){
-                console.log(">>> Event: ", event);
-            })
-            .on('changed', function(event){
-                console.log(">>> changed: ", event);
+            .on('data', async function(event){
+                console.log(">>> Return Value: ", event.returnValues._value);
+                returnHash = await event.returnValues._value
+                returnHash.should.equal(repoHash);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
                 console.log(">>> Error: ", error);
             });
-            await mintReward.mintReward(repoSlug);
         })
         
         it('Repo has the correct owner', async () => {
