@@ -1,5 +1,5 @@
 const GLDToken = artifacts.require("GLDToken");
-const RepoContract = artifacts.require("RepoContract");
+const Repository = artifacts.require("Repository");
 const { assert } = require('chai');
 
 const BigNumber = web3.BigNumber;

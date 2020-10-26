@@ -3,7 +3,7 @@ const Web3 = require('web3');
 
 const contractImport = require('../src/abis/MintReward.json');
 const MintReward = artifacts.require("MintReward");
-const RepoContract = artifacts.require("RepoContract");
+const Repository = artifacts.require("Repository");
 const GLDToken = artifacts.require("GLDToken");
 
 
@@ -35,7 +35,7 @@ contract('MintReward', (accounts)=>{
     before(async () => {
         // Fetch the smart contract before running tests
         mintReward = await MintReward.deployed();
-        repo = await RepoContract.deployed();
+        repo = await Repository.deployed();
         token = await GLDToken.deployed();
         abi = contractImport.abi;
         address = mintReward.address;

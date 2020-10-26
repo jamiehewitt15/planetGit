@@ -8,7 +8,7 @@ import "./UserContract.sol";
 import "./GLDToken.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract RepoContract is Ownable {
+contract Repository is Ownable {
     
     GLDToken private token;
     

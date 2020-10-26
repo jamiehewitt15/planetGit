@@ -1,18 +1,18 @@
 const { assert } = require('chai');
 
-const RepoContract = artifacts.require("RepoContract");
+const Repository = artifacts.require("Repository");
 
 require('chai')
     .use(require('chai-as-promised'))
     .should()
 
-contract('RepoContract', (accounts)=>{
+contract('Repository', (accounts)=>{
     // Testing the Data smart contract
     let repo;
 
     before(async () => {
         // Fetch the smart contract before running tests
-        repo = await RepoContract.deployed();
+        repo = await Repository.deployed();
     })
 
     describe('deployment', async()=> { 

@@ -1,5 +1,5 @@
 const User = artifacts.require("UserContract");
-const Repo = artifacts.require("RepoContract");
+const Repo = artifacts.require("Repository");
 const GLDToken = artifacts.require("GLDToken");
 const MintReward = artifacts.require("MintReward");
 

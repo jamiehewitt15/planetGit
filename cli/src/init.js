@@ -64,7 +64,7 @@ const provider = 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
 const web3 = new Web3js(web3Provider);
 
-const { abi, networks } = require('../abis/RepoContract.json');
+const { abi, networks } = require('../abis/Repository.json');
 
 let accountAddress = '';
 let privateKey = '';

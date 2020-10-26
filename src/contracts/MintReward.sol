@@ -1,21 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0;
 
-// Import User from RepoContract.sol
-import "./RepoContract.sol";
+// Import User from Repository.sol
+import "./Repository.sol";
 // Import GLDToken from GLDToken.sol.sol
 import "./GLDToken.sol";
 
 contract MintReward {
     
-    RepoContract private repo;
+    Repository private repo;
     GLDToken private token;
 
     event Hash(address indexed _from, string _value);
 
     constructor(address tokenAddress, address repoAddress) {
         token = GLDToken(tokenAddress);
-        repo = RepoContract(repoAddress);
+        repo = Repository(repoAddress);
     }
     
     // Get Repo Name

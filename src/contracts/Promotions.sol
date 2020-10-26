@@ -2,34 +2,34 @@
 pragma solidity >=0.7.0;
 pragma experimental ABIEncoderV2;
 
-// Import User from RepoContract.sol
-import "./RepoContract.sol";
+// Import User from Repository.sol
+import "./Repository.sol";
 // Import GLDToken from GLDToken.sol.sol
 import "./GLDToken.sol";
 
-contract Promotions {
+contract Promotions is  {
     
-    RepoContract private repo;
+    Repository private repo;
     GLDToken private token;
     
 
     struct promotion {
         address owner;
-        string repoName;
-        string repoHash;
-        bool live;
+        Repo promotedRepo;
     }
 
     promotion[] public allPromotions;
 
     constructor(address tokenAddress, address repoAddress) {
         token = GLDToken(tokenAddress);
-        repo = RepoContract(repoAddress);
+        repo = Repository(repoAddress);
     }
     
     // Create Promotion
     function createPromotion(string memory _projectSlug) public {
+        // send money
         
+        // create promotion
         
     }
     // Remove Promotion
