@@ -6,14 +6,14 @@ import "./Repository.sol";
 import "./GLDToken.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Promotions is Ownable, Repository{
+contract Promotions is Repository{
     
     Repository private repo;
     GLDToken private token;
     uint price;
     promotion[10] public livePromotions;
     mapping (string => promotion) promotions;
-    address owner = this.owner();
+    address thisOwner; // COntract owner
     
     struct promotion{
         Repo promotedRepo;
@@ -22,6 +22,8 @@ contract Promotions is Ownable, Repository{
 
     constructor(address tokenAddress, address repoAddress) Repository(tokenAddress){
         repo = Repository(repoAddress);
+        token = GLDToken(tokenAddress);
+        thisOwner = msg.sender;
     }
     
     // Create Promotion
@@ -30,7 +32,7 @@ contract Promotions is Ownable, Repository{
         require(amount > price, "Value sent must be greater than price."); 
 
         // send money
-        require(token.transferFrom(msg.sender, owner, amount) == true, "Could not send tokens");
+        require(token.transferFrom(msg.sender, thisOwner, amount) == true, "Could not send tokens");
 
         // Get Repo
         Repo memory promotedRepo = repo.getRepo(_projectSlug);
