@@ -52,6 +52,10 @@ contract Repository is Ownable {
         repoNames[_projectSlug].repoHash =  _repoHash;
         }
     }
+   // Get Repo
+    function getRepo(string memory _projectSlug) public view returns(Repo memory) {
+        return repoNames[_projectSlug];
+    }
    // Get Repo Name
     function getRepoName(string memory _projectSlug) public view returns(string memory) {
         return repoNames[_projectSlug].repoName;
