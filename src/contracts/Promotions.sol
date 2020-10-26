@@ -13,7 +13,7 @@ contract Promotions is Repository{
     uint price;
     promotion[10] public livePromotions;
     mapping (string => promotion) promotions;
-    address thisOwner; // COntract owner
+    address thisOwner; // Contract owner
     
     struct promotion{
         Repo promotedRepo;
