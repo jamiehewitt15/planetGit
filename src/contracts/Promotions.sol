@@ -13,7 +13,7 @@ contract Promotions is Ownable, Repository{
     uint price;
     promotion[10] public livePromotions;
     mapping (string => promotion) promotions;
-    address owner = owner();
+    address owner = this.owner();
     
     struct promotion{
         Repo promotedRepo;
@@ -25,13 +25,17 @@ contract Promotions is Ownable, Repository{
     }
     
     // Create Promotion
-    function createPromotion(string memory _projectSlug, uint memory tokenSent) public {
+    function createPromotion(string memory _projectSlug, uint amount) public {
+        // Check amount
+        require(amount > price, "Value sent must be greater than price."); 
+
         // send money
+        require(token.transferFrom(msg.sender, owner, amount) == true, "Could not send tokens");
 
         // Get Repo
         Repo memory promotedRepo = repo.getRepo(_projectSlug);
         // Create Promotion
-        promotions[_projectSlug] = promotion(promotedRepo, tokenSent);
+        promotions[_projectSlug] = promotion(promotedRepo, amount);
 
         // create promotion
         // livePromotions.push(promo);
@@ -41,10 +45,15 @@ contract Promotions is Ownable, Repository{
        
        
     }
+    // Get Price
+    function getPrice() public view returns(uint) {
+        return price;
+    }
     // Get One Promotion
     function getPromotion(string memory _projectSlug) public view returns(promotion memory) {
         return promotions[_projectSlug];
     }
+
     // Get All Promotions
     // function getAllPromotions() public view returns(Repository[] memory) {
     //     return price;
