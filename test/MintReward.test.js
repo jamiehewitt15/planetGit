@@ -20,7 +20,7 @@ require('chai')
 
 contract('MintReward', (accounts)=>{
     // Testing the Data smart contract
-    const walletAddress = '0x2fEa99173ED4db605bdD9E29Fa22d8ECaAE11bbd'
+    const walletAddress = accounts[0];
     let mintReward;
     let repo;
     let token;

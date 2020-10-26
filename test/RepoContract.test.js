@@ -18,7 +18,6 @@ contract('Repository', (accounts)=>{
     describe('deployment', async()=> { 
         it('Deploys successfully', async () => {
             const address = repo.address;
-            console.log(address);
             // Test the smart contract has been deployed with a valid address
             assert.notEqual(address, 0x0);
             assert.notEqual(address, '');
