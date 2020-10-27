@@ -40,10 +40,7 @@ contract('MintReward', (accounts)=>{
         abi = contractImport.abi;
         address = mintReward.address;
         rewardContract = web3.eth.Contract(abi, address); 
-        repoName = 'TomTest00000000';
-        repoHash = '21X243OJNOI12092189443RNJK24R0';
-        repoSlug = 'projectname3';
-        await repo.createRepo(repoSlug, repoName, repoHash);
+        
     })
 
     describe('deployment', async()=> { 
@@ -73,7 +70,10 @@ contract('MintReward', (accounts)=>{
 
         // Test createRepo and getRepoHash functions
         it('Creates Repo and gets RepoHash', async () => {
-            // const count = await web3.eth.getTransactionCount(walletAddress);
+            repoName = 'TomTest00000000';
+            repoHash = '21X243OJNOI12092189443RNJK24R0';
+            repoSlug = 'projectname1';
+            await repo.createRepo(repoSlug, repoName, repoHash);
             // console.log("count", count);
             const nonce = web3.utils.randomHex(4); // web3.utils.numberToHex(count);
             // const nonce = String(nonceHex)
@@ -90,7 +90,10 @@ contract('MintReward', (accounts)=>{
             })
             .on('data', async function(event){
                 const returnHash = await event.returnValues._value;
-                const nonce = await event.returnValues.nonce
+                const nonce = await event.returnValues.nonce;
+                const returnSlug = await event.returnValues._slug;
+                // console.log("> event 1:", event);
+                console.log("> slug 1:", returnSlug);
                 console.log("> nonce 1:", nonce);
                 console.log("> repoHash1:", repoHash);
                 returnHash.should.equal(repoHash);
@@ -116,7 +119,7 @@ contract('MintReward', (accounts)=>{
             // Create Second Repo Hash
             const repoName2 = 'JaneTest00000000';
             const repoHash2 = '123243OJNOI12321189443RNJK24R2';
-            const repoSlug2 = 'projectname3';
+            const repoSlug2 = 'projectname2';
             await repo.createRepo(repoSlug2, repoName2, repoHash2);
             // create nonce
             
@@ -134,10 +137,12 @@ contract('MintReward', (accounts)=>{
             })
             .on('data', async function(event){
                 const returnHash = await event.returnValues._value;
-                const nonce = await event.returnValues.nonce
+                const nonce = await event.returnValues.nonce;
+                const returnSlug = await event.returnValues._slug;
+                console.log("> slug 2:", returnSlug);
                 console.log("> nonce 2:", nonce);
                 console.log("> returnHash2", returnHash);
-                // returnHash.should.equal(repoHash2);
+                returnHash.should.equal(repoHash2);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
                 console.log(">>> Error: ", error);
