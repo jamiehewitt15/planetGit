@@ -92,10 +92,6 @@ contract('MintReward', (accounts)=>{
                 const returnHash = await event.returnValues._value;
                 const nonce = await event.returnValues.nonce;
                 const returnSlug = await event.returnValues._slug;
-                // console.log("> event 1:", event);
-                console.log("> slug 1:", returnSlug);
-                console.log("> nonce 1:", nonce);
-                console.log("> repoHash1:", repoHash);
                 returnHash.should.equal(repoHash);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
@@ -128,9 +124,6 @@ contract('MintReward', (accounts)=>{
                 const returnHash = await event.returnValues._value;
                 const nonce = await event.returnValues.nonce;
                 const returnSlug = await event.returnValues._slug;
-                console.log("> slug 2:", returnSlug);
-                console.log("> nonce 2:", nonce);
-                console.log("> returnHash2", returnHash);
                 returnHash.should.equal(repoHash2);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.

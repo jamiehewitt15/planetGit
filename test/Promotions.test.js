@@ -56,15 +56,24 @@ contract('Promotions', (accounts)=>{
             const name = await repo.getRepoName(repoSlug)
             assert.equal(owner, walletAddress);
             assert.equal(name, repoName);
-            const thisBalance = parseInt(await token.balanceOf(walletAddress));
-            console.log("thisBalance:", thisBalance);
+            const initialBalance = parseInt(await token.balanceOf(walletAddress));
             const nonce = web3.utils.randomHex(4); 
             await mintReward.mintReward(repoSlug, nonce);
-            const nowBalance = parseInt(await token.balanceOf(walletAddress));
-            console.log("Now Balance:", nowBalance);
-            const amount = 10;
+            const middleBalance = parseInt(await token.balanceOf(walletAddress));
+            assert.notEqual(initialBalance, middleBalance);
+            assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
+        
+            const amount = 1000;
             await token.approve(promotions.address, amount)
             await promotions.createPromotion(repoSlug, amount);
+            const finalBalance = parseInt(await token.balanceOf(walletAddress));
+            assert.notEqual(finalBalance, middleBalance);
+            assert.isAbove(middleBalance, finalBalance, 'Final balance is greater than middle balance');
+        
+            const retunPromotion = await promotions.getPromotion(repoSlug);
+            assert.equal(retunPromotion.pricePaid, amount);
+            assert.equal(retunPromotion.promotedRepo.repoHash, repoHash);
+            assert.equal(retunPromotion.promotedRepo.repoName, repoName);
         })
 
         it('Token has the correct owner', async () => {
