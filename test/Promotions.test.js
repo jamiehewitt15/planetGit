@@ -62,7 +62,9 @@ contract('Promotions', (accounts)=>{
             await mintReward.mintReward(repoSlug, nonce);
             const nowBalance = parseInt(await token.balanceOf(walletAddress));
             console.log("Now Balance:", nowBalance);
-            await promotions.createPromotion(repoSlug, 10);
+            const amount = 10;
+            await token.approve(promotions.address, amount)
+            await promotions.createPromotion(repoSlug, amount);
         })
 
         it('Token has the correct owner', async () => {
