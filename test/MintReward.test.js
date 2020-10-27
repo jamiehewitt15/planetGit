@@ -119,15 +119,14 @@ contract('MintReward', (accounts)=>{
             const repoSlug2 = 'projectname3';
             await repo.createRepo(repoSlug2, repoName2, repoHash2);
             // create nonce
-            const count2 = await web3.eth.getTransactionCount(walletAddress);
-            console.log("count", count2);
-            const nonce2 = web3.utils.numberToHex(count2);
+            
+            const nonce2 = web3.utils.randomHex(4); 
             console.log("* nonce2", nonce2);
             // Mint Reward
             await mintReward.mintReward(repoSlug2, nonce2);
             // Get Repo Hash
             await rewardContract.events.Hash({
-                filter: {_from: walletAddress}, 
+                filter: {_from: walletAddress, nonce: nonce2}, 
                 fromBlock: 0
             })
             .on("connected", function(subscriptionId){
@@ -150,10 +149,7 @@ contract('MintReward', (accounts)=>{
             const initialBalance = (await token.balanceOf(walletAddress)).toString();
             const currentReward = await token.getReward();
             // create nonce
-            const count3 = await web3.eth.getTransactionCount(walletAddress);
-            console.log("count", count3);
-            const nonce3 = web3.utils.toHex(count3);
-            console.log("nonce", nonce3);
+            const nonce3 = web3.utils.randomHex(4); 
             // Mint Reward
             await mintReward.mintReward(repoSlug, nonce3);
             const finalBalance = (await token.balanceOf(walletAddress)).toString();
