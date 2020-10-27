@@ -1,4 +1,9 @@
 const { assert } = require('chai');
+const Web3 = require('web3');
+
+const provider = 'HTTP://127.0.0.1:7545' 
+const web3Provider = new Web3.providers.WebsocketProvider(provider);
+const web3 = new Web3(web3Provider);
 
 const Promotions = artifacts.require("Promotions");
 const Repository = artifacts.require("Repository");
@@ -51,10 +56,13 @@ contract('Promotions', (accounts)=>{
             const name = await repo.getRepoName(repoSlug)
             assert.equal(owner, walletAddress);
             assert.equal(name, repoName);
-            // const thisBalance = parseInt(await token.balanceOf(walletAddress));
-            // console.log("thisBalance:", thisBalance);
-            // await mintReward.mintReward(repoSlug);
-            // await promotions.createPromotion(repoSlug, 10);
+            const thisBalance = parseInt(await token.balanceOf(walletAddress));
+            console.log("thisBalance:", thisBalance);
+            const nonce = web3.utils.randomHex(4); 
+            await mintReward.mintReward(repoSlug, nonce);
+            const nowBalance = parseInt(await token.balanceOf(walletAddress));
+            console.log("Now Balance:", nowBalance);
+            await promotions.createPromotion(repoSlug, 10);
         })
 
         it('Token has the correct owner', async () => {

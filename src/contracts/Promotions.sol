@@ -32,7 +32,9 @@ contract Promotions is Repository{
         require(amount > price, "Value sent must be greater than price."); 
 
         // send money
-        require(token.transferFrom(msg.sender, thisOwner, amount) == true, "Could not send tokens");
+        // require(token.transfer(thisOwner, amount) == true, "Could not send tokens");
+        // token.allowance(address(this), amount);
+        require(token.transferFrom(msg.sender, address(this), amount) == true, "Could not send tokens");
 
         // Get Repo
         Repo memory promotedRepo = repo.getRepo(_projectSlug);

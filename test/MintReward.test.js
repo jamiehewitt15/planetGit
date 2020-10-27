@@ -101,17 +101,6 @@ contract('MintReward', (accounts)=>{
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
                 console.log(">>> Error: ", error);
             });
-
-            // rewardContract.once('Hash', {
-            //     filter: {_from: walletAddress}, 
-            //     fromBlock: 0
-            // }, function(error, event){ 
-            //     if(!error){
-            //         console.log("***event", event);
-            //     } else{
-            //         console.log("error", error);
-            //     }
-            //      });
         });
 
         // Test second createRepo and getRepoHash functions
