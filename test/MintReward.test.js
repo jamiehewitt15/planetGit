@@ -41,7 +41,7 @@ contract('MintReward', (accounts)=>{
         address = mintReward.address;
         rewardContract = web3.eth.Contract(abi, address); 
         repoName = 'TomTest00000000';
-        repoHash = '21X243OJNOI12092189443RNJK24R9';
+        repoHash = '21X243OJNOI12092189443RNJK24R0';
         repoSlug = 'projectname3';
         await repo.createRepo(repoSlug, repoName, repoHash);
     })
@@ -58,6 +58,7 @@ contract('MintReward', (accounts)=>{
     })
 
     describe('Functions', async () => {
+
         it('Repo has the correct owner', async () => {
             const mintRewardAddress = await mintReward.address;
             const repoOwner = await repo.owner();
@@ -69,11 +70,62 @@ contract('MintReward', (accounts)=>{
             const tokenOwner = await token.owner();
             tokenOwner.should.equal(mintRewardAddress);
         });
+
         // Test createRepo and getRepoHash functions
         it('Creates Repo and gets RepoHash', async () => {
+            // const count = await web3.eth.getTransactionCount(walletAddress);
+            // console.log("count", count);
+            const nonce = web3.utils.randomHex(4); // web3.utils.numberToHex(count);
+            // const nonce = String(nonceHex)
+            console.log("*nonce1", nonce);
             // Get Repo Hash
-            await mintReward.mintReward(repoSlug);
+            await mintReward.mintReward(repoSlug, nonce);
            
+            await rewardContract.events.Hash({
+                filter: {_from: walletAddress, nonce: nonce}, 
+                fromBlock: 0
+            })
+            .on("connected", function(subscriptionId){
+                console.log(">>> subscriptionId: ", subscriptionId);
+            })
+            .on('data', async function(event){
+                const returnHash = await event.returnValues._value;
+                const nonce = await event.returnValues.nonce
+                console.log("> nonce 1:", nonce);
+                console.log("> repoHash1:", repoHash);
+                returnHash.should.equal(repoHash);
+            })
+            .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
+                console.log(">>> Error: ", error);
+            });
+
+            // rewardContract.once('Hash', {
+            //     filter: {_from: walletAddress}, 
+            //     fromBlock: 0
+            // }, function(error, event){ 
+            //     if(!error){
+            //         console.log("***event", event);
+            //     } else{
+            //         console.log("error", error);
+            //     }
+            //      });
+        });
+
+        // Test second createRepo and getRepoHash functions
+        it('Creates Second Repo and gets second RepoHash', async () => {
+            // Create Second Repo Hash
+            const repoName2 = 'JaneTest00000000';
+            const repoHash2 = '123243OJNOI12321189443RNJK24R2';
+            const repoSlug2 = 'projectname3';
+            await repo.createRepo(repoSlug2, repoName2, repoHash2);
+            // create nonce
+            const count2 = await web3.eth.getTransactionCount(walletAddress);
+            console.log("count", count2);
+            const nonce2 = web3.utils.numberToHex(count2);
+            console.log("* nonce2", nonce2);
+            // Mint Reward
+            await mintReward.mintReward(repoSlug2, nonce2);
+            // Get Repo Hash
             await rewardContract.events.Hash({
                 filter: {_from: walletAddress}, 
                 fromBlock: 0
@@ -82,20 +134,28 @@ contract('MintReward', (accounts)=>{
                 console.log(">>> subscriptionId: ", subscriptionId);
             })
             .on('data', async function(event){
-                const returnHash = await event.returnValues._value
-                returnHash.should.equal(repoHash);
+                const returnHash = await event.returnValues._value;
+                const nonce = await event.returnValues.nonce
+                console.log("> nonce 2:", nonce);
+                console.log("> returnHash2", returnHash);
+                // returnHash.should.equal(repoHash2);
             })
             .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
                 console.log(">>> Error: ", error);
             });
-        })
-        
+        });
+
         it('Tokens are sent to the correct repo owner', async () => {
             // Call balanceOf function
             const initialBalance = (await token.balanceOf(walletAddress)).toString();
             const currentReward = await token.getReward();
-
-            await mintReward.mintReward(repoSlug);
+            // create nonce
+            const count3 = await web3.eth.getTransactionCount(walletAddress);
+            console.log("count", count3);
+            const nonce3 = web3.utils.toHex(count3);
+            console.log("nonce", nonce3);
+            // Mint Reward
+            await mintReward.mintReward(repoSlug, nonce3);
             const finalBalance = (await token.balanceOf(walletAddress)).toString();
             // initialBalance.should.not.be.bignumber.equal(finalBalance);
             assert.notEqual(initialBalance, finalBalance);

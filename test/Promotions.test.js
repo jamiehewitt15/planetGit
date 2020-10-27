@@ -3,6 +3,7 @@ const { assert } = require('chai');
 const Promotions = artifacts.require("Promotions");
 const Repository = artifacts.require("Repository");
 const GLDToken = artifacts.require("GLDToken");
+const MintReward = artifacts.require("MintReward");
 
 
 require('chai')
@@ -11,17 +12,27 @@ require('chai')
 
 contract('Promotions', (accounts)=>{
     // Testing the Data smart contract
+    const walletAddress = accounts[0];
     let promotions;
     let repo;
     let token;
-    
+    let mintReward;
+    let repoName;
+    let repoSlug;
+    let repoHash;
+    let owner;
 
     before(async () => {
         // Fetch the smart contract before running tests
         promotions = await Promotions.deployed();
         repo = await Repository.deployed();
         token = await GLDToken.deployed();
-        
+        mintReward = await MintReward.deployed();
+        repoName = 'Promotions Repo 1';
+        repoSlug = 'promotionsRepo1';
+        repoHash = 'ABC3OJNOI12092189443RNJK24R0';
+        await repo.createRepo(repoSlug, repoName, repoHash);
+        owner = await repo.getRepoOwner(repoSlug);
     })
 
     describe('deployment', async()=> { 
@@ -37,11 +48,13 @@ contract('Promotions', (accounts)=>{
 
     describe('Functions', async () => {
         it('Creates a promotion', async () => {
-            const repoName = 'Project Name 1';
-            const repoSlug = 'projectname1';
-            const repoHash = 'X243OJNOIUND98243RNJK24R9';
-            await repo.createRepo(repoSlug, repoName, repoHash);
-            await promotions.createPromotion(repoSlug, 10);
+            const name = await repo.getRepoName(repoSlug)
+            assert.equal(owner, walletAddress);
+            assert.equal(name, repoName);
+            // const thisBalance = parseInt(await token.balanceOf(walletAddress));
+            // console.log("thisBalance:", thisBalance);
+            // await mintReward.mintReward(repoSlug);
+            // await promotions.createPromotion(repoSlug, 10);
         })
 
         it('Token has the correct owner', async () => {

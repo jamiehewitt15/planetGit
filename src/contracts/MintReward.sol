@@ -11,7 +11,7 @@ contract MintReward {
     Repository private repo;
     GLDToken private token;
 
-    event Hash(address indexed _from, string _value);
+    event Hash(address indexed _from, string _value, bytes4 indexed nonce);
 
     constructor(address tokenAddress, address repoAddress) {
         token = GLDToken(tokenAddress);
@@ -19,10 +19,11 @@ contract MintReward {
     }
     
     // Get Repo Name
-    function mintReward(string memory _projectSlug) public {
+    function mintReward(string memory _projectSlug, bytes4 nonce) public {
         address repoOwner = repo.getRepoOwner(_projectSlug);
         token.mintMinerReward(repoOwner);
         string memory repoHash = repo.getRepoHash(_projectSlug);
-        emit Hash(msg.sender, repoHash);
+        
+        emit Hash(msg.sender, repoHash, nonce);
     }
 }
