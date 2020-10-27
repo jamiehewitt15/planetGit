@@ -32,17 +32,24 @@ contract Promotions is Repository{
         require(amount > price, "Value sent must be greater than price."); 
 
         // send money
-        // require(token.transfer(thisOwner, amount) == true, "Could not send tokens");
-        // token.allowance(address(this), amount);
         require(token.transferFrom(msg.sender, address(this), amount) == true, "Could not send tokens");
 
         // Get Repo
         Repo memory promotedRepo = repo.getRepo(_projectSlug);
+
         // Create Promotion
         promotions[_projectSlug] = promotion(promotedRepo, amount);
 
-        // create promotion
-        // livePromotions.push(promo);
+        // Remove lowest paid promotion & Make New Promotion Live
+        for(uint i=0; i < livePromotions.length; i++){
+            if(livePromotions[i].pricePaid == price){
+                livePromotions[i] = promotion(promotedRepo, amount);
+            }
+            if(livePromotions[i].pricePaid <= price){
+                price = livePromotions[i].pricePaid;
+            }
+        }
+        
     }
     // Remove Promotion
     function removePromotion(string memory _projectSlug) public {
