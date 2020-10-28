@@ -40,16 +40,17 @@ contract Promotions is Repository{
         // Create Promotion
         promotions[_projectSlug] = promotion(promotedRepo, amount);
 
-        // Remove lowest paid promotion & Make New Promotion Live
-        for(uint i=0; i < livePromotions.length; i++){
-            if(livePromotions[i].pricePaid == price){
-                livePromotions[i] = promotion(promotedRepo, amount);
-            }
-            if(livePromotions[i].pricePaid <= price){
-                price = livePromotions[i].pricePaid;
-            }
+        // Find lowest paid promotion
+        uint lowestIndex = 0;
+        uint lowestPaid = livePromotions[0].pricePaid;
+        for(uint i = 1; i < livePromotions.length; i++){
+           if(livePromotions[i].pricePaid < lowestPaid){
+               price = lowestPaid;
+               lowestIndex = i;
+           }
         }
-        
+        // Remove lowest paid promotion & Make New Promotion Live
+        livePromotions[lowestIndex] = promotion(promotedRepo, amount);
     }
     // Remove Promotion
     function removePromotion(string memory _projectSlug) public {
