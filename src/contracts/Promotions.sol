@@ -66,8 +66,8 @@ contract Promotions is Repository{
         return promotions[_projectSlug];
     }
 
-    // Get All Promotions
-    // function getAllPromotions() public view returns(Repository[] memory) {
-    //     return price;
-    // }
+    // Get Live Promotions
+    function getAllPromotions() public view returns(promotion[] memory) {
+        return livePromotions;
+    }
 }
