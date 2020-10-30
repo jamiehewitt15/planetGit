@@ -43,15 +43,15 @@
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/OwnershipTransfer.sol",
     "exportedSymbols": {
       "OwnershipTransfer": [
-        277
+        285
       ]
     },
-    "id": 278,
+    "id": 286,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 253,
+        "id": 261,
         "literals": [
           "solidity",
           ">=",
@@ -64,9 +64,9 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 254,
+        "id": 262,
         "nodeType": "ImportDirective",
-        "scope": 278,
+        "scope": 286,
         "sourceUnit": 128,
         "src": "103:24:3",
         "symbolAliases": [],
@@ -78,9 +78,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 277,
+        "id": 285,
         "linearizedBaseContracts": [
-          277
+          285
         ],
         "name": "OwnershipTransfer",
         "nodeType": "ContractDefinition",
@@ -88,11 +88,11 @@
           {
             "constant": false,
             "functionSelector": "fc0c546a",
-            "id": 256,
+            "id": 264,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 277,
+            "scope": 285,
             "src": "171:21:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -101,7 +101,7 @@
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 255,
+              "id": 263,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 127,
@@ -115,23 +115,23 @@
           },
           {
             "body": {
-              "id": 275,
+              "id": 283,
               "nodeType": "Block",
               "src": "257:157:3",
               "statements": [
                 {
                   "expression": {
-                    "id": 267,
+                    "id": 275,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 263,
+                      "id": 271,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 256,
+                      "referencedDeclaration": 264,
                       "src": "268:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_GLDToken_$127",
@@ -143,11 +143,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 265,
+                          "id": 273,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 258,
+                          "referencedDeclaration": 266,
                           "src": "285:12:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -162,7 +162,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 264,
+                        "id": 272,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -173,7 +173,7 @@
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 266,
+                      "id": 274,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -194,7 +194,7 @@
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 268,
+                  "id": 276,
                   "nodeType": "ExpressionStatement",
                   "src": "268:30:3"
                 },
@@ -202,11 +202,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 272,
+                        "id": 280,
                         "name": "newOwner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 260,
+                        "referencedDeclaration": 268,
                         "src": "333:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -222,32 +222,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 269,
+                        "id": 277,
                         "name": "token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 256,
+                        "referencedDeclaration": 264,
                         "src": "309:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_GLDToken_$127",
                           "typeString": "contract GLDToken"
                         }
                       },
-                      "id": 271,
+                      "id": 279,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 736,
+                      "referencedDeclaration": 946,
                       "src": "309:23:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 273,
+                    "id": 281,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -262,29 +262,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 274,
+                  "id": 282,
                   "nodeType": "ExpressionStatement",
                   "src": "309:33:3"
                 }
               ]
             },
-            "id": 276,
+            "id": 284,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 261,
+              "id": 269,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 258,
+                  "id": 266,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 284,
                   "src": "217:20:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -293,7 +293,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 257,
+                    "id": 265,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "217:7:3",
@@ -307,11 +307,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 260,
+                  "id": 268,
                   "mutability": "mutable",
                   "name": "newOwner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 284,
                   "src": "239:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -320,7 +320,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 259,
+                    "id": 267,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "239:7:3",
@@ -336,19 +336,19 @@
               "src": "216:40:3"
             },
             "returnParameters": {
-              "id": 262,
+              "id": 270,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "257:0:3"
             },
-            "scope": 277,
+            "scope": 285,
             "src": "205:209:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 278,
+        "scope": 286,
         "src": "131:294:3"
       }
     ],
@@ -358,15 +358,15 @@
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/OwnershipTransfer.sol",
     "exportedSymbols": {
       "OwnershipTransfer": [
-        277
+        285
       ]
     },
-    "id": 278,
+    "id": 286,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 253,
+        "id": 261,
         "literals": [
           "solidity",
           ">=",
@@ -379,9 +379,9 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 254,
+        "id": 262,
         "nodeType": "ImportDirective",
-        "scope": 278,
+        "scope": 286,
         "sourceUnit": 128,
         "src": "103:24:3",
         "symbolAliases": [],
@@ -393,9 +393,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 277,
+        "id": 285,
         "linearizedBaseContracts": [
-          277
+          285
         ],
         "name": "OwnershipTransfer",
         "nodeType": "ContractDefinition",
@@ -403,11 +403,11 @@
           {
             "constant": false,
             "functionSelector": "fc0c546a",
-            "id": 256,
+            "id": 264,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 277,
+            "scope": 285,
             "src": "171:21:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -416,7 +416,7 @@
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 255,
+              "id": 263,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 127,
@@ -430,23 +430,23 @@
           },
           {
             "body": {
-              "id": 275,
+              "id": 283,
               "nodeType": "Block",
               "src": "257:157:3",
               "statements": [
                 {
                   "expression": {
-                    "id": 267,
+                    "id": 275,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 263,
+                      "id": 271,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 256,
+                      "referencedDeclaration": 264,
                       "src": "268:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_GLDToken_$127",
@@ -458,11 +458,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 265,
+                          "id": 273,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 258,
+                          "referencedDeclaration": 266,
                           "src": "285:12:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -477,7 +477,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 264,
+                        "id": 272,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -488,7 +488,7 @@
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 266,
+                      "id": 274,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -509,7 +509,7 @@
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 268,
+                  "id": 276,
                   "nodeType": "ExpressionStatement",
                   "src": "268:30:3"
                 },
@@ -517,11 +517,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 272,
+                        "id": 280,
                         "name": "newOwner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 260,
+                        "referencedDeclaration": 268,
                         "src": "333:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -537,32 +537,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 269,
+                        "id": 277,
                         "name": "token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 256,
+                        "referencedDeclaration": 264,
                         "src": "309:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_GLDToken_$127",
                           "typeString": "contract GLDToken"
                         }
                       },
-                      "id": 271,
+                      "id": 279,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 736,
+                      "referencedDeclaration": 946,
                       "src": "309:23:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 273,
+                    "id": 281,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -577,29 +577,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 274,
+                  "id": 282,
                   "nodeType": "ExpressionStatement",
                   "src": "309:33:3"
                 }
               ]
             },
-            "id": 276,
+            "id": 284,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 261,
+              "id": 269,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 258,
+                  "id": 266,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 284,
                   "src": "217:20:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -608,7 +608,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 257,
+                    "id": 265,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "217:7:3",
@@ -622,11 +622,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 260,
+                  "id": 268,
                   "mutability": "mutable",
                   "name": "newOwner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 284,
                   "src": "239:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -635,7 +635,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 259,
+                    "id": 267,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "239:7:3",
@@ -651,19 +651,19 @@
               "src": "216:40:3"
             },
             "returnParameters": {
-              "id": 262,
+              "id": 270,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "257:0:3"
             },
-            "scope": 277,
+            "scope": 285,
             "src": "205:209:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 278,
+        "scope": 286,
         "src": "131:294:3"
       }
     ],
@@ -675,7 +675,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-25T18:43:36.528Z",
+  "updatedAt": "2020-10-29T16:05:54.571Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -25,7 +25,12 @@ contract('Promotions', (accounts)=>{
     let repoName;
     let repoSlug;
     let repoHash;
+    let repoName2;
+    let repoSlug2;
+    let repoHash2;
     let owner;
+    const amount = 1000;
+    const amount2 = 2000;
 
     before(async () => {
         // Fetch the smart contract before running tests
@@ -36,7 +41,11 @@ contract('Promotions', (accounts)=>{
         repoName = 'Promotions Repo 1';
         repoSlug = 'promotionsRepo1';
         repoHash = 'ABC3OJNOI12092189443RNJK24R0';
+        repoName2 = 'Promotions Repo 2';
+        repoSlug2 = 'promotionsRepo2';
+        repoHash2 = 'XYZ3OJNOI12092189443RNJK24R1';
         await repo.createRepo(repoSlug, repoName, repoHash);
+        await repo.createRepo(repoSlug2, repoName2, repoHash2);
         owner = await repo.getRepoOwner(repoSlug);
     })
 
@@ -63,7 +72,7 @@ contract('Promotions', (accounts)=>{
             assert.notEqual(initialBalance, middleBalance);
             assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
         
-            const amount = 1000;
+            
             await token.approve(promotions.address, amount)
             await promotions.createPromotion(repoSlug, amount);
             const finalBalance = parseInt(await token.balanceOf(walletAddress));
@@ -76,8 +85,25 @@ contract('Promotions', (accounts)=>{
             assert.equal(retunPromotion.promotedRepo.repoName, repoName);
         })
 
-        it('Token has the correct owner', async () => {
-            
+        it('Live promotions are correctly returned', async () => {
+            const livePromotions = await promotions.getAllPromotions();
+            assert.equal(livePromotions[0].pricePaid, amount);
+            assert.equal(livePromotions[0].promotedRepo.repoHash, repoHash);
+            assert.equal(livePromotions[0].promotedRepo.repoName, repoName);
+            const name2 = await repo.getRepoName(repoSlug2);
+            assert.equal(name2, repoName2);
+
+            await token.approve(promotions.address, amount2)
+            await promotions.createPromotion(repoSlug2, amount2);
+            const livePromotions2 = await promotions.getAllPromotions();
+
+            console.log("livePromotion 2:", livePromotions2[9].pricePaid);
+            console.log("livePromotion 2:", livePromotions2[9].promotedRepo.repoName);
+            console.log("livePromotion 2:", livePromotions2[9].promotedRepo.repoHash);
+
+            assert.equal(livePromotions2[9].pricePaid, amount2);
+            assert.equal(livePromotions2[9].promotedRepo.repoHash, repoHash2);
+            assert.equal(livePromotions2[9].promotedRepo.repoName, repoName2);
         });
         
         

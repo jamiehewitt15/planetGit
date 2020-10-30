@@ -8,6 +8,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Promotions is Repository{
     
+    struct promotion{
+        Repo promotedRepo;
+        uint pricePaid;
+    }
+
     Repository private repo;
     GLDToken private token;
     uint price;
@@ -15,10 +20,8 @@ contract Promotions is Repository{
     mapping (string => promotion) promotions;
     address thisOwner; // Contract owner
     
-    struct promotion{
-        Repo promotedRepo;
-        uint pricePaid;
-    }
+    event Test(address indexed _from, uint price, string _slug, uint index, string name);
+    event Test2(promotion testPromotion);
 
     constructor(address tokenAddress, address repoAddress) Repository(tokenAddress){
         repo = Repository(repoAddress);
@@ -29,7 +32,7 @@ contract Promotions is Repository{
     // Create Promotion
     function createPromotion(string memory _projectSlug, uint amount) public {
         // Check amount
-        require(amount > price, "Value sent must be greater than price."); 
+        require(amount > price, "Value sent must be greater than price.");
 
         // send money
         require(token.transferFrom(msg.sender, address(this), amount) == true, "Could not send tokens");
@@ -44,13 +47,18 @@ contract Promotions is Repository{
         uint lowestIndex = 0;
         uint lowestPaid = livePromotions[0].pricePaid;
         for(uint i = 1; i < livePromotions.length; i++){
-           if(livePromotions[i].pricePaid < lowestPaid){
-               price = lowestPaid;
-               lowestIndex = i;
-           }
+            emit Test(msg.sender, price, _projectSlug, i, "Test 1");
+            if(livePromotions[i].pricePaid < lowestPaid){
+                price = lowestPaid;
+                lowestIndex = i;
+                emit Test(msg.sender, price, _projectSlug, i, "Test 2");
+            }
         }
         // Remove lowest paid promotion & Make New Promotion Live
-        livePromotions[lowestIndex] = promotion(promotedRepo, amount);
+        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 3");
+        Test2(promotions[_projectSlug]);
+        livePromotions[lowestIndex] = promotions[_projectSlug]; // promotion(promotedRepo, amount);
+        Test2(livePromotions[lowestIndex]);
     }
     // Remove Promotion
     function removePromotion(string memory _projectSlug) public {
@@ -67,7 +75,7 @@ contract Promotions is Repository{
     }
 
     // Get Live Promotions
-    function getAllPromotions() public view returns(promotion[] memory) {
+    function getAllPromotions() public view returns(promotion[10] memory) {
         return livePromotions;
     }
 }
