@@ -28,9 +28,13 @@ contract('Promotions', (accounts)=>{
     let repoName2;
     let repoSlug2;
     let repoHash2;
+    let repoName3;
+    let repoSlug3;
+    let repoHash3;
     let owner;
     const amount = 1000;
     const amount2 = 2000;
+    const amount3 = 3000;
 
     before(async () => {
         // Fetch the smart contract before running tests
@@ -44,8 +48,12 @@ contract('Promotions', (accounts)=>{
         repoName2 = 'Promotions Repo 2';
         repoSlug2 = 'promotionsRepo2';
         repoHash2 = 'XYZ3OJNOI12092189443RNJK24R1';
+        repoName3 = 'Promotions Repo 3';
+        repoSlug3 = 'promotionsRepo3';
+        repoHash3 = '3333OJNOI12092189443RNJK24R3';
         await repo.createRepo(repoSlug, repoName, repoHash);
         await repo.createRepo(repoSlug2, repoName2, repoHash2);
+        await repo.createRepo(repoSlug3, repoName3, repoHash3);
         owner = await repo.getRepoOwner(repoSlug);
     })
 
@@ -97,13 +105,23 @@ contract('Promotions', (accounts)=>{
             await promotions.createPromotion(repoSlug2, amount2);
             const livePromotions2 = await promotions.getAllPromotions();
 
-            console.log("livePromotion 2:", livePromotions2[9].pricePaid);
-            console.log("livePromotion 2:", livePromotions2[9].promotedRepo.repoName);
-            console.log("livePromotion 2:", livePromotions2[9].promotedRepo.repoHash);
-
             assert.equal(livePromotions2[9].pricePaid, amount2);
             assert.equal(livePromotions2[9].promotedRepo.repoHash, repoHash2);
             assert.equal(livePromotions2[9].promotedRepo.repoName, repoName2);
+
+            const name3 = await repo.getRepoName(repoSlug3);
+            assert.equal(name3, repoName3);
+            await token.approve(promotions.address, amount3)
+            await promotions.createPromotion(repoSlug3, amount3);
+            const livePromotions3 = await promotions.getAllPromotions();
+
+            console.log("livePromotion 3:", livePromotions3[8].pricePaid);
+            console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoName);
+            console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoHash);
+            
+            assert.equal(livePromotions3[8].pricePaid, amount3);
+            assert.equal(livePromotions3[8].promotedRepo.repoHash, repoHash3);
+            assert.equal(livePromotions3[8].promotedRepo.repoName, repoName3);
         });
         
         
