@@ -17,3 +17,8 @@ body{
 .form-left {
 /* float: left; */
 }
+.createPromotionPage{
+    width:50%;
+    padding-top: 5%;
+    margin: auto;
+}

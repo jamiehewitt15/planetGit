@@ -10,7 +10,8 @@ export default function Header() {
             <h2>The fully distributed git repository</h2>
             <p>Push you code to IPFS and Ethereum</p>
             <Link to="/signup" ><button>Sign Up</button></Link><br /><br />
-            <Link to="/newrepo" ><button>Create a New Repo</button></Link>
+            <Link to="/newrepo" ><button>Create a New Repo</button></Link><br /><br />
+            <Link to="/createpromotion" ><button>Create a Promotion</button></Link>
             <Promotions />
         </div>
       );
