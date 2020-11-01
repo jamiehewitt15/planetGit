@@ -19,8 +19,9 @@ import Repo from './Repo.page.jsx';
 import User from './User.jsx';
 
 
+
 class App extends Component {
-    
+  
   async componentWillMount(){
     await this.loadWeb3();
     await this.loadAccount();
@@ -28,34 +29,26 @@ class App extends Component {
   }
   
   async loadAccount(){
-    const web3 = window.web3;
+    const web3 = window.web3;  
     // Load the ethereum account
     const accounts = await web3.eth.getAccounts();
-    console.log("Accounts: ", accounts);
     this.setState({ account: accounts[0] })
   }
   async loadUserName(){
-    const web3 = window.web3;
+    const web3 = window.web3;  
     // Get smart contract network
     const networkId = await web3.eth.net.getId();
-    console.log("networkId", networkId)
     // Get netwrok address
     const networkData = UserContract.networks[networkId];
     if (networkData){
-      console.log("networkData", networkData);
       const abi = UserContract.abi;
-      console.log("abi: ", abi);
       const address= networkData.address;
-      console.log("address: ", address);
       // Fetch Contract Data
       const contract = web3.eth.Contract(abi, address);
       this.setState({ contract });
-      console.log("Contract", contract);
       try{
         const userName = await contract.methods.getUserName().call();
-        console.log("getUser", userName);
         const allUsers = await contract.methods.getAllUsers().call();
-        console.log("getAllUsers", allUsers);
         if(userName){
           this.setState({ userName })
           console.log("this.state.projectName", this.state.userName)

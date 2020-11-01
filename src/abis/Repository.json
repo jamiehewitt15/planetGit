@@ -275,15 +275,15 @@
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/Repository.sol",
     "exportedSymbols": {
       "Repository": [
-        712
+        737
       ]
     },
-    "id": 713,
+    "id": 738,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 506,
+        "id": 531,
         "literals": [
           "solidity",
           ">=",
@@ -294,7 +294,7 @@
         "src": "33:24:5"
       },
       {
-        "id": 507,
+        "id": 532,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -305,10 +305,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol",
         "file": "./UserContract.sol",
-        "id": 508,
+        "id": 533,
         "nodeType": "ImportDirective",
-        "scope": 713,
-        "sourceUnit": 845,
+        "scope": 738,
+        "sourceUnit": 870,
         "src": "126:28:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -316,9 +316,9 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 509,
+        "id": 534,
         "nodeType": "ImportDirective",
-        "scope": 713,
+        "scope": 738,
         "sourceUnit": 128,
         "src": "198:24:5",
         "symbolAliases": [],
@@ -327,10 +327,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 510,
+        "id": 535,
         "nodeType": "ImportDirective",
-        "scope": 713,
-        "sourceUnit": 977,
+        "scope": 738,
+        "sourceUnit": 1002,
         "src": "224:52:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -340,43 +340,43 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 511,
+              "id": 536,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 976,
+              "referencedDeclaration": 1001,
               "src": "303:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$976",
+                "typeIdentifier": "t_contract$_Ownable_$1001",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 512,
+            "id": 537,
             "nodeType": "InheritanceSpecifier",
             "src": "303:7:5"
           }
         ],
         "contractDependencies": [
-          867,
-          976
+          892,
+          1001
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 712,
+        "id": 737,
         "linearizedBaseContracts": [
-          712,
-          976,
-          867
+          737,
+          1001,
+          892
         ],
         "name": "Repository",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 514,
+            "id": 539,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "324:22:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -385,7 +385,7 @@
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 513,
+              "id": 538,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 127,
@@ -399,23 +399,23 @@
           },
           {
             "body": {
-              "id": 525,
+              "id": 550,
               "nodeType": "Block",
               "src": "393:49:5",
               "statements": [
                 {
                   "expression": {
-                    "id": 523,
+                    "id": 548,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 519,
+                      "id": 544,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 514,
+                      "referencedDeclaration": 539,
                       "src": "404:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_GLDToken_$127",
@@ -427,11 +427,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 521,
+                          "id": 546,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 516,
+                          "referencedDeclaration": 541,
                           "src": "421:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -446,7 +446,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 520,
+                        "id": 545,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -457,7 +457,7 @@
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 522,
+                      "id": 547,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -478,29 +478,29 @@
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 524,
+                  "id": 549,
                   "nodeType": "ExpressionStatement",
                   "src": "404:30:5"
                 }
               ]
             },
-            "id": 526,
+            "id": 551,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 517,
+              "id": 542,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 516,
+                  "id": 541,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 526,
+                  "scope": 551,
                   "src": "371:20:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -509,7 +509,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 515,
+                    "id": 540,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "371:7:5",
@@ -525,12 +525,12 @@
               "src": "370:22:5"
             },
             "returnParameters": {
-              "id": 518,
+              "id": 543,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "393:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "359:83:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -538,15 +538,15 @@
           },
           {
             "canonicalName": "Repository.Repo",
-            "id": 535,
+            "id": 560,
             "members": [
               {
                 "constant": false,
-                "id": 528,
+                "id": 553,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "473:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -555,7 +555,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 527,
+                  "id": 552,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "473:7:5",
@@ -569,11 +569,11 @@
               },
               {
                 "constant": false,
-                "id": 530,
+                "id": 555,
                 "mutability": "mutable",
                 "name": "repoName",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "497:15:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -582,7 +582,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 529,
+                  "id": 554,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "497:6:5",
@@ -595,11 +595,11 @@
               },
               {
                 "constant": false,
-                "id": 532,
+                "id": 557,
                 "mutability": "mutable",
                 "name": "repoHash",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "523:15:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -608,7 +608,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 531,
+                  "id": 556,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "523:6:5",
@@ -621,11 +621,11 @@
               },
               {
                 "constant": false,
-                "id": 534,
+                "id": 559,
                 "mutability": "mutable",
                 "name": "exists",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "549:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -634,7 +634,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 533,
+                  "id": 558,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "549:4:5",
@@ -648,28 +648,28 @@
             ],
             "name": "Repo",
             "nodeType": "StructDefinition",
-            "scope": 712,
+            "scope": 737,
             "src": "450:118:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 539,
+            "id": 564,
             "mutability": "mutable",
             "name": "repoNames",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "608:34:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
               "typeString": "mapping(string => struct Repository.Repo)"
             },
             "typeName": {
-              "id": 538,
+              "id": 563,
               "keyType": {
-                "id": 536,
+                "id": 561,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "617:6:5",
@@ -681,17 +681,17 @@
               "nodeType": "Mapping",
               "src": "608:24:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                 "typeString": "mapping(string => struct Repository.Repo)"
               },
               "valueType": {
-                "id": 537,
+                "id": 562,
                 "name": "Repo",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 535,
+                "referencedDeclaration": 560,
                 "src": "627:4:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                  "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                   "typeString": "struct Repository.Repo"
                 }
               }
@@ -700,22 +700,22 @@
           },
           {
             "constant": false,
-            "id": 545,
+            "id": 570,
             "mutability": "mutable",
             "name": "userRepos",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "686:55:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
               "typeString": "mapping(address => mapping(string => struct Repository.Repo))"
             },
             "typeName": {
-              "id": 544,
+              "id": 569,
               "keyType": {
-                "id": 540,
+                "id": 565,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "695:7:5",
@@ -727,13 +727,13 @@
               "nodeType": "Mapping",
               "src": "686:45:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                 "typeString": "mapping(address => mapping(string => struct Repository.Repo))"
               },
               "valueType": {
-                "id": 543,
+                "id": 568,
                 "keyType": {
-                  "id": 541,
+                  "id": 566,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "715:6:5",
@@ -745,17 +745,17 @@
                 "nodeType": "Mapping",
                 "src": "706:24:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                   "typeString": "mapping(string => struct Repository.Repo)"
                 },
                 "valueType": {
-                  "id": 542,
+                  "id": 567,
                   "name": "Repo",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 535,
+                  "referencedDeclaration": 560,
                   "src": "725:4:5",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                    "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                     "typeString": "struct Repository.Repo"
                   }
                 }
@@ -766,11 +766,11 @@
           {
             "constant": false,
             "functionSelector": "7f3b156f",
-            "id": 548,
+            "id": 573,
             "mutability": "mutable",
             "name": "allRepos",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "748:24:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -780,7 +780,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 546,
+                "id": 571,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "748:6:5",
@@ -789,7 +789,7 @@
                   "typeString": "string"
                 }
               },
-              "id": 547,
+              "id": 572,
               "nodeType": "ArrayTypeName",
               "src": "748:8:5",
               "typeDescriptions": {
@@ -801,7 +801,7 @@
           },
           {
             "body": {
-              "id": 568,
+              "id": 593,
               "nodeType": "Block",
               "src": "901:142:5",
               "statements": [
@@ -811,7 +811,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 560,
+                    "id": 585,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -819,24 +819,24 @@
                     "leftExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 555,
+                          "id": 580,
                           "name": "repoNames",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 539,
+                          "referencedDeclaration": 564,
                           "src": "915:9:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                             "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                           }
                         },
-                        "id": 557,
+                        "id": 582,
                         "indexExpression": {
-                          "id": 556,
+                          "id": 581,
                           "name": "_projectSlug",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 550,
+                          "referencedDeclaration": 575,
                           "src": "925:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -850,18 +850,18 @@
                         "nodeType": "IndexAccess",
                         "src": "915:23:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Repo_$535_storage",
+                          "typeIdentifier": "t_struct$_Repo_$560_storage",
                           "typeString": "struct Repository.Repo storage ref"
                         }
                       },
-                      "id": 558,
+                      "id": 583,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "exists",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 534,
+                      "referencedDeclaration": 559,
                       "src": "915:30:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -872,7 +872,7 @@
                     "operator": "!=",
                     "rightExpression": {
                       "hexValue": "74727565",
-                      "id": 559,
+                      "id": 584,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -893,14 +893,14 @@
                     }
                   },
                   "falseBody": {
-                    "id": 566,
+                    "id": 591,
                     "nodeType": "Block",
                     "src": "997:39:5",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "66616c7365",
-                          "id": 564,
+                          "id": 589,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -914,25 +914,25 @@
                           },
                           "value": "false"
                         },
-                        "functionReturnParameters": 554,
-                        "id": 565,
+                        "functionReturnParameters": 579,
+                        "id": 590,
                         "nodeType": "Return",
                         "src": "1012:12:5"
                       }
                     ]
                   },
-                  "id": 567,
+                  "id": 592,
                   "nodeType": "IfStatement",
                   "src": "912:124:5",
                   "trueBody": {
-                    "id": 563,
+                    "id": 588,
                     "nodeType": "Block",
                     "src": "954:38:5",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "74727565",
-                          "id": 561,
+                          "id": 586,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -946,8 +946,8 @@
                           },
                           "value": "true"
                         },
-                        "functionReturnParameters": 554,
-                        "id": 562,
+                        "functionReturnParameters": 579,
+                        "id": 587,
                         "nodeType": "Return",
                         "src": "969:11:5"
                       }
@@ -957,23 +957,23 @@
               ]
             },
             "functionSelector": "b4bc07c2",
-            "id": 569,
+            "id": 594,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "uniqueRepoSlug",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 551,
+              "id": 576,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 550,
+                  "id": 575,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 569,
+                  "scope": 594,
                   "src": "838:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -982,7 +982,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 549,
+                    "id": 574,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "838:6:5",
@@ -997,16 +997,16 @@
               "src": "837:28:5"
             },
             "returnParameters": {
-              "id": 554,
+              "id": 579,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 553,
+                  "id": 578,
                   "mutability": "mutable",
                   "name": "isUnique",
                   "nodeType": "VariableDeclaration",
-                  "scope": 569,
+                  "scope": 594,
                   "src": "886:13:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1015,7 +1015,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 552,
+                    "id": 577,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "886:4:5",
@@ -1029,7 +1029,7 @@
               ],
               "src": "885:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "814:229:5",
             "stateMutability": "view",
             "virtual": false,
@@ -1037,7 +1037,7 @@
           },
           {
             "body": {
-              "id": 614,
+              "id": 639,
               "nodeType": "Block",
               "src": "1176:296:5",
               "statements": [
@@ -1045,11 +1045,11 @@
                   "condition": {
                     "arguments": [
                       {
-                        "id": 579,
+                        "id": 604,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 571,
+                        "referencedDeclaration": 596,
                         "src": "1205:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1064,18 +1064,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 578,
+                      "id": 603,
                       "name": "uniqueRepoSlug",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 569,
+                      "referencedDeclaration": 594,
                       "src": "1190:14:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$returns$_t_bool_$",
                         "typeString": "function (string memory) view returns (bool)"
                       }
                     },
-                    "id": 580,
+                    "id": 605,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1090,53 +1090,53 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 613,
+                  "id": 638,
                   "nodeType": "IfStatement",
                   "src": "1187:278:5",
                   "trueBody": {
-                    "id": 612,
+                    "id": 637,
                     "nodeType": "Block",
                     "src": "1219:246:5",
                     "statements": [
                       {
                         "assignments": [
-                          582
+                          607
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 582,
+                            "id": 607,
                             "mutability": "mutable",
                             "name": "newRepo",
                             "nodeType": "VariableDeclaration",
-                            "scope": 612,
+                            "scope": 637,
                             "src": "1234:19:5",
                             "stateVariable": false,
                             "storageLocation": "memory",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo"
                             },
                             "typeName": {
-                              "id": 581,
+                              "id": 606,
                               "name": "Repo",
                               "nodeType": "UserDefinedTypeName",
-                              "referencedDeclaration": 535,
+                              "referencedDeclaration": 560,
                               "src": "1234:4:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                                 "typeString": "struct Repository.Repo"
                               }
                             },
                             "visibility": "internal"
                           }
                         ],
-                        "id": 590,
+                        "id": 615,
                         "initialValue": {
                           "arguments": [
                             {
                               "expression": {
-                                "id": 584,
+                                "id": 609,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -1147,7 +1147,7 @@
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 585,
+                              "id": 610,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -1161,11 +1161,11 @@
                               }
                             },
                             {
-                              "id": 586,
+                              "id": 611,
                               "name": "_projectName",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 573,
+                              "referencedDeclaration": 598,
                               "src": "1273:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1173,11 +1173,11 @@
                               }
                             },
                             {
-                              "id": 587,
+                              "id": 612,
                               "name": "_repoHash",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 575,
+                              "referencedDeclaration": 600,
                               "src": "1287:9:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1186,7 +1186,7 @@
                             },
                             {
                               "hexValue": "74727565",
-                              "id": 588,
+                              "id": 613,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -1220,18 +1220,18 @@
                                 "typeString": "bool"
                               }
                             ],
-                            "id": 583,
+                            "id": 608,
                             "name": "Repo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 535,
+                            "referencedDeclaration": 560,
                             "src": "1256:4:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_struct$_Repo_$535_storage_ptr_$",
+                              "typeIdentifier": "t_type$_t_struct$_Repo_$560_storage_ptr_$",
                               "typeString": "type(struct Repository.Repo storage pointer)"
                             }
                           },
-                          "id": 589,
+                          "id": 614,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1242,7 +1242,7 @@
                           "src": "1256:47:5",
                           "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                            "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                             "typeString": "struct Repository.Repo memory"
                           }
                         },
@@ -1251,7 +1251,7 @@
                       },
                       {
                         "expression": {
-                          "id": 598,
+                          "id": 623,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1259,21 +1259,21 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 591,
+                                "id": 616,
                                 "name": "userRepos",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 545,
+                                "referencedDeclaration": 570,
                                 "src": "1318:9:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                                   "typeString": "mapping(address => mapping(string memory => struct Repository.Repo storage ref))"
                                 }
                               },
-                              "id": 595,
+                              "id": 620,
                               "indexExpression": {
                                 "expression": {
-                                  "id": 592,
+                                  "id": 617,
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
@@ -1284,7 +1284,7 @@
                                     "typeString": "msg"
                                   }
                                 },
-                                "id": 593,
+                                "id": 618,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -1304,17 +1304,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1318:21:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                 "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                               }
                             },
-                            "id": 596,
+                            "id": 621,
                             "indexExpression": {
-                              "id": 594,
+                              "id": 619,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1340:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1328,61 +1328,61 @@
                             "nodeType": "IndexAccess",
                             "src": "1318:35:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_storage",
+                              "typeIdentifier": "t_struct$_Repo_$560_storage",
                               "typeString": "struct Repository.Repo storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 597,
+                            "id": 622,
                             "name": "newRepo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 582,
+                            "referencedDeclaration": 607,
                             "src": "1356:7:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo memory"
                             }
                           },
                           "src": "1318:45:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_storage",
+                            "typeIdentifier": "t_struct$_Repo_$560_storage",
                             "typeString": "struct Repository.Repo storage ref"
                           }
                         },
-                        "id": 599,
+                        "id": 624,
                         "nodeType": "ExpressionStatement",
                         "src": "1318:45:5"
                       },
                       {
                         "expression": {
-                          "id": 604,
+                          "id": 629,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "baseExpression": {
-                              "id": 600,
+                              "id": 625,
                               "name": "repoNames",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 539,
+                              "referencedDeclaration": 564,
                               "src": "1378:9:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                 "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                               }
                             },
-                            "id": 602,
+                            "id": 627,
                             "indexExpression": {
-                              "id": 601,
+                              "id": 626,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1388:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1396,31 +1396,31 @@
                             "nodeType": "IndexAccess",
                             "src": "1378:23:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_storage",
+                              "typeIdentifier": "t_struct$_Repo_$560_storage",
                               "typeString": "struct Repository.Repo storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 603,
+                            "id": 628,
                             "name": "newRepo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 582,
+                            "referencedDeclaration": 607,
                             "src": "1404:7:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo memory"
                             }
                           },
                           "src": "1378:33:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_storage",
+                            "typeIdentifier": "t_struct$_Repo_$560_storage",
                             "typeString": "struct Repository.Repo storage ref"
                           }
                         },
-                        "id": 605,
+                        "id": 630,
                         "nodeType": "ExpressionStatement",
                         "src": "1378:33:5"
                       },
@@ -1428,11 +1428,11 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 609,
+                              "id": 634,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1440:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1448,18 +1448,18 @@
                               }
                             ],
                             "expression": {
-                              "id": 606,
+                              "id": 631,
                               "name": "allRepos",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 548,
+                              "referencedDeclaration": 573,
                               "src": "1426:8:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                                 "typeString": "string storage ref[] storage ref"
                               }
                             },
-                            "id": 608,
+                            "id": 633,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1472,7 +1472,7 @@
                               "typeString": "function (string storage ref)"
                             }
                           },
-                          "id": 610,
+                          "id": 635,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1487,7 +1487,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 611,
+                        "id": 636,
                         "nodeType": "ExpressionStatement",
                         "src": "1426:27:5"
                       }
@@ -1497,23 +1497,23 @@
               ]
             },
             "functionSelector": "90ec291d",
-            "id": 615,
+            "id": 640,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 576,
+              "id": 601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 571,
+                  "id": 596,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1089:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1522,7 +1522,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 570,
+                    "id": 595,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1089:6:5",
@@ -1535,11 +1535,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 573,
+                  "id": 598,
                   "mutability": "mutable",
                   "name": "_projectName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1117:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1548,7 +1548,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 572,
+                    "id": 597,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1117:6:5",
@@ -1561,11 +1561,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 575,
+                  "id": 600,
                   "mutability": "mutable",
                   "name": "_repoHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1145:23:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1574,7 +1574,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 574,
+                    "id": 599,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1145:6:5",
@@ -1589,12 +1589,12 @@
               "src": "1088:81:5"
             },
             "returnParameters": {
-              "id": 577,
+              "id": 602,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1176:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1069:403:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1602,7 +1602,7 @@
           },
           {
             "body": {
-              "id": 648,
+              "id": 673,
               "nodeType": "Block",
               "src": "1577:201:5",
               "statements": [
@@ -1612,14 +1612,14 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 628,
+                    "id": 653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-                        "id": 622,
+                        "id": 647,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1630,7 +1630,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 623,
+                      "id": 648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1648,24 +1648,24 @@
                     "rightExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 624,
+                          "id": 649,
                           "name": "repoNames",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 539,
+                          "referencedDeclaration": 564,
                           "src": "1605:9:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                             "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                           }
                         },
-                        "id": 626,
+                        "id": 651,
                         "indexExpression": {
-                          "id": 625,
+                          "id": 650,
                           "name": "_projectSlug",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 617,
+                          "referencedDeclaration": 642,
                           "src": "1615:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -1679,18 +1679,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1605:23:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Repo_$535_storage",
+                          "typeIdentifier": "t_struct$_Repo_$560_storage",
                           "typeString": "struct Repository.Repo storage ref"
                         }
                       },
-                      "id": 627,
+                      "id": 652,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "owner",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 553,
                       "src": "1605:29:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1703,17 +1703,17 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 647,
+                  "id": 672,
                   "nodeType": "IfStatement",
                   "src": "1588:183:5",
                   "trueBody": {
-                    "id": 646,
+                    "id": 671,
                     "nodeType": "Block",
                     "src": "1635:136:5",
                     "statements": [
                       {
                         "expression": {
-                          "id": 637,
+                          "id": 662,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1722,21 +1722,21 @@
                             "expression": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 629,
+                                  "id": 654,
                                   "name": "userRepos",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 545,
+                                  "referencedDeclaration": 570,
                                   "src": "1646:9:5",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                                     "typeString": "mapping(address => mapping(string memory => struct Repository.Repo storage ref))"
                                   }
                                 },
-                                "id": 633,
+                                "id": 658,
                                 "indexExpression": {
                                   "expression": {
-                                    "id": 630,
+                                    "id": 655,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -1747,7 +1747,7 @@
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 631,
+                                  "id": 656,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -1767,17 +1767,17 @@
                                 "nodeType": "IndexAccess",
                                 "src": "1646:21:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                   "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                                 }
                               },
-                              "id": 634,
+                              "id": 659,
                               "indexExpression": {
-                                "id": 632,
+                                "id": 657,
                                 "name": "_projectSlug",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 617,
+                                "referencedDeclaration": 642,
                                 "src": "1668:12:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
@@ -1791,18 +1791,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1646:35:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage",
                                 "typeString": "struct Repository.Repo storage ref"
                               }
                             },
-                            "id": 635,
+                            "id": 660,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": true,
                             "memberName": "repoHash",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 532,
+                            "referencedDeclaration": 557,
                             "src": "1646:44:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_storage",
@@ -1812,11 +1812,11 @@
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 636,
+                            "id": 661,
                             "name": "_repoHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 619,
+                            "referencedDeclaration": 644,
                             "src": "1694:9:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -1829,13 +1829,13 @@
                             "typeString": "string storage ref"
                           }
                         },
-                        "id": 638,
+                        "id": 663,
                         "nodeType": "ExpressionStatement",
                         "src": "1646:57:5"
                       },
                       {
                         "expression": {
-                          "id": 644,
+                          "id": 669,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1843,24 +1843,24 @@
                           "leftHandSide": {
                             "expression": {
                               "baseExpression": {
-                                "id": 639,
+                                "id": 664,
                                 "name": "repoNames",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 539,
+                                "referencedDeclaration": 564,
                                 "src": "1714:9:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                   "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                                 }
                               },
-                              "id": 641,
+                              "id": 666,
                               "indexExpression": {
-                                "id": 640,
+                                "id": 665,
                                 "name": "_projectSlug",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 617,
+                                "referencedDeclaration": 642,
                                 "src": "1724:12:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
@@ -1874,18 +1874,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1714:23:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage",
                                 "typeString": "struct Repository.Repo storage ref"
                               }
                             },
-                            "id": 642,
+                            "id": 667,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": true,
                             "memberName": "repoHash",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 532,
+                            "referencedDeclaration": 557,
                             "src": "1714:32:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_storage",
@@ -1895,11 +1895,11 @@
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 643,
+                            "id": 668,
                             "name": "_repoHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 619,
+                            "referencedDeclaration": 644,
                             "src": "1750:9:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -1912,7 +1912,7 @@
                             "typeString": "string storage ref"
                           }
                         },
-                        "id": 645,
+                        "id": 670,
                         "nodeType": "ExpressionStatement",
                         "src": "1714:45:5"
                       }
@@ -1922,23 +1922,23 @@
               ]
             },
             "functionSelector": "9e20505a",
-            "id": 649,
+            "id": 674,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 620,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 617,
+                  "id": 642,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 674,
                   "src": "1518:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1947,7 +1947,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 616,
+                    "id": 641,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1518:6:5",
@@ -1960,11 +1960,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 619,
+                  "id": 644,
                   "mutability": "mutable",
                   "name": "_repoHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 674,
                   "src": "1546:23:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1973,7 +1973,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 618,
+                    "id": 643,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1546:6:5",
@@ -1988,12 +1988,12 @@
               "src": "1517:53:5"
             },
             "returnParameters": {
-              "id": 621,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1577:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1498:280:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2001,31 +2001,31 @@
           },
           {
             "body": {
-              "id": 660,
+              "id": 685,
               "nodeType": "Block",
               "src": "1878:49:5",
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 656,
+                      "id": 681,
                       "name": "repoNames",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 539,
+                      "referencedDeclaration": 564,
                       "src": "1896:9:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                         "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                       }
                     },
-                    "id": 658,
+                    "id": 683,
                     "indexExpression": {
-                      "id": 657,
+                      "id": 682,
                       "name": "_projectSlug",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 651,
+                      "referencedDeclaration": 676,
                       "src": "1906:12:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -2039,35 +2039,35 @@
                     "nodeType": "IndexAccess",
                     "src": "1896:23:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Repo_$535_storage",
+                      "typeIdentifier": "t_struct$_Repo_$560_storage",
                       "typeString": "struct Repository.Repo storage ref"
                     }
                   },
-                  "functionReturnParameters": 655,
-                  "id": 659,
+                  "functionReturnParameters": 680,
+                  "id": 684,
                   "nodeType": "Return",
                   "src": "1889:30:5"
                 }
               ]
             },
             "functionSelector": "82149bcb",
-            "id": 661,
+            "id": 686,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 652,
+              "id": 677,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 651,
+                  "id": 676,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 661,
+                  "scope": 686,
                   "src": "1817:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2076,7 +2076,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 650,
+                    "id": 675,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1817:6:5",
@@ -2091,31 +2091,31 @@
               "src": "1816:28:5"
             },
             "returnParameters": {
-              "id": 655,
+              "id": 680,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 679,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 661,
+                  "scope": 686,
                   "src": "1865:11:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                    "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                     "typeString": "struct Repository.Repo"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 678,
                     "name": "Repo",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 535,
+                    "referencedDeclaration": 560,
                     "src": "1865:4:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                      "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                       "typeString": "struct Repository.Repo"
                     }
                   },
@@ -2124,7 +2124,7 @@
               ],
               "src": "1864:13:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1800:127:5",
             "stateMutability": "view",
             "virtual": false,
@@ -2132,7 +2132,7 @@
           },
           {
             "body": {
-              "id": 673,
+              "id": 698,
               "nodeType": "Block",
               "src": "2038:58:5",
               "statements": [
@@ -2140,24 +2140,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 668,
+                        "id": 693,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2056:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 670,
+                      "id": 695,
                       "indexExpression": {
-                        "id": 669,
+                        "id": 694,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 663,
+                        "referencedDeclaration": 688,
                         "src": "2066:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2171,49 +2171,49 @@
                       "nodeType": "IndexAccess",
                       "src": "2056:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 671,
+                    "id": 696,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "repoName",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 530,
+                    "referencedDeclaration": 555,
                     "src": "2056:32:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 667,
-                  "id": 672,
+                  "functionReturnParameters": 692,
+                  "id": 697,
                   "nodeType": "Return",
                   "src": "2049:39:5"
                 }
               ]
             },
             "functionSelector": "0446c519",
-            "id": 674,
+            "id": 699,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepoName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 689,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 663,
+                  "id": 688,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 674,
+                  "scope": 699,
                   "src": "1975:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2222,7 +2222,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 662,
+                    "id": 687,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1975:6:5",
@@ -2237,16 +2237,16 @@
               "src": "1974:28:5"
             },
             "returnParameters": {
-              "id": 667,
+              "id": 692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 691,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 674,
+                  "scope": 699,
                   "src": "2023:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2255,7 +2255,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 690,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2023:6:5",
@@ -2269,7 +2269,7 @@
               ],
               "src": "2022:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1954:142:5",
             "stateMutability": "view",
             "virtual": false,
@@ -2277,7 +2277,7 @@
           },
           {
             "body": {
-              "id": 688,
+              "id": 713,
               "nodeType": "Block",
               "src": "2217:58:5",
               "statements": [
@@ -2285,24 +2285,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 683,
+                        "id": 708,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2235:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 685,
+                      "id": 710,
                       "indexExpression": {
-                        "id": 684,
+                        "id": 709,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 676,
+                        "referencedDeclaration": 701,
                         "src": "2245:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2316,44 +2316,44 @@
                       "nodeType": "IndexAccess",
                       "src": "2235:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 686,
+                    "id": 711,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "repoHash",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 532,
+                    "referencedDeclaration": 557,
                     "src": "2235:32:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 682,
-                  "id": 687,
+                  "functionReturnParameters": 707,
+                  "id": 712,
                   "nodeType": "Return",
                   "src": "2228:39:5"
                 }
               ]
             },
             "functionSelector": "f4845d87",
-            "id": 689,
+            "id": 714,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 679,
+                "id": 704,
                 "modifierName": {
-                  "id": 678,
+                  "id": 703,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 925,
+                  "referencedDeclaration": 950,
                   "src": "2179:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2367,16 +2367,16 @@
             "name": "getRepoHash",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 677,
+              "id": 702,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 676,
+                  "id": 701,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 689,
+                  "scope": 714,
                   "src": "2144:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2385,7 +2385,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 675,
+                    "id": 700,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2144:6:5",
@@ -2400,16 +2400,16 @@
               "src": "2143:28:5"
             },
             "returnParameters": {
-              "id": 682,
+              "id": 707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 681,
+                  "id": 706,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 689,
+                  "scope": 714,
                   "src": "2202:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2418,7 +2418,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 680,
+                    "id": 705,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2202:6:5",
@@ -2432,7 +2432,7 @@
               ],
               "src": "2201:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2123:152:5",
             "stateMutability": "view",
             "virtual": false,
@@ -2440,54 +2440,54 @@
           },
           {
             "body": {
-              "id": 697,
+              "id": 722,
               "nodeType": "Block",
               "src": "2363:34:5",
               "statements": [
                 {
                   "expression": {
-                    "id": 695,
+                    "id": 720,
                     "name": "allRepos",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 548,
+                    "referencedDeclaration": 573,
                     "src": "2381:8:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                       "typeString": "string storage ref[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 694,
-                  "id": 696,
+                  "functionReturnParameters": 719,
+                  "id": 721,
                   "nodeType": "Return",
                   "src": "2374:15:5"
                 }
               ]
             },
             "functionSelector": "f5cc98c9",
-            "id": 698,
+            "id": 723,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllRepos",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 690,
+              "id": 715,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2323:2:5"
             },
             "returnParameters": {
-              "id": 694,
+              "id": 719,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 693,
+                  "id": 718,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 698,
+                  "scope": 723,
                   "src": "2346:15:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2497,7 +2497,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 691,
+                      "id": 716,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
                       "src": "2346:6:5",
@@ -2506,7 +2506,7 @@
                         "typeString": "string"
                       }
                     },
-                    "id": 692,
+                    "id": 717,
                     "nodeType": "ArrayTypeName",
                     "src": "2346:8:5",
                     "typeDescriptions": {
@@ -2519,7 +2519,7 @@
               ],
               "src": "2345:17:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2303:94:5",
             "stateMutability": "view",
             "virtual": false,
@@ -2527,7 +2527,7 @@
           },
           {
             "body": {
-              "id": 710,
+              "id": 735,
               "nodeType": "Block",
               "src": "2505:55:5",
               "statements": [
@@ -2535,24 +2535,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 705,
+                        "id": 730,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2523:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 707,
+                      "id": 732,
                       "indexExpression": {
-                        "id": 706,
+                        "id": 731,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 700,
+                        "referencedDeclaration": 725,
                         "src": "2533:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2566,49 +2566,49 @@
                       "nodeType": "IndexAccess",
                       "src": "2523:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 708,
+                    "id": 733,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "owner",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 528,
+                    "referencedDeclaration": 553,
                     "src": "2523:29:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 704,
-                  "id": 709,
+                  "functionReturnParameters": 729,
+                  "id": 734,
                   "nodeType": "Return",
                   "src": "2516:36:5"
                 }
               ]
             },
             "functionSelector": "e2c782a2",
-            "id": 711,
+            "id": 736,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepoOwner",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 701,
+              "id": 726,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 700,
+                  "id": 725,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
+                  "scope": 736,
                   "src": "2448:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2617,7 +2617,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 699,
+                    "id": 724,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2448:6:5",
@@ -2632,16 +2632,16 @@
               "src": "2447:28:5"
             },
             "returnParameters": {
-              "id": 704,
+              "id": 729,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 703,
+                  "id": 728,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
+                  "scope": 736,
                   "src": "2496:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2650,7 +2650,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 702,
+                    "id": 727,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2496:7:5",
@@ -2665,14 +2665,14 @@
               ],
               "src": "2495:9:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2426:134:5",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 713,
+        "scope": 738,
         "src": "280:2289:5"
       }
     ],
@@ -2682,15 +2682,15 @@
     "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/Repository.sol",
     "exportedSymbols": {
       "Repository": [
-        712
+        737
       ]
     },
-    "id": 713,
+    "id": 738,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 506,
+        "id": 531,
         "literals": [
           "solidity",
           ">=",
@@ -2701,7 +2701,7 @@
         "src": "33:24:5"
       },
       {
-        "id": 507,
+        "id": 532,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -2712,10 +2712,10 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol",
         "file": "./UserContract.sol",
-        "id": 508,
+        "id": 533,
         "nodeType": "ImportDirective",
-        "scope": 713,
-        "sourceUnit": 845,
+        "scope": 738,
+        "sourceUnit": 870,
         "src": "126:28:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2723,9 +2723,9 @@
       {
         "absolutePath": "/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol",
         "file": "./GLDToken.sol",
-        "id": 509,
+        "id": 534,
         "nodeType": "ImportDirective",
-        "scope": 713,
+        "scope": 738,
         "sourceUnit": 128,
         "src": "198:24:5",
         "symbolAliases": [],
@@ -2734,10 +2734,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 510,
+        "id": 535,
         "nodeType": "ImportDirective",
-        "scope": 713,
-        "sourceUnit": 977,
+        "scope": 738,
+        "sourceUnit": 1002,
         "src": "224:52:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2747,43 +2747,43 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 511,
+              "id": 536,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 976,
+              "referencedDeclaration": 1001,
               "src": "303:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$976",
+                "typeIdentifier": "t_contract$_Ownable_$1001",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 512,
+            "id": 537,
             "nodeType": "InheritanceSpecifier",
             "src": "303:7:5"
           }
         ],
         "contractDependencies": [
-          867,
-          976
+          892,
+          1001
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 712,
+        "id": 737,
         "linearizedBaseContracts": [
-          712,
-          976,
-          867
+          737,
+          1001,
+          892
         ],
         "name": "Repository",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 514,
+            "id": 539,
             "mutability": "mutable",
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "324:22:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2792,7 +2792,7 @@
               "typeString": "contract GLDToken"
             },
             "typeName": {
-              "id": 513,
+              "id": 538,
               "name": "GLDToken",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 127,
@@ -2806,23 +2806,23 @@
           },
           {
             "body": {
-              "id": 525,
+              "id": 550,
               "nodeType": "Block",
               "src": "393:49:5",
               "statements": [
                 {
                   "expression": {
-                    "id": 523,
+                    "id": 548,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 519,
+                      "id": 544,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 514,
+                      "referencedDeclaration": 539,
                       "src": "404:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_GLDToken_$127",
@@ -2834,11 +2834,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 521,
+                          "id": 546,
                           "name": "tokenAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 516,
+                          "referencedDeclaration": 541,
                           "src": "421:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2853,7 +2853,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 520,
+                        "id": 545,
                         "name": "GLDToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -2864,7 +2864,7 @@
                           "typeString": "type(contract GLDToken)"
                         }
                       },
-                      "id": 522,
+                      "id": 547,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2885,29 +2885,29 @@
                       "typeString": "contract GLDToken"
                     }
                   },
-                  "id": 524,
+                  "id": 549,
                   "nodeType": "ExpressionStatement",
                   "src": "404:30:5"
                 }
               ]
             },
-            "id": 526,
+            "id": 551,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 517,
+              "id": 542,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 516,
+                  "id": 541,
                   "mutability": "mutable",
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 526,
+                  "scope": 551,
                   "src": "371:20:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2916,7 +2916,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 515,
+                    "id": 540,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "371:7:5",
@@ -2932,12 +2932,12 @@
               "src": "370:22:5"
             },
             "returnParameters": {
-              "id": 518,
+              "id": 543,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "393:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "359:83:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2945,15 +2945,15 @@
           },
           {
             "canonicalName": "Repository.Repo",
-            "id": 535,
+            "id": 560,
             "members": [
               {
                 "constant": false,
-                "id": 528,
+                "id": 553,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "473:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2962,7 +2962,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 527,
+                  "id": 552,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "473:7:5",
@@ -2976,11 +2976,11 @@
               },
               {
                 "constant": false,
-                "id": 530,
+                "id": 555,
                 "mutability": "mutable",
                 "name": "repoName",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "497:15:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2989,7 +2989,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 529,
+                  "id": 554,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "497:6:5",
@@ -3002,11 +3002,11 @@
               },
               {
                 "constant": false,
-                "id": 532,
+                "id": 557,
                 "mutability": "mutable",
                 "name": "repoHash",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "523:15:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3015,7 +3015,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 531,
+                  "id": 556,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "523:6:5",
@@ -3028,11 +3028,11 @@
               },
               {
                 "constant": false,
-                "id": 534,
+                "id": 559,
                 "mutability": "mutable",
                 "name": "exists",
                 "nodeType": "VariableDeclaration",
-                "scope": 535,
+                "scope": 560,
                 "src": "549:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3041,7 +3041,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 533,
+                  "id": 558,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "549:4:5",
@@ -3055,28 +3055,28 @@
             ],
             "name": "Repo",
             "nodeType": "StructDefinition",
-            "scope": 712,
+            "scope": 737,
             "src": "450:118:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 539,
+            "id": 564,
             "mutability": "mutable",
             "name": "repoNames",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "608:34:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
               "typeString": "mapping(string => struct Repository.Repo)"
             },
             "typeName": {
-              "id": 538,
+              "id": 563,
               "keyType": {
-                "id": 536,
+                "id": 561,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "617:6:5",
@@ -3088,17 +3088,17 @@
               "nodeType": "Mapping",
               "src": "608:24:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                 "typeString": "mapping(string => struct Repository.Repo)"
               },
               "valueType": {
-                "id": 537,
+                "id": 562,
                 "name": "Repo",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 535,
+                "referencedDeclaration": 560,
                 "src": "627:4:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                  "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                   "typeString": "struct Repository.Repo"
                 }
               }
@@ -3107,22 +3107,22 @@
           },
           {
             "constant": false,
-            "id": 545,
+            "id": 570,
             "mutability": "mutable",
             "name": "userRepos",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "686:55:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
               "typeString": "mapping(address => mapping(string => struct Repository.Repo))"
             },
             "typeName": {
-              "id": 544,
+              "id": 569,
               "keyType": {
-                "id": 540,
+                "id": 565,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "695:7:5",
@@ -3134,13 +3134,13 @@
               "nodeType": "Mapping",
               "src": "686:45:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                 "typeString": "mapping(address => mapping(string => struct Repository.Repo))"
               },
               "valueType": {
-                "id": 543,
+                "id": 568,
                 "keyType": {
-                  "id": 541,
+                  "id": 566,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "715:6:5",
@@ -3152,17 +3152,17 @@
                 "nodeType": "Mapping",
                 "src": "706:24:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                   "typeString": "mapping(string => struct Repository.Repo)"
                 },
                 "valueType": {
-                  "id": 542,
+                  "id": 567,
                   "name": "Repo",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 535,
+                  "referencedDeclaration": 560,
                   "src": "725:4:5",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                    "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                     "typeString": "struct Repository.Repo"
                   }
                 }
@@ -3173,11 +3173,11 @@
           {
             "constant": false,
             "functionSelector": "7f3b156f",
-            "id": 548,
+            "id": 573,
             "mutability": "mutable",
             "name": "allRepos",
             "nodeType": "VariableDeclaration",
-            "scope": 712,
+            "scope": 737,
             "src": "748:24:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3187,7 +3187,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 546,
+                "id": 571,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "748:6:5",
@@ -3196,7 +3196,7 @@
                   "typeString": "string"
                 }
               },
-              "id": 547,
+              "id": 572,
               "nodeType": "ArrayTypeName",
               "src": "748:8:5",
               "typeDescriptions": {
@@ -3208,7 +3208,7 @@
           },
           {
             "body": {
-              "id": 568,
+              "id": 593,
               "nodeType": "Block",
               "src": "901:142:5",
               "statements": [
@@ -3218,7 +3218,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 560,
+                    "id": 585,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3226,24 +3226,24 @@
                     "leftExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 555,
+                          "id": 580,
                           "name": "repoNames",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 539,
+                          "referencedDeclaration": 564,
                           "src": "915:9:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                             "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                           }
                         },
-                        "id": 557,
+                        "id": 582,
                         "indexExpression": {
-                          "id": 556,
+                          "id": 581,
                           "name": "_projectSlug",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 550,
+                          "referencedDeclaration": 575,
                           "src": "925:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -3257,18 +3257,18 @@
                         "nodeType": "IndexAccess",
                         "src": "915:23:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Repo_$535_storage",
+                          "typeIdentifier": "t_struct$_Repo_$560_storage",
                           "typeString": "struct Repository.Repo storage ref"
                         }
                       },
-                      "id": 558,
+                      "id": 583,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "exists",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 534,
+                      "referencedDeclaration": 559,
                       "src": "915:30:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -3279,7 +3279,7 @@
                     "operator": "!=",
                     "rightExpression": {
                       "hexValue": "74727565",
-                      "id": 559,
+                      "id": 584,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3300,14 +3300,14 @@
                     }
                   },
                   "falseBody": {
-                    "id": 566,
+                    "id": 591,
                     "nodeType": "Block",
                     "src": "997:39:5",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "66616c7365",
-                          "id": 564,
+                          "id": 589,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3321,25 +3321,25 @@
                           },
                           "value": "false"
                         },
-                        "functionReturnParameters": 554,
-                        "id": 565,
+                        "functionReturnParameters": 579,
+                        "id": 590,
                         "nodeType": "Return",
                         "src": "1012:12:5"
                       }
                     ]
                   },
-                  "id": 567,
+                  "id": 592,
                   "nodeType": "IfStatement",
                   "src": "912:124:5",
                   "trueBody": {
-                    "id": 563,
+                    "id": 588,
                     "nodeType": "Block",
                     "src": "954:38:5",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "74727565",
-                          "id": 561,
+                          "id": 586,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3353,8 +3353,8 @@
                           },
                           "value": "true"
                         },
-                        "functionReturnParameters": 554,
-                        "id": 562,
+                        "functionReturnParameters": 579,
+                        "id": 587,
                         "nodeType": "Return",
                         "src": "969:11:5"
                       }
@@ -3364,23 +3364,23 @@
               ]
             },
             "functionSelector": "b4bc07c2",
-            "id": 569,
+            "id": 594,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "uniqueRepoSlug",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 551,
+              "id": 576,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 550,
+                  "id": 575,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 569,
+                  "scope": 594,
                   "src": "838:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3389,7 +3389,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 549,
+                    "id": 574,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "838:6:5",
@@ -3404,16 +3404,16 @@
               "src": "837:28:5"
             },
             "returnParameters": {
-              "id": 554,
+              "id": 579,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 553,
+                  "id": 578,
                   "mutability": "mutable",
                   "name": "isUnique",
                   "nodeType": "VariableDeclaration",
-                  "scope": 569,
+                  "scope": 594,
                   "src": "886:13:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3422,7 +3422,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 552,
+                    "id": 577,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "886:4:5",
@@ -3436,7 +3436,7 @@
               ],
               "src": "885:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "814:229:5",
             "stateMutability": "view",
             "virtual": false,
@@ -3444,7 +3444,7 @@
           },
           {
             "body": {
-              "id": 614,
+              "id": 639,
               "nodeType": "Block",
               "src": "1176:296:5",
               "statements": [
@@ -3452,11 +3452,11 @@
                   "condition": {
                     "arguments": [
                       {
-                        "id": 579,
+                        "id": 604,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 571,
+                        "referencedDeclaration": 596,
                         "src": "1205:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3471,18 +3471,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 578,
+                      "id": 603,
                       "name": "uniqueRepoSlug",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 569,
+                      "referencedDeclaration": 594,
                       "src": "1190:14:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$returns$_t_bool_$",
                         "typeString": "function (string memory) view returns (bool)"
                       }
                     },
-                    "id": 580,
+                    "id": 605,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3497,53 +3497,53 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 613,
+                  "id": 638,
                   "nodeType": "IfStatement",
                   "src": "1187:278:5",
                   "trueBody": {
-                    "id": 612,
+                    "id": 637,
                     "nodeType": "Block",
                     "src": "1219:246:5",
                     "statements": [
                       {
                         "assignments": [
-                          582
+                          607
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 582,
+                            "id": 607,
                             "mutability": "mutable",
                             "name": "newRepo",
                             "nodeType": "VariableDeclaration",
-                            "scope": 612,
+                            "scope": 637,
                             "src": "1234:19:5",
                             "stateVariable": false,
                             "storageLocation": "memory",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo"
                             },
                             "typeName": {
-                              "id": 581,
+                              "id": 606,
                               "name": "Repo",
                               "nodeType": "UserDefinedTypeName",
-                              "referencedDeclaration": 535,
+                              "referencedDeclaration": 560,
                               "src": "1234:4:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                                 "typeString": "struct Repository.Repo"
                               }
                             },
                             "visibility": "internal"
                           }
                         ],
-                        "id": 590,
+                        "id": 615,
                         "initialValue": {
                           "arguments": [
                             {
                               "expression": {
-                                "id": 584,
+                                "id": 609,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -3554,7 +3554,7 @@
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 585,
+                              "id": 610,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3568,11 +3568,11 @@
                               }
                             },
                             {
-                              "id": 586,
+                              "id": 611,
                               "name": "_projectName",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 573,
+                              "referencedDeclaration": 598,
                               "src": "1273:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3580,11 +3580,11 @@
                               }
                             },
                             {
-                              "id": 587,
+                              "id": 612,
                               "name": "_repoHash",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 575,
+                              "referencedDeclaration": 600,
                               "src": "1287:9:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3593,7 +3593,7 @@
                             },
                             {
                               "hexValue": "74727565",
-                              "id": 588,
+                              "id": 613,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -3627,18 +3627,18 @@
                                 "typeString": "bool"
                               }
                             ],
-                            "id": 583,
+                            "id": 608,
                             "name": "Repo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 535,
+                            "referencedDeclaration": 560,
                             "src": "1256:4:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_struct$_Repo_$535_storage_ptr_$",
+                              "typeIdentifier": "t_type$_t_struct$_Repo_$560_storage_ptr_$",
                               "typeString": "type(struct Repository.Repo storage pointer)"
                             }
                           },
-                          "id": 589,
+                          "id": 614,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3649,7 +3649,7 @@
                           "src": "1256:47:5",
                           "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                            "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                             "typeString": "struct Repository.Repo memory"
                           }
                         },
@@ -3658,7 +3658,7 @@
                       },
                       {
                         "expression": {
-                          "id": 598,
+                          "id": 623,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3666,21 +3666,21 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 591,
+                                "id": 616,
                                 "name": "userRepos",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 545,
+                                "referencedDeclaration": 570,
                                 "src": "1318:9:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                                   "typeString": "mapping(address => mapping(string memory => struct Repository.Repo storage ref))"
                                 }
                               },
-                              "id": 595,
+                              "id": 620,
                               "indexExpression": {
                                 "expression": {
-                                  "id": 592,
+                                  "id": 617,
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
@@ -3691,7 +3691,7 @@
                                     "typeString": "msg"
                                   }
                                 },
-                                "id": 593,
+                                "id": 618,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3711,17 +3711,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1318:21:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                 "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                               }
                             },
-                            "id": 596,
+                            "id": 621,
                             "indexExpression": {
-                              "id": 594,
+                              "id": 619,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1340:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3735,61 +3735,61 @@
                             "nodeType": "IndexAccess",
                             "src": "1318:35:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_storage",
+                              "typeIdentifier": "t_struct$_Repo_$560_storage",
                               "typeString": "struct Repository.Repo storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 597,
+                            "id": 622,
                             "name": "newRepo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 582,
+                            "referencedDeclaration": 607,
                             "src": "1356:7:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo memory"
                             }
                           },
                           "src": "1318:45:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_storage",
+                            "typeIdentifier": "t_struct$_Repo_$560_storage",
                             "typeString": "struct Repository.Repo storage ref"
                           }
                         },
-                        "id": 599,
+                        "id": 624,
                         "nodeType": "ExpressionStatement",
                         "src": "1318:45:5"
                       },
                       {
                         "expression": {
-                          "id": 604,
+                          "id": 629,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "baseExpression": {
-                              "id": 600,
+                              "id": 625,
                               "name": "repoNames",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 539,
+                              "referencedDeclaration": 564,
                               "src": "1378:9:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                 "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                               }
                             },
-                            "id": 602,
+                            "id": 627,
                             "indexExpression": {
-                              "id": 601,
+                              "id": 626,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1388:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3803,31 +3803,31 @@
                             "nodeType": "IndexAccess",
                             "src": "1378:23:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_storage",
+                              "typeIdentifier": "t_struct$_Repo_$560_storage",
                               "typeString": "struct Repository.Repo storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 603,
+                            "id": 628,
                             "name": "newRepo",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 582,
+                            "referencedDeclaration": 607,
                             "src": "1404:7:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                              "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                               "typeString": "struct Repository.Repo memory"
                             }
                           },
                           "src": "1378:33:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Repo_$535_storage",
+                            "typeIdentifier": "t_struct$_Repo_$560_storage",
                             "typeString": "struct Repository.Repo storage ref"
                           }
                         },
-                        "id": 605,
+                        "id": 630,
                         "nodeType": "ExpressionStatement",
                         "src": "1378:33:5"
                       },
@@ -3835,11 +3835,11 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 609,
+                              "id": 634,
                               "name": "_projectSlug",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 571,
+                              "referencedDeclaration": 596,
                               "src": "1440:12:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3855,18 +3855,18 @@
                               }
                             ],
                             "expression": {
-                              "id": 606,
+                              "id": 631,
                               "name": "allRepos",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 548,
+                              "referencedDeclaration": 573,
                               "src": "1426:8:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                                 "typeString": "string storage ref[] storage ref"
                               }
                             },
-                            "id": 608,
+                            "id": 633,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3879,7 +3879,7 @@
                               "typeString": "function (string storage ref)"
                             }
                           },
-                          "id": 610,
+                          "id": 635,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3894,7 +3894,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 611,
+                        "id": 636,
                         "nodeType": "ExpressionStatement",
                         "src": "1426:27:5"
                       }
@@ -3904,23 +3904,23 @@
               ]
             },
             "functionSelector": "90ec291d",
-            "id": 615,
+            "id": 640,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 576,
+              "id": 601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 571,
+                  "id": 596,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1089:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3929,7 +3929,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 570,
+                    "id": 595,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1089:6:5",
@@ -3942,11 +3942,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 573,
+                  "id": 598,
                   "mutability": "mutable",
                   "name": "_projectName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1117:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3955,7 +3955,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 572,
+                    "id": 597,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1117:6:5",
@@ -3968,11 +3968,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 575,
+                  "id": 600,
                   "mutability": "mutable",
                   "name": "_repoHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 640,
                   "src": "1145:23:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3981,7 +3981,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 574,
+                    "id": 599,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1145:6:5",
@@ -3996,12 +3996,12 @@
               "src": "1088:81:5"
             },
             "returnParameters": {
-              "id": 577,
+              "id": 602,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1176:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1069:403:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4009,7 +4009,7 @@
           },
           {
             "body": {
-              "id": 648,
+              "id": 673,
               "nodeType": "Block",
               "src": "1577:201:5",
               "statements": [
@@ -4019,14 +4019,14 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 628,
+                    "id": 653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-                        "id": 622,
+                        "id": 647,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -4037,7 +4037,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 623,
+                      "id": 648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4055,24 +4055,24 @@
                     "rightExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 624,
+                          "id": 649,
                           "name": "repoNames",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 539,
+                          "referencedDeclaration": 564,
                           "src": "1605:9:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                             "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                           }
                         },
-                        "id": 626,
+                        "id": 651,
                         "indexExpression": {
-                          "id": 625,
+                          "id": 650,
                           "name": "_projectSlug",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 617,
+                          "referencedDeclaration": 642,
                           "src": "1615:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -4086,18 +4086,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1605:23:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Repo_$535_storage",
+                          "typeIdentifier": "t_struct$_Repo_$560_storage",
                           "typeString": "struct Repository.Repo storage ref"
                         }
                       },
-                      "id": 627,
+                      "id": 652,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "owner",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 553,
                       "src": "1605:29:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -4110,17 +4110,17 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 647,
+                  "id": 672,
                   "nodeType": "IfStatement",
                   "src": "1588:183:5",
                   "trueBody": {
-                    "id": 646,
+                    "id": 671,
                     "nodeType": "Block",
                     "src": "1635:136:5",
                     "statements": [
                       {
                         "expression": {
-                          "id": 637,
+                          "id": 662,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4129,21 +4129,21 @@
                             "expression": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 629,
+                                  "id": 654,
                                   "name": "userRepos",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 545,
+                                  "referencedDeclaration": 570,
                                   "src": "1646:9:5",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$_$",
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$_$",
                                     "typeString": "mapping(address => mapping(string memory => struct Repository.Repo storage ref))"
                                   }
                                 },
-                                "id": 633,
+                                "id": 658,
                                 "indexExpression": {
                                   "expression": {
-                                    "id": 630,
+                                    "id": 655,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -4154,7 +4154,7 @@
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 631,
+                                  "id": 656,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -4174,17 +4174,17 @@
                                 "nodeType": "IndexAccess",
                                 "src": "1646:21:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                   "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                                 }
                               },
-                              "id": 634,
+                              "id": 659,
                               "indexExpression": {
-                                "id": 632,
+                                "id": 657,
                                 "name": "_projectSlug",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 617,
+                                "referencedDeclaration": 642,
                                 "src": "1668:12:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
@@ -4198,18 +4198,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1646:35:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage",
                                 "typeString": "struct Repository.Repo storage ref"
                               }
                             },
-                            "id": 635,
+                            "id": 660,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": true,
                             "memberName": "repoHash",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 532,
+                            "referencedDeclaration": 557,
                             "src": "1646:44:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_storage",
@@ -4219,11 +4219,11 @@
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 636,
+                            "id": 661,
                             "name": "_repoHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 619,
+                            "referencedDeclaration": 644,
                             "src": "1694:9:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -4236,13 +4236,13 @@
                             "typeString": "string storage ref"
                           }
                         },
-                        "id": 638,
+                        "id": 663,
                         "nodeType": "ExpressionStatement",
                         "src": "1646:57:5"
                       },
                       {
                         "expression": {
-                          "id": 644,
+                          "id": 669,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4250,24 +4250,24 @@
                           "leftHandSide": {
                             "expression": {
                               "baseExpression": {
-                                "id": 639,
+                                "id": 664,
                                 "name": "repoNames",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 539,
+                                "referencedDeclaration": 564,
                                 "src": "1714:9:5",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                                   "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                                 }
                               },
-                              "id": 641,
+                              "id": 666,
                               "indexExpression": {
-                                "id": 640,
+                                "id": 665,
                                 "name": "_projectSlug",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 617,
+                                "referencedDeclaration": 642,
                                 "src": "1724:12:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
@@ -4281,18 +4281,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1714:23:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Repo_$535_storage",
+                                "typeIdentifier": "t_struct$_Repo_$560_storage",
                                 "typeString": "struct Repository.Repo storage ref"
                               }
                             },
-                            "id": 642,
+                            "id": 667,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": true,
                             "memberName": "repoHash",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 532,
+                            "referencedDeclaration": 557,
                             "src": "1714:32:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_storage",
@@ -4302,11 +4302,11 @@
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 643,
+                            "id": 668,
                             "name": "_repoHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 619,
+                            "referencedDeclaration": 644,
                             "src": "1750:9:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -4319,7 +4319,7 @@
                             "typeString": "string storage ref"
                           }
                         },
-                        "id": 645,
+                        "id": 670,
                         "nodeType": "ExpressionStatement",
                         "src": "1714:45:5"
                       }
@@ -4329,23 +4329,23 @@
               ]
             },
             "functionSelector": "9e20505a",
-            "id": 649,
+            "id": 674,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 620,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 617,
+                  "id": 642,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 674,
                   "src": "1518:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4354,7 +4354,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 616,
+                    "id": 641,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1518:6:5",
@@ -4367,11 +4367,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 619,
+                  "id": 644,
                   "mutability": "mutable",
                   "name": "_repoHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 649,
+                  "scope": 674,
                   "src": "1546:23:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4380,7 +4380,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 618,
+                    "id": 643,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1546:6:5",
@@ -4395,12 +4395,12 @@
               "src": "1517:53:5"
             },
             "returnParameters": {
-              "id": 621,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1577:0:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1498:280:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4408,31 +4408,31 @@
           },
           {
             "body": {
-              "id": 660,
+              "id": 685,
               "nodeType": "Block",
               "src": "1878:49:5",
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 656,
+                      "id": 681,
                       "name": "repoNames",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 539,
+                      "referencedDeclaration": 564,
                       "src": "1896:9:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                         "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                       }
                     },
-                    "id": 658,
+                    "id": 683,
                     "indexExpression": {
-                      "id": 657,
+                      "id": 682,
                       "name": "_projectSlug",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 651,
+                      "referencedDeclaration": 676,
                       "src": "1906:12:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -4446,35 +4446,35 @@
                     "nodeType": "IndexAccess",
                     "src": "1896:23:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Repo_$535_storage",
+                      "typeIdentifier": "t_struct$_Repo_$560_storage",
                       "typeString": "struct Repository.Repo storage ref"
                     }
                   },
-                  "functionReturnParameters": 655,
-                  "id": 659,
+                  "functionReturnParameters": 680,
+                  "id": 684,
                   "nodeType": "Return",
                   "src": "1889:30:5"
                 }
               ]
             },
             "functionSelector": "82149bcb",
-            "id": 661,
+            "id": 686,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 652,
+              "id": 677,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 651,
+                  "id": 676,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 661,
+                  "scope": 686,
                   "src": "1817:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4483,7 +4483,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 650,
+                    "id": 675,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1817:6:5",
@@ -4498,31 +4498,31 @@
               "src": "1816:28:5"
             },
             "returnParameters": {
-              "id": 655,
+              "id": 680,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 679,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 661,
+                  "scope": 686,
                   "src": "1865:11:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Repo_$535_memory_ptr",
+                    "typeIdentifier": "t_struct$_Repo_$560_memory_ptr",
                     "typeString": "struct Repository.Repo"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 678,
                     "name": "Repo",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 535,
+                    "referencedDeclaration": 560,
                     "src": "1865:4:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Repo_$535_storage_ptr",
+                      "typeIdentifier": "t_struct$_Repo_$560_storage_ptr",
                       "typeString": "struct Repository.Repo"
                     }
                   },
@@ -4531,7 +4531,7 @@
               ],
               "src": "1864:13:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1800:127:5",
             "stateMutability": "view",
             "virtual": false,
@@ -4539,7 +4539,7 @@
           },
           {
             "body": {
-              "id": 673,
+              "id": 698,
               "nodeType": "Block",
               "src": "2038:58:5",
               "statements": [
@@ -4547,24 +4547,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 668,
+                        "id": 693,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2056:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 670,
+                      "id": 695,
                       "indexExpression": {
-                        "id": 669,
+                        "id": 694,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 663,
+                        "referencedDeclaration": 688,
                         "src": "2066:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4578,49 +4578,49 @@
                       "nodeType": "IndexAccess",
                       "src": "2056:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 671,
+                    "id": 696,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "repoName",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 530,
+                    "referencedDeclaration": 555,
                     "src": "2056:32:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 667,
-                  "id": 672,
+                  "functionReturnParameters": 692,
+                  "id": 697,
                   "nodeType": "Return",
                   "src": "2049:39:5"
                 }
               ]
             },
             "functionSelector": "0446c519",
-            "id": 674,
+            "id": 699,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepoName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 689,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 663,
+                  "id": 688,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 674,
+                  "scope": 699,
                   "src": "1975:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4629,7 +4629,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 662,
+                    "id": 687,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1975:6:5",
@@ -4644,16 +4644,16 @@
               "src": "1974:28:5"
             },
             "returnParameters": {
-              "id": 667,
+              "id": 692,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 691,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 674,
+                  "scope": 699,
                   "src": "2023:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4662,7 +4662,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 690,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2023:6:5",
@@ -4676,7 +4676,7 @@
               ],
               "src": "2022:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "1954:142:5",
             "stateMutability": "view",
             "virtual": false,
@@ -4684,7 +4684,7 @@
           },
           {
             "body": {
-              "id": 688,
+              "id": 713,
               "nodeType": "Block",
               "src": "2217:58:5",
               "statements": [
@@ -4692,24 +4692,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 683,
+                        "id": 708,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2235:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 685,
+                      "id": 710,
                       "indexExpression": {
-                        "id": 684,
+                        "id": 709,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 676,
+                        "referencedDeclaration": 701,
                         "src": "2245:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4723,44 +4723,44 @@
                       "nodeType": "IndexAccess",
                       "src": "2235:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 686,
+                    "id": 711,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "repoHash",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 532,
+                    "referencedDeclaration": 557,
                     "src": "2235:32:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 682,
-                  "id": 687,
+                  "functionReturnParameters": 707,
+                  "id": 712,
                   "nodeType": "Return",
                   "src": "2228:39:5"
                 }
               ]
             },
             "functionSelector": "f4845d87",
-            "id": 689,
+            "id": 714,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 679,
+                "id": 704,
                 "modifierName": {
-                  "id": 678,
+                  "id": 703,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 925,
+                  "referencedDeclaration": 950,
                   "src": "2179:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4774,16 +4774,16 @@
             "name": "getRepoHash",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 677,
+              "id": 702,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 676,
+                  "id": 701,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 689,
+                  "scope": 714,
                   "src": "2144:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4792,7 +4792,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 675,
+                    "id": 700,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2144:6:5",
@@ -4807,16 +4807,16 @@
               "src": "2143:28:5"
             },
             "returnParameters": {
-              "id": 682,
+              "id": 707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 681,
+                  "id": 706,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 689,
+                  "scope": 714,
                   "src": "2202:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4825,7 +4825,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 680,
+                    "id": 705,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2202:6:5",
@@ -4839,7 +4839,7 @@
               ],
               "src": "2201:15:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2123:152:5",
             "stateMutability": "view",
             "virtual": false,
@@ -4847,54 +4847,54 @@
           },
           {
             "body": {
-              "id": 697,
+              "id": 722,
               "nodeType": "Block",
               "src": "2363:34:5",
               "statements": [
                 {
                   "expression": {
-                    "id": 695,
+                    "id": 720,
                     "name": "allRepos",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 548,
+                    "referencedDeclaration": 573,
                     "src": "2381:8:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                       "typeString": "string storage ref[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 694,
-                  "id": 696,
+                  "functionReturnParameters": 719,
+                  "id": 721,
                   "nodeType": "Return",
                   "src": "2374:15:5"
                 }
               ]
             },
             "functionSelector": "f5cc98c9",
-            "id": 698,
+            "id": 723,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllRepos",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 690,
+              "id": 715,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2323:2:5"
             },
             "returnParameters": {
-              "id": 694,
+              "id": 719,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 693,
+                  "id": 718,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 698,
+                  "scope": 723,
                   "src": "2346:15:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -4904,7 +4904,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 691,
+                      "id": 716,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
                       "src": "2346:6:5",
@@ -4913,7 +4913,7 @@
                         "typeString": "string"
                       }
                     },
-                    "id": 692,
+                    "id": 717,
                     "nodeType": "ArrayTypeName",
                     "src": "2346:8:5",
                     "typeDescriptions": {
@@ -4926,7 +4926,7 @@
               ],
               "src": "2345:17:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2303:94:5",
             "stateMutability": "view",
             "virtual": false,
@@ -4934,7 +4934,7 @@
           },
           {
             "body": {
-              "id": 710,
+              "id": 735,
               "nodeType": "Block",
               "src": "2505:55:5",
               "statements": [
@@ -4942,24 +4942,24 @@
                   "expression": {
                     "expression": {
                       "baseExpression": {
-                        "id": 705,
+                        "id": 730,
                         "name": "repoNames",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 539,
+                        "referencedDeclaration": 564,
                         "src": "2523:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$535_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Repo_$560_storage_$",
                           "typeString": "mapping(string memory => struct Repository.Repo storage ref)"
                         }
                       },
-                      "id": 707,
+                      "id": 732,
                       "indexExpression": {
-                        "id": 706,
+                        "id": 731,
                         "name": "_projectSlug",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 700,
+                        "referencedDeclaration": 725,
                         "src": "2533:12:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4973,49 +4973,49 @@
                       "nodeType": "IndexAccess",
                       "src": "2523:23:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Repo_$535_storage",
+                        "typeIdentifier": "t_struct$_Repo_$560_storage",
                         "typeString": "struct Repository.Repo storage ref"
                       }
                     },
-                    "id": 708,
+                    "id": 733,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "owner",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 528,
+                    "referencedDeclaration": 553,
                     "src": "2523:29:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 704,
-                  "id": 709,
+                  "functionReturnParameters": 729,
+                  "id": 734,
                   "nodeType": "Return",
                   "src": "2516:36:5"
                 }
               ]
             },
             "functionSelector": "e2c782a2",
-            "id": 711,
+            "id": 736,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getRepoOwner",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 701,
+              "id": 726,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 700,
+                  "id": 725,
                   "mutability": "mutable",
                   "name": "_projectSlug",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
+                  "scope": 736,
                   "src": "2448:26:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -5024,7 +5024,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 699,
+                    "id": 724,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2448:6:5",
@@ -5039,16 +5039,16 @@
               "src": "2447:28:5"
             },
             "returnParameters": {
-              "id": 704,
+              "id": 729,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 703,
+                  "id": 728,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
+                  "scope": 736,
                   "src": "2496:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5057,7 +5057,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 702,
+                    "id": 727,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2496:7:5",
@@ -5072,14 +5072,14 @@
               ],
               "src": "2495:9:5"
             },
-            "scope": 712,
+            "scope": 737,
             "src": "2426:134:5",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 713,
+        "scope": 738,
         "src": "280:2289:5"
       }
     ],
@@ -5113,12 +5113,12 @@
         }
       },
       "links": {},
-      "address": "0x7542d8006c8a6Af924608F26c5A3Ee2970C1505A",
-      "transactionHash": "0x92cb5c6ed4af80578ecea812749e159effe3a067560b02edf996d58f326eb451"
+      "address": "0xC3A38D641323863098e41d54f7032aE5B2dAE0CA",
+      "transactionHash": "0xff4f4dbd24f2a8ea0079991af6693a83e2d0b6de3f86027b1b8311ab48dbeb36"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-30T07:37:40.066Z",
+  "updatedAt": "2020-11-01T07:19:33.799Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
