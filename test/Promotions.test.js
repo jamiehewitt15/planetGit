@@ -79,7 +79,7 @@ contract('Promotions', (accounts)=>{
             await mintReward.mintReward(repoSlug, nonce);
             const middleBalance = parseInt(await token.balanceOf(walletAddress));
             console.log("initialBalance", initialBalance);
-            assert.notEqual(middleBalance, middleBalance);
+            assert.notEqual(initialBalance, middleBalance);
             assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
         
             
