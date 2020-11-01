@@ -70,13 +70,15 @@ contract('Promotions', (accounts)=>{
 
     describe('Functions', async () => {
         it('Creates a promotion', async () => {
-            const name = await repo.getRepoName(repoSlug)
+            const name = await repo.getRepoName(repoSlug);
             assert.equal(owner, walletAddress);
             assert.equal(name, repoName);
             const initialBalance = parseInt(await token.balanceOf(walletAddress));
+            console.log("initialBalance", initialBalance)
             const nonce = web3.utils.randomHex(4); 
             await mintReward.mintReward(repoSlug, nonce);
             const middleBalance = parseInt(await token.balanceOf(walletAddress));
+            console.log("initialBalance", initialBalance);
             assert.notEqual(initialBalance, middleBalance);
             assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
         
@@ -84,6 +86,7 @@ contract('Promotions', (accounts)=>{
             await token.approve(promotions.address, amount);
             await promotions.createPromotion(repoSlug, amount);
             const finalBalance = parseInt(await token.balanceOf(walletAddress));
+            console.log("initialBalance", initialBalance);
             assert.notEqual(finalBalance, middleBalance);
             assert.isAbove(middleBalance, finalBalance, 'Final balance is greater than middle balance');
         
@@ -95,6 +98,7 @@ contract('Promotions', (accounts)=>{
 
         it('Live promotions are correctly returned', async () => {
             const livePromotions = await promotions.getAllPromotions();
+            console.log("livePromotions", livePromotions)
             assert.equal(livePromotions[0].pricePaid, amount);
             assert.equal(livePromotions[0].promotedRepo.repoHash, repoHash);
             assert.equal(livePromotions[0].promotedRepo.repoName, repoName);

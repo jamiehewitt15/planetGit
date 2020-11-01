@@ -137,7 +137,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -173,7 +174,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -214,7 +216,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -233,7 +236,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -252,7 +256,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -271,7 +276,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -317,7 +323,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -330,7 +337,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -369,7 +377,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -431,7 +440,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -484,7 +494,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -531,7 +542,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"repoAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_slug\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"Test\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"repoName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"repoHash\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct Repository.Repo\",\"name\":\"promotedRepo\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"pricePaid\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct Promotions.promotion\",\"name\":\"testPromotion\",\"type\":\"tuple\"}],\"name\":\"Test2\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"allRepos\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"createPromotion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_projectName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_repoHash\",\"type\":\"string\"}],\"name\":\"createRepo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllPromotions\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"repoName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"repoHash\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct Repository.Repo\",\"name\":\"promotedRepo\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"pricePaid\",\"type\":\"uint256\"}],\"internalType\":\"struct Promotions.promotion[10]\",\"name\":\"\",\"type\":\"tuple[10]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllRepos\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"getPromotion\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"repoName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"repoHash\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct Repository.Repo\",\"name\":\"promotedRepo\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"pricePaid\",\"type\":\"uint256\"}],\"internalType\":\"struct Promotions.promotion\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"getRepo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"repoName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"repoHash\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct Repository.Repo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"getRepoHash\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"getRepoName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"getRepoOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"livePromotions\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"repoName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"repoHash\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct Repository.Repo\",\"name\":\"promotedRepo\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"pricePaid\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"removePromotion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"}],\"name\":\"uniqueRepoSlug\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isUnique\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_projectSlug\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_repoHash\",\"type\":\"string\"}],\"name\":\"updateRepo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/Promotions.sol\":\"Promotions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/GLDToken.sol\":{\"keccak256\":\"0x1c740eccc0f427a7f081fcf7c16ed904a04e464f76af7fce95957304e66b2013\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9a9b7cc1aac111924f3046476fa34a15ffeb45df67f3a37b76f692cf974d59e8\",\"dweb:/ipfs/QmUrY1YF4zsZBxFV8QfTYeiAiScHpNtAK6PpYqRSnviCCK\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/Promotions.sol\":{\"keccak256\":\"0xfe9fe37a60bfd9efa6f797093dae604ac55e81a107cb9617bc651a230318e7c2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a7a2fbbb720146b8e278afc359f228be4a7c72be73b0ffe5c3bcab349bb67d88\",\"dweb:/ipfs/QmTk1pFDv4D294BQVnK9JvvU3c42YwC4hsw17wNnVgx3AJ\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/Repository.sol\":{\"keccak256\":\"0x4996144954a068cb3d7b36d32cf421e5dc48a2f9023a4455530cac9067b98ed9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da60779c4d105cfff0091dba13a91416fe441dbd51e9d303af1f6ab733d3a91e\",\"dweb:/ipfs/QmYUBA7nbvZXHBHatQyaJbdFK15DrQgS1kkhA5y317U6sa\"]},\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol\":{\"keccak256\":\"0x6a3fb614e0cd68dec847b34505479725d88fe0f911cd81a7e95b9da748df8657\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://086b94e9caa21b0473b225517246a470b13faf39d3d7faad99dfe7b1c72e66eb\",\"dweb:/ipfs/QmS9bLNY3Z3vE2yXPgHsm2GspyQuPeL2Mz8aJYQukd5mYJ\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x910a2e625b71168563edf9eeef55a50d6d699acfe27ceba3921f291829a8f938\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://248246ac66e6479dce1ad7d4945ec5540c98ceb09881e93c93f7c48d5772925c\",\"dweb:/ipfs/QmXr8tmUiZgEYid6ixeeBRmTdUnASWjKzhP3KRxMPy8fRt\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x74b0525c81e47810f1bd795755962bdb84de3a4f71cfcb063f4c4d4999a3e96b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1cd0b71a794900681c8bcc255599fac53c211fc6a530a58d7dd7246bfde6c4f5\",\"dweb:/ipfs/QmdAB1mFyuN2i25DRf9szWgp1FLCByqJ4F8aYzXWe3mfTR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xba96bc371ba999f452985a98717cca1e4c4abb598dc038a9a9c3db08129b1ba4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e50e3f7b6482fb6f598f2e006994a74aa492687daa4b3eee7fd4fb5398ce7f\",\"dweb:/ipfs/QmZudqoPSkA4USLMFsBBmt19dDPZFS8aaAmL5R7pECXu6t\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xaeb6a782d9ae2dd3b4070369ffb74c7503e17b00f478bf184a8db2ab9654a527\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc4b19578e6b2f133126923f038d1844963b3e15ccfc742f9b2bdefff5ba6ea7\",\"dweb:/ipfs/QmfAHZRtkzVkBHVdTGnowxvGJuXYQdwq6Je3tnj7auqB9s\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xbd74f587ab9b9711801baf667db1426e4a03fd2d7f15af33e0e0d0394e7cef76\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d0913dfbfce90d170df0d496ad7596c0778518e5fa7aba6c32562522546f66b\",\"dweb:/ipfs/QmR6B8nLj2PJf5e1JWD9Nk7ErkAwkqUwadCnvE82FJr1RU\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x698f929f1097637d051976b322a2d532c27df022b09010e8d091e2888a5ebdf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bd4c9419d1182612ef415c60a83a9039b227fccb799937963448114c0473b58\",\"dweb:/ipfs/Qmat1U571v55F5JDDHHX7igGcmLF8Ehk9CzsWpjbdx3RTH\"]}},\"version\":1}",
@@ -6792,12 +6804,13 @@
         }
       },
       "links": {},
-      "address": "0x6bC0F943F192febC9e5B3B1C4EF8C8e6464676B6",
-      "transactionHash": "0x2eadcfbc1d85fee5a411cdc3b5444dd5506609bea52514b8f1cca19d2bdab6c9"
+      "address": "0xA13Fc4Bb78DC1a3e8F7Dfc63f4b98dbB213cb1b7",
+      "transactionHash": "0x03650c9a9ffbe108f45627d014c6ae2165b1eaddf2dd5e8c25e0175ebc0343ec"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-11-01T10:37:19.701Z",
+  "updatedAt": "2020-11-01T15:32:12.107Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

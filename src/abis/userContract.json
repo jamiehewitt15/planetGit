@@ -18,7 +18,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -37,7 +38,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -56,7 +58,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -87,7 +90,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -100,7 +104,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -113,7 +118,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.1+commit.f4a555be\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"allUserAddrs\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"allUserNames\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_imgHash\",\"type\":\"string\"}],\"name\":\"createUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllUsers\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserImg\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userName\",\"type\":\"string\"}],\"name\":\"uniqueUsername\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isUnique\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol\":\"UserContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/jamie/Desktop/Thesis/planetGit/src/contracts/UserContract.sol\":{\"keccak256\":\"0x6a3fb614e0cd68dec847b34505479725d88fe0f911cd81a7e95b9da748df8657\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://086b94e9caa21b0473b225517246a470b13faf39d3d7faad99dfe7b1c72e66eb\",\"dweb:/ipfs/QmS9bLNY3Z3vE2yXPgHsm2GspyQuPeL2Mz8aJYQukd5mYJ\"]}},\"version\":1}",
@@ -3266,12 +3272,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xdCe37f63cE6A00995E67cbdB21AADDc579410bD3",
-      "transactionHash": "0x33e14d608994151967e85e4f2978c221dbf035d3ea55fbf569079d9ace582024"
+      "address": "0x462847F26a43C17837356eE8434A875be7cCC503",
+      "transactionHash": "0x59c6b9b978975f5fe17e62760ed80f026253082516cf7de29de4e369d9a7b886"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-11-01T10:37:19.716Z",
+  "updatedAt": "2020-11-01T15:32:12.072Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

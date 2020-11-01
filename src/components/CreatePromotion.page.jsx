@@ -79,9 +79,13 @@ class ShowPromotions extends Component {
         event.preventDefault();
         const amount = document.getElementById("captureAmount").value;
         const repoSlug = document.getElementById("captureRepoSlug").value;
+        console.log("amount: ", amount);
+        console.log("repoSlug: ", repoSlug);
         try{
-            await this.state.tokenContract.methods.approve(this.state.promotionAddress, amount);
-            await this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.props.account});
+            const response = await this.state.tokenContract.methods.approve(this.state.promotionAddress, amount).send({from: this.state.account});
+            console.log("response", response);
+            const response1 = await this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.state.account});
+            console.log("response1", response1);
         } catch(error){
             console.log("error", error)
         }
