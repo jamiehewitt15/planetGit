@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Promotions from '../abis/Promotions.json';
+import Token from '../abis/GLDToken.json'
 import Web3 from 'web3';
 
 class ShowPromotions extends Component {
@@ -9,6 +10,7 @@ class ShowPromotions extends Component {
       await this.loadWeb3();
       await this.loadBlockchainData();
       await this.getPrice();
+      await this.getBalance();
     }
   
     async loadWeb3(){
@@ -28,18 +30,21 @@ class ShowPromotions extends Component {
         const networkId = await web3.eth.net.getId();
         console.log("networkId", networkId)
         // Get netwrok address
-        const networkData = Promotions.networks[networkId];
-        if (networkData){
-          console.log("networkData", networkData);
-          const abi = Promotions.abi;
-          console.log("abi: ", abi);
-          const address = networkData.address;
-          console.log("address: ", address);
+        const promotionsNetworkData = Promotions.networks[networkId];
+        const tokenNetworkData = Token.networks[networkId];
+        if (promotionsNetworkData && tokenNetworkData){
+          const promotionsAbi = Promotions.abi;
+          const tokenAbi = Token.abi;
+          const promotionAddress = promotionsNetworkData.address;
+          const tokenAddress = tokenNetworkData.address;
+          console.log("Promotions Address", tokenAddress)
           // Fetch Contract Data
-          const contract = web3.eth.Contract(abi, address);
-          this.setState({ address });
-          this.setState({ contract });
-          console.log("Contract", contract);
+          const promotionContract = web3.eth.Contract(promotionsAbi, promotionAddress);
+          const tokenContract = web3.eth.Contract(tokenAbi, tokenAddress);
+          this.setState({ tokenAddress });
+          this.setState({ tokenContract });
+          this.setState({ promotionAddress });
+          this.setState({ promotionContract });
         } else {
           window.alert("Sorry, the smart contract not deploy to the current network.")
         }
@@ -47,21 +52,36 @@ class ShowPromotions extends Component {
       
     getPrice = async() => {
         try{
-            const price = (await this.state.contract.methods.getPrice().call()).toNumber();
+            const price = (await this.state.promotionContract.methods.getPrice().call()).toNumber();
             this.setState({ price });
             console.log("Price:", price)
           } catch(error){
               console.log("error: ", error)
           }
     }
-
+ 
+    getBalance = async() => {
+        const web3 = window.web3;  
+        const accounts = await web3.eth.getAccounts();
+        this.setState({ account: accounts[0] });
+        try{
+            console.log("this.state.account", this.state.account);
+            let balance = (await this.state.tokenContract.methods.balanceOf(this.state.account).call()).toString();
+            console.log("Balance 1:", balance)
+            balance = web3.utils.fromWei(balance, 'ether')
+            this.setState({ balance });
+            console.log("Balance:", balance)
+          } catch(error){
+              console.log("error: ", error)
+          }
+    }
     createPromotion = async(event) => {
         event.preventDefault();
         const amount = document.getElementById("captureAmount").value;
         const repoSlug = document.getElementById("captureRepoSlug").value;
         try{
-            await this.state.contract.methods.approve(this.state.address, amount);
-            await this.state.contract.methods.createPromotion(repoSlug, amount).send({from: this.props.account});
+            await this.state.tokenContract.methods.approve(this.state.promotionAddress, amount);
+            await this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.props.account});
         } catch(error){
             console.log("error", error)
         }
@@ -70,10 +90,14 @@ class ShowPromotions extends Component {
     constructor(props) {
       super(props);
       this.state = {
+          tokenAddress: '',
+          tokenContract: '',
+          promotionContract: '',
+          promotionAddress: '',
+          account: '',
           promotions: '',
-          contract: '',
-          address: '',
           price: '',
+          balance: '',
       };
     }
     
@@ -83,7 +107,8 @@ class ShowPromotions extends Component {
         <h1>Promote Your Project</h1>
         <p>Create a promoton</p>
         <p>The current price for promoting your project is: {this.state.price}</p>
-        <form onSubmit={this.onSubmit} className="form">
+        <p>Your current balance is: {this.state.balance}</p>
+        <form onSubmit={this.createPromotion} className="form">
           Repo Slug: <input type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
           Price: <input type="number" id="captureAmount" name="fileList" className="form-left"/><br /><br />
           <input type='submit'  />
