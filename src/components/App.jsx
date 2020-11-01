@@ -51,6 +51,8 @@ class App extends Component {
       try{
         const userName = await contract.methods.getUserName().call();
         console.log("userName", userName)
+        const allUsers = await contract.methods.getAllUsers().call();
+        console.log("allUsers", allUsers)
         if(userName){
           this.setState({ userName })
           console.log("this.state.projectName", this.state.userName)
@@ -88,11 +90,12 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Router>
         <Header account={this.state.account} userName={this.state.userName} />
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
-            <Router>
+            
             <Switch>
               <Route path="/repo/*"  component={() => <Repo account={this.state.account} />}  />
               <Route path="/user/:username"  component={() => <User account={this.state.account} />}  />
@@ -102,10 +105,11 @@ class App extends Component {
               <Route path="/createrepo" component={() => <CreateRepo account={this.state.account} />} />
               <Route path="/" component={Home} />
             </Switch>
-            </Router>
+            
             </main>
           </div>
         </div>
+        </Router>
       </div>
     );
   }

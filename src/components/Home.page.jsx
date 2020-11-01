@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  Link } from "react-router-dom";
 import './App.css';
-import Promotions from './ShowPromotions.jsx' 
+import Promotions from './ShowPromotions.jsx'
 
 export default function Header() {
       return (

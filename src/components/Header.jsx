@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import {  Link } from "react-router-dom";
 import './App.css';
-import Greeting from './User.jsx';
 
 class Header extends Component {
     
   render() {
+    let greeting;
+    if(this.props.userName !== ''){
+      console.log("this.props.userName", this.props.userName)
+      greeting = <p>Welcome back {this.props.userName}!</p>
+    } else{
+      greeting =  <div><Link to="/signup" ><p>Create an Account</p></Link></div>
+    }
     return (
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -15,13 +22,13 @@ class Header extends Component {
           >
            PLANET GIT
           </a>
+          {greeting}
           <ul className="navbar-nav px-3">
+            
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <small className="text-white">Your address: {this.props.account}</small>
             </li>
-            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            {/* <Greeting userName={this.props.userName} account={this.props.account}/> */}
-            </li>
+            
           </ul>
         </nav>
         
