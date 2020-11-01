@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserContract from '../abis/UserContract.json';
+import Users from '../abis/Users.json';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
@@ -28,10 +28,10 @@ class Signup extends Component {
     const networkId = await web3.eth.net.getId();
     console.log("networkId", networkId)
     // Get netwrok address
-    const networkData = UserContract.networks[networkId];
+    const networkData = Users.networks[networkId];
     if (networkData){
       console.log("networkData", networkData);
-      const abi = UserContract.abi;
+      const abi = Users.abi;
       console.log("abi: ", abi);
       const address= networkData.address;
       console.log("address: ", address);

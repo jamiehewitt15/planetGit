@@ -8,7 +8,7 @@ import Web3 from 'web3';
 import './App.css';
 import DirectoryListing from './directoryListing.jsx';
 import Header from './Header.jsx';
-import UserContract from '../abis/UserContract.json';
+import Users from '../abis/Users.json';
 /**
  * Import all page components here
  */
@@ -41,16 +41,16 @@ class App extends Component {
     // Get smart contract network
     const networkId = await web3.eth.net.getId();
     // Get netwrok address
-    const networkData = UserContract.networks[networkId];
+    const networkData = Users.networks[networkId];
     if (networkData){
-      const abi = UserContract.abi;
+      const abi = Users.abi;
       const address = networkData.address;
       // Fetch Contract Data
       const contract = web3.eth.Contract(abi, address);
       this.setState({ contract });
       try{
         const userName = await contract.methods.getUserName().call();
-        const allUsers = await contract.methods.getAllUsers().call();
+        console.log("userName", userName)
         if(userName){
           this.setState({ userName })
           console.log("this.state.projectName", this.state.userName)

@@ -3,7 +3,7 @@ pragma solidity >=0.7.0;
 pragma experimental ABIEncoderV2;
 
 // Import User from User.sol
-import "./UserContract.sol";
+import "./Users.sol";
 // Import GLDToken from GLDToken.sol.sol
 import "./GLDToken.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
 import './App.css';
-import UserContract from '../abis/UserContract.json';
+import Users from '../abis/Users.json';
 import CreateUser from './Signup.page.jsx';
 import {useParams} from "react-router-dom";
 
@@ -29,10 +29,10 @@ export default class User extends Component {
     const networkId = await web3.eth.net.getId();
     console.log("networkId", networkId)
     // Get netwrok address
-    const networkData = UserContract.networks[networkId];
+    const networkData = Users.networks[networkId];
     if (networkData){
       console.log("networkData", networkData);
-      const abi = UserContract.abi;
+      const abi = Users.abi;
       console.log("abi: ", abi);
       const address= networkData.address;
       console.log("address: ", address);
