@@ -22,3 +22,29 @@ body{
     padding-top: 5%;
     margin: auto;
 }
+.promotionsSection{
+    width: 100%;
+    text-align: left;
+}
+.homePage{
+    width:100%;
+}
+table{
+    border-spacing: 15px !important;
+}
+.promotionsTable{
+    border-collapse: separate;
+    width: 100vw;
+    border-spacing: 15px !important;
+}
+.promotionsRow{
+    margin: 5px;
+}
+.promotionsCell{
+    width: 15%;
+    padding: 10px;
+    background-color: aliceblue;
+}
+table, th, td {
+    padding: 15px;
+  }

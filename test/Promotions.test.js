@@ -74,11 +74,9 @@ contract('Promotions', (accounts)=>{
             assert.equal(owner, walletAddress);
             assert.equal(name, repoName);
             const initialBalance = parseInt(await token.balanceOf(walletAddress));
-            console.log("initialBalance", initialBalance)
             const nonce = web3.utils.randomHex(4); 
             await mintReward.mintReward(repoSlug, nonce);
             const middleBalance = parseInt(await token.balanceOf(walletAddress));
-            console.log("initialBalance", initialBalance);
             assert.notEqual(initialBalance, middleBalance);
             assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
         
@@ -86,7 +84,6 @@ contract('Promotions', (accounts)=>{
             await token.approve(promotions.address, amount);
             await promotions.createPromotion(repoSlug, amount);
             const finalBalance = parseInt(await token.balanceOf(walletAddress));
-            console.log("initialBalance", initialBalance);
             assert.notEqual(finalBalance, middleBalance);
             assert.isAbove(middleBalance, finalBalance, 'Final balance is greater than middle balance');
         
@@ -98,7 +95,6 @@ contract('Promotions', (accounts)=>{
 
         it('Live promotions are correctly returned', async () => {
             const livePromotions = await promotions.getAllPromotions();
-            console.log("livePromotions", livePromotions)
             assert.equal(livePromotions[0].pricePaid, amount);
             assert.equal(livePromotions[0].promotedRepo.repoHash, repoHash);
             assert.equal(livePromotions[0].promotedRepo.repoName, repoName);
@@ -119,9 +115,9 @@ contract('Promotions', (accounts)=>{
             await promotions.createPromotion(repoSlug3, amount3);
             const livePromotions3 = await promotions.getAllPromotions();
 
-            console.log("livePromotion 3:", livePromotions3[8].pricePaid);
-            console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoName);
-            console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoHash);
+            // console.log("livePromotion 3:", livePromotions3[8].pricePaid);
+            // console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoName);
+            // console.log("livePromotion 3:", livePromotions3[8].promotedRepo.repoHash);
             
             assert.equal(livePromotions3[8].pricePaid, amount3);
             assert.equal(livePromotions3[8].promotedRepo.repoHash, repoHash3);

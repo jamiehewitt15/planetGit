@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  { Redirect } from 'react-router-dom'
 import './App.css';
 import Promotions from '../abis/Promotions.json';
 import Token from '../abis/GLDToken.json'
@@ -82,14 +83,29 @@ class ShowPromotions extends Component {
         console.log("amount: ", amount);
         console.log("repoSlug: ", repoSlug);
         try{
-            const response = await this.state.tokenContract.methods.approve(this.state.promotionAddress, amount).send({from: this.state.account});
-            console.log("response", response);
-            const response1 = await this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.state.account});
-            console.log("response1", response1);
+            this.state.tokenContract.methods.approve(this.state.promotionAddress, amount).send({from: this.state.account})
+            .on('transactionHash', () => {
+                this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.state.account})
+                .on('transactionHash', () => {
+                    this.setState({redirect: true})
+                })
+                .on('error', (error) => {
+                    console.log("Error: ", error)
+                })
+            })
+            .on('error', (error) => {
+                console.log("Error: ", error)
+            })
         } catch(error){
             console.log("error", error)
         }
     }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/target' />
+        }
+      }
 
     constructor(props) {
       super(props);
@@ -102,12 +118,14 @@ class ShowPromotions extends Component {
           promotions: '',
           price: '',
           balance: '',
+          redirect: false,
       };
     }
     
   render() {
     return (
       <div className="createPromotionPage">
+        {this.renderRedirect()}
         <h1>Promote Your Project</h1>
         <p>Create a promoton</p>
         <p>The current price for promoting your project is: {this.state.price}</p>

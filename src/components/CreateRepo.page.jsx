@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import './App.css';
 import Repository from '../abis/Repository.json';
 import Web3 from 'web3';
@@ -48,12 +49,22 @@ class CreateRepo extends Component {
         const repoSlug = document.getElementById("captureRepoSlug").value;
         const repoHash = document.getElementById("captureRepoHash").value;
         try{
-            await this.state.repositoryContract.methods.createRepo(repoSlug, repoName, repoHash).send({from: this.props.account});
+            this.state.repositoryContract.methods.createRepo(repoSlug, repoName, repoHash).send({from: this.props.account})
+            .on('transactionHash', () => {
+              this.setState({redirect: true})
+            })
+            .on('error', (error) => {
+                console.log("Error: ", error);
+            })
         } catch(error){
             console.log("error", error)
         }
     }
-
+    renderRedirect = () => {
+      if (this.state.redirect) {
+        return <Redirect to='/target' />
+      }
+    }
     constructor(props) {
       super(props);
       this.state = {
@@ -63,12 +74,14 @@ class CreateRepo extends Component {
         promotions: '',
         price: '',
         balance: '',
+        redirect: false,
       };
     }
     
   render() {
     return (
       <div className="createPromotionPage">
+        {this.renderRedirect()}
         <h1>Create a Repo</h1>
         <p>Create you repo here</p>
         <form onSubmit={this.createRepo} className="form">
