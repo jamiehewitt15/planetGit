@@ -18,7 +18,7 @@ import NewRepo from './NewRepo.page.jsx';
 import Repo from './Repo.page.jsx';
 import User from './User.jsx';
 import CreatePromotion from './CreatePromotion.page.jsx';
-
+import CreateRepo from './CreateRepo.page.jsx';
 
 
 
@@ -44,7 +44,7 @@ class App extends Component {
     const networkData = UserContract.networks[networkId];
     if (networkData){
       const abi = UserContract.abi;
-      const address= networkData.address;
+      const address = networkData.address;
       // Fetch Contract Data
       const contract = web3.eth.Contract(abi, address);
       this.setState({ contract });
@@ -99,6 +99,7 @@ class App extends Component {
               <Route path="/signup" component={() => <Signup account={this.state.account} />} />
               <Route path="/newrepo" component={() => <NewRepo account={this.state.account} />} />
               <Route path="/createpromotion" component={() => <CreatePromotion account={this.state.account} />} />
+              <Route path="/createrepo" component={() => <CreateRepo account={this.state.account} />} />
               <Route path="/" component={Home} />
             </Switch>
             </Router>

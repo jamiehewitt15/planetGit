@@ -81,7 +81,7 @@ contract('Promotions', (accounts)=>{
             assert.isAbove(middleBalance, initialBalance, 'Middle balance is greater than initial balance');
         
             
-            await token.approve(promotions.address, amount)
+            await token.approve(promotions.address, amount);
             await promotions.createPromotion(repoSlug, amount);
             const finalBalance = parseInt(await token.balanceOf(walletAddress));
             assert.notEqual(finalBalance, middleBalance);
