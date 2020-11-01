@@ -46,6 +46,7 @@ contract Promotions is Repository{
         // Find lowest paid promotion
         uint lowestIndex = 0;
         uint lowestPaid = livePromotions[0].pricePaid;
+        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 0");
         for(uint i = 1; i < livePromotions.length; i++){
             emit Test(msg.sender, price, _projectSlug, i, "Test 1");
             if(livePromotions[i].pricePaid < lowestPaid){

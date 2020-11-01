@@ -73,8 +73,8 @@ class CreateRepo extends Component {
         <p>Create you repo here</p>
         <form onSubmit={this.createRepo} className="form">
           Repo Slug: <input type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
-          Repo Name: <input type="number" id="captureRepoName" name="fileList" className="form-left"/><br /><br />
-          Repo Hash: <input type="number" id="captureRepoHash" name="fileList" className="form-left"/><br /><br />
+          Repo Name: <input type="text" id="captureRepoName" name="fileList" className="form-left"/><br /><br />
+          Repo Hash: <input type="text" id="captureRepoHash" name="fileList" className="form-left"/><br /><br />
           <input type='submit'  />
         </form>
       </div>
