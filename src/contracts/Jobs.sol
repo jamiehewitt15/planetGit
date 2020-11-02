@@ -19,20 +19,22 @@ contract Jobs is Ownable {
     GLDToken private token;
     uint index;
     job[] public allJobs;
+    // mapping repo slug to Repo
+    mapping (string => job) jobNames;
 
     constructor(address tokenAddress){
         token = GLDToken(tokenAddress);
     }
     
     // Create Promotion
-    function createPromotion(string memory _title, string memory _description, bool _monthly, uint _salary) public {
+    function createJob(string memory _title, string memory _description, bool _monthly, uint _salary) public {
        
         // Stake salary
         require(token.transferFrom(msg.sender, address(this), _salary) == true, "Could not send tokens");
 
         // Create Job
-        allJobs[index] = job(msg.sender, _title, _description, _monthly, _salary);
-        index++;
+        jobNames[_title] = job(msg.sender, _title, _description, _monthly, _salary);
+        allJobs.push(jobNames[_title]);
     }
 
     // Remove Promotion
@@ -41,8 +43,12 @@ contract Jobs is Ownable {
        
     }
 
-    // Get Live Promotions
-    function getAllPromotions() public view returns(job[] memory) {
+    // Get One Jobs
+    function getJob(string memory _title) public view returns(job memory) {
+        return jobNames[_title];
+    }
+    // Get All Jobs
+    function getAllJobs() public view returns(job[] memory) {
         return allJobs;
     }
 }
