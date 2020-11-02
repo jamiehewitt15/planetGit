@@ -7,7 +7,7 @@ export default function Header() {
       return (
         <div className="homePage">
         <div id="home" className="home">
-            <h1>Welcome to PLANET GIT</h1>
+            <h1>Welcome to <span className="logo">PLANET GIT</span></h1>
             <h2>The fully distributed git repository</h2>
             <p>Push you code to IPFS and Ethereum</p>
             <Link to="/signup" ><button>Sign Up</button></Link><br /><br />

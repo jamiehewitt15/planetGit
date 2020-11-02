@@ -20,7 +20,7 @@ class Header extends Component {
             href="./"
             rel="noopener noreferrer"
           >
-           PLANET GIT
+           <span className="logo">PLANET GIT</span>
           </a>
           {greeting}
           <ul className="navbar-nav px-3">

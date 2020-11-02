@@ -112,7 +112,7 @@ class Signup extends Component {
       <div>
         
       <h1>Create a User Account</h1>
-      <p>User Planet git to push your git repo to IPFS & Ethereum!</p> <br />
+      <p>Use <span className="logo">PLANET GIT</span> to push your git repo to IPFS & Ethereum!</p> <br />
       <form onSubmit={this.onSubmit} className="form">
           Username: <input type="text" id="usernameInput" name="usernameInput" className="form-left"/><br /><br />
           Picture: <input type="file" id="filepicker" name="fileList" onChange={this.captureImg} className="form-left"/><br /><br />

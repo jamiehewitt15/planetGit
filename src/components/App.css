@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,900&family=Fira+Sans+Extra+Condensed:ital,wght@1,900&display=swap');
 /* Styles go here */
 body{
     background: lightgray
+}
+.logo{
+    font-family: 'Fira Sans Condensed', sans-serif;
+    /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
 }
 #home{
     width:50%;
