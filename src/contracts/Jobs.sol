@@ -9,6 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract Jobs is Ownable {
     
     struct job{
+        address owner;
         string title;
         string description;
         bool monthly;
@@ -16,65 +17,32 @@ contract Jobs is Ownable {
     }
 
     GLDToken private token;
-    uint price;
+    uint index;
     job[] public allJobs;
-    address thisOwner; // Contract owner
-    
 
-    constructor(address tokenAddress, address repoAddress) Repository(tokenAddress){
-        repo = Repository(repoAddress);
+    constructor(address tokenAddress){
         token = GLDToken(tokenAddress);
-        thisOwner = msg.sender;
     }
     
     // Create Promotion
-    function createPromotion(string memory _projectSlug, uint amount) public {
-        // Check amount
-        require(amount > price, "Value sent must be greater than price.");
+    function createPromotion(string memory _title, string memory _description, bool _monthly, uint _salary) public {
+       
+        // Stake salary
+        require(token.transferFrom(msg.sender, address(this), _salary) == true, "Could not send tokens");
 
-        // send money
-        require(token.transferFrom(msg.sender, address(this), amount) == true, "Could not send tokens");
-
-        // Get Repo
-        Repo memory promotedRepo = repo.getRepo(_projectSlug);
-
-        // Create Promotion
-        promotions[_projectSlug] = promotion(promotedRepo, amount);
-
-        // Find lowest paid promotion
-        uint lowestIndex = 0;
-        uint lowestPaid = livePromotions[0].pricePaid;
-        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 0");
-        for(uint i = 1; i < livePromotions.length; i++){
-            emit Test(msg.sender, price, _projectSlug, i, "Test 1");
-            if(livePromotions[i].pricePaid < lowestPaid){
-                price = lowestPaid;
-                lowestIndex = i;
-                emit Test(msg.sender, price, _projectSlug, i, "Test 2");
-            }
-        }
-        // Remove lowest paid promotion & Make New Promotion Live
-        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 3");
-        Test2(promotions[_projectSlug]);
-        livePromotions[lowestIndex] = promotions[_projectSlug]; // promotion(promotedRepo, amount);
-        Test2(livePromotions[lowestIndex]);
+        // Create Job
+        allJobs[index] = job(msg.sender, _title, _description, _monthly, _salary);
+        index++;
     }
+
     // Remove Promotion
-    function removePromotion(string memory _projectSlug) public {
+    function removeJob(string memory _projectSlug) public {
        
        
-    }
-    // Get Price
-    function getPrice() public view returns(uint) {
-        return price;
-    }
-    // Get One Promotion
-    function getPromotion(string memory _projectSlug) public view returns(promotion memory) {
-        return promotions[_projectSlug];
     }
 
     // Get Live Promotions
-    function getAllPromotions() public view returns(promotion[10] memory) {
-        return livePromotions;
+    function getAllPromotions() public view returns(job[] memory) {
+        return allJobs;
     }
 }
