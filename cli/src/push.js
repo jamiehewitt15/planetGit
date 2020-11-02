@@ -93,14 +93,12 @@ async function updateRepo(){
     let privateKeyBuffer;
     try {
         privateKeyBuffer = await Buffer.from(privateKey, 'hex');
-        console.log("privateKeyBuffer", privateKeyBuffer)
     } catch (error) {
         console.log(">>> error 1", error)
     }
     // get transaction count to used as nonce
     console.log("getTransactionCount")
     const count = await web3.eth.getTransactionCount(accountAddress);
-    console.log("getTransactionCount", count)
     // creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
@@ -109,7 +107,6 @@ async function updateRepo(){
         "data":contract.methods.updateRepo(repoSlug, repoHash).encodeABI(), 
         "nonce":web3.utils.toHex(count)
         }
-    console.log("rawTransaction", rawTransaction);
     // creating tranaction via ethereumjs-tx
     const transaction = await new EthereumTx(rawTransaction);
     //signing transaction with private key
