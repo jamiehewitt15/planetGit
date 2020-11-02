@@ -43,17 +43,8 @@ class ShowPromotions extends Component {
           console.log("getAllPromotions", promotions);
           
           if(promotions){
-            this.setState({ promotion1: promotions[0] })
-            this.setState({ promotion2: promotions[1] })
-            this.setState({ promotion3: promotions[2] })
-            this.setState({ promotion4: promotions[3] })
-            this.setState({ promotion5: promotions[4] })
-            this.setState({ promotion6: promotions[5] })
-            this.setState({ promotion7: promotions[6] })
-            this.setState({ promotion8: promotions[7] })
-            this.setState({ promotion9: promotions[8] })
-            this.setState({ promotion10: promotions[9] })
-            console.log("One Promotion", this.state.promotion1 );
+            this.setState({ promotions: promotions })
+            console.log("All Promotions", this.state.promotions );
           } else{
             console.log("No userName recieved")
           }
@@ -70,16 +61,7 @@ class ShowPromotions extends Component {
       super(props);
       
       this.state = {
-          promotion1: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion2: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion3: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion4: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion5: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion6: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion7: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion8: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion9: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
-          promotion10: { pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } },
+        promotions:  new Array(10).fill().map((value, index) => ({ id: index, pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } })),
       };
       this.loadPromotions();
     }
@@ -88,20 +70,17 @@ class ShowPromotions extends Component {
     return (
       <div className="promotionsSection" >
         <h2 className="promotionsTitle">Promotions</h2>
+       
         <table className="promotionsTable">
         <tr className="promotionsRow">
-          <td className="promotionsCell">{this.state.promotion1.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion2.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion3.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion4.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion5.promotedRepo.repoName}</td>
+        {this.state.promotions.slice(0, 5).map(((promotion) => (
+           <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+        )))} 
         </tr>
         <tr className="promotionsRow">
-          <td className="promotionsCell">{this.state.promotion6.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion7.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion8.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion9.promotedRepo.repoName}</td>
-          <td className="promotionsCell">{this.state.promotion10.promotedRepo.repoName}</td>
+        {this.state.promotions.slice(5, 10).map(((promotion) => (
+           <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+        )))} 
         </tr>
         </table>
 

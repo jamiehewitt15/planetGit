@@ -60,7 +60,7 @@ const startClone = async(repoHash) => {
 // QmYgyahQoikJEbZEkiubwxm16xjCAZs2RUd1qfuus2Zyeq
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////// GET LATEST FROM HASH ETHEREUM ///////////////////////////////
+/////////////////////////////// GET LATEST FROM HASH FROM ETHEREUM //////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 const Web3js = require('web3');
@@ -81,6 +81,7 @@ const loadContractAddress = async (networks) => {
     // Get contract address
     return networks[networkId].address;
 }
+
 const loadContract = async (abi, contractAddress) => {
     const contract = web3.eth.Contract(abi, contractAddress);
     return contract;
