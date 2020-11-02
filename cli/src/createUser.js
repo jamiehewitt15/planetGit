@@ -7,12 +7,12 @@ const provider = 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
 const web3 = new Web3js(web3Provider);
 
-const { abi, networks } = require('../abis/UserContract.json');
+const { abi, networks } = require('../abis/Users.json');
 
 let accountAddress = '';
 let privateKey = '';
 let userName;
-let imageHash = 'QmdVHVAvpHb5JRk5VHuwe4hucjnM7NBZoWAZhVkLgAXnnR'; // default User Image
+let imageHash = 'QmdVHVAvpHb5JRk5VHuwe4hucjnM7NBZoWAZhVkLgAXnnR'; // default User Image //
 
 const loadContractAddress = async () => {
     // Get smart contract network

@@ -3451,12 +3451,12 @@
         }
       },
       "links": {},
-      "address": "0x6e42f3ec6C517c45e614BeB5548b8CE5e2779e96",
-      "transactionHash": "0x9335513c2eec1dead557ecfc161cac54027b0dea50587c65992d2d1fa112327d"
+      "address": "0x9CC0c2d2EAA00554B55F1DD1C89C449E5C85EC22",
+      "transactionHash": "0x1d2a80b61b015c0117c9643f7cfc57c1e8608a3609253e25d80ef69bfac4eb8a"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-11-01T19:49:06.931Z",
+  "updatedAt": "2020-11-02T07:36:28.870Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

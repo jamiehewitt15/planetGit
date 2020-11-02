@@ -31,6 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "user": "node ./cli/src/createUser.js",
     "clone": "node ./cli/src/clone.js",
     "push": "node ./cli/src/push.js",
     "init": "node ./cli/src/init.js",

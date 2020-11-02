@@ -1,12 +1,11 @@
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
-let repoHash = '';
 // Assign arguments
 let repoSlug = shell.cat("reposlug.txt").stdout;
 // Ask for user input
 
-const pullRepo = async() => {
+const pullRepo = async(repoHash) => {
   console.log('Pulling from: ', 'http://127.0.0.1:8080/ipfs/' + repoHash);
   if (shell.exec(`git pull http://127.0.0.1:8080/ipfs/${repoHash}`).code !== 0) {
     console.log("Waiting for IPFS daemon to start...")
@@ -22,7 +21,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const startPull = async() => {
+const startPull = async(repoHash) => {
   if (!shell.which('git')) { // check if user has git installed
     shell.echo('Sorry, this script requires git');
     shell.exit(1);
@@ -30,7 +29,7 @@ const startPull = async() => {
     if (shell.which('ipfs')) { // check if user has IPFS installed
       shell.exec(`ipfs daemon`, {async:true, silent:true});
       await sleep(2000); // wait for IPFS Daemon to start
-      await pullRepo();
+      await pullRepo(repoHash);
       }
       else{ // Use public IPFS node
       console.log("We recomend installing IPFS")
@@ -115,7 +114,7 @@ const getHash = async () => {
         const returnHash = await event.returnValues._value;
         console.log("returnHash", returnHash);
         await startPull(returnHash);
-        return returnHash;
+        // return returnHash;
     })
     .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
         console.log(">>> Error: ", error);
