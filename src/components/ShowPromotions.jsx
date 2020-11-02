@@ -72,16 +72,18 @@ class ShowPromotions extends Component {
         <h2 className="promotionsTitle">Promotions</h2>
        
         <table className="promotionsTable">
-        <tr className="promotionsRow">
-        {this.state.promotions.slice(0, 5).map(((promotion) => (
-           <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
-        )))} 
-        </tr>
-        <tr className="promotionsRow">
-        {this.state.promotions.slice(5, 10).map(((promotion) => (
-           <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
-        )))} 
-        </tr>
+        <tbody>
+          <tr className="promotionsRow">
+          {this.state.promotions.slice(0, 5).map(((promotion) => (
+            <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+          )))} 
+          </tr>
+          <tr className="promotionsRow">
+          {this.state.promotions.slice(5, 10).map(((promotion) => (
+            <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+          )))} 
+          </tr>
+        </tbody>
         </table>
 
 

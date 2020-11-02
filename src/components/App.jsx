@@ -19,6 +19,7 @@ import Repo from './Repo.page.jsx';
 import User from './User.jsx';
 import CreatePromotion from './CreatePromotion.page.jsx';
 import CreateRepo from './CreateRepo.page.jsx';
+import AllRepos from './AllRepos.page.jsx';
 
 
 
@@ -103,6 +104,7 @@ class App extends Component {
               <Route path="/newrepo" component={() => <NewRepo account={this.state.account} />} />
               <Route path="/createpromotion" component={() => <CreatePromotion account={this.state.account} />} />
               <Route path="/createrepo" component={() => <CreateRepo account={this.state.account} />} />
+              <Route path="/allrepos" component={() => <AllRepos account={this.state.account} />} />
               <Route path="/" component={Home} />
             </Switch>
             

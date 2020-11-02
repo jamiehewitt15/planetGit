@@ -26,7 +26,8 @@ contract Repository is Ownable {
     mapping (string => Repo) repoNames;
     // mapping User address to Repo
     mapping (address => mapping (string => Repo)) userRepos;
-    string[] public allRepos;
+    // string[] public allRepos;
+    Repo[] public allRepos;
 
     // Check RepoName is unique
     function uniqueRepoSlug(string memory _projectSlug) public view returns(bool isUnique) {

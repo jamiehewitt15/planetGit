@@ -53,3 +53,14 @@ table{
 table, th, td {
     padding: 15px;
   }
+.repositoriesSection{
+    width: 100%;
+    text-align: center;
+}
+.repoDiv{
+    margin: auto;
+    margin-top: 5px;
+    width: 15%;
+    padding: 10px;
+    background-color: aliceblue;
+}
