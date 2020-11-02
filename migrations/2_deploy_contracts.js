@@ -3,6 +3,7 @@ const Repo = artifacts.require("Repository");
 const GLDToken = artifacts.require("GLDToken");
 const MintReward = artifacts.require("MintReward");
 const Promotions = artifacts.require("Promotions");
+const Jobs = artifacts.require("Jobs");
 
 module.exports = async function(deployer) {
   // Deploying User Contract
@@ -25,9 +26,14 @@ module.exports = async function(deployer) {
 
   // Deploying Promotions Contract
   await deployer.deploy(Promotions, token.address, repo.address);
-  const promotions = await MintReward.deployed();
+  const promotions = await Promotions.deployed();
   console.log(">>> promotions Address: ", promotions.address);
   
+  // Deploying Promotions Contract
+  await deployer.deploy(Jobs, token.address);
+  const jobs = await Jobs.deployed();
+  console.log(">>> jobs Address: ", jobs.address);
+
   // Transfering ownership of the Token contract to the MintReward contract
   await token.transferOwnership(mintReward.address);
   
