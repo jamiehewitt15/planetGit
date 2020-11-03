@@ -74,6 +74,7 @@ class JobsBoard extends Component {
            <div key={job.id} >
              <h3 className="repoDiv">{job.title}</h3>
              <p>{job.description}</p>
+             <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
              </div>
         )))} 
       </div>
