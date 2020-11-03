@@ -14,6 +14,7 @@ contract Jobs is Ownable {
         string description;
         bool monthly;
         uint salary;
+        bool live;
     }
 
     GLDToken private token;
@@ -33,7 +34,7 @@ contract Jobs is Ownable {
         require(token.transferFrom(msg.sender, address(this), _salary) == true, "Could not send tokens");
 
         // Create Job
-        jobNames[_title] = job(msg.sender, _title, _description, _monthly, _salary);
+        jobNames[_title] = job(msg.sender, _title, _description, _monthly, _salary, true);
         allJobs.push(jobNames[_title]);
     }
 

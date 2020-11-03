@@ -20,7 +20,7 @@ import User from './User.jsx';
 import CreatePromotion from './CreatePromotion.page.jsx';
 import CreateRepo from './CreateRepo.page.jsx';
 import AllRepos from './AllRepos.page.jsx';
-
+import CreateJob from './CreateJob.page.jsx';
 
 
 class App extends Component {
@@ -105,6 +105,7 @@ class App extends Component {
               <Route path="/createpromotion" component={() => <CreatePromotion account={this.state.account} />} />
               <Route path="/createrepo" component={() => <CreateRepo account={this.state.account} />} />
               <Route path="/allrepos" component={() => <AllRepos account={this.state.account} />} />
+              <Route path="/createjob" component={() => <CreateJob account={this.state.account} />} />
               <Route path="/" component={Home} />
             </Switch>
             

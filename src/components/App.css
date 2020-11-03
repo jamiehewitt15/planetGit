@@ -64,3 +64,6 @@ table, th, td {
     padding: 10px;
     background-color: aliceblue;
 }
+.jobForm{
+    width: 40%;
+}
