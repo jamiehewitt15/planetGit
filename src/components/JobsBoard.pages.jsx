@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Repository from '../abis/Repository.json';
+import Jobs from '../abis/Jobs.json';
 import Web3 from 'web3';
 
-class ShowPromotions extends Component {
+class JobsBoard extends Component {
     
     async componentWillMount(){
       await this.loadWeb3();
@@ -21,16 +21,16 @@ class ShowPromotions extends Component {
       }
     }
 
-    async loadRepos(){
+    async loadJobs(){
       const web3 = window.web3; 
       // Get smart contract network
       const networkId = await web3.eth.net.getId();
       console.log("networkId", networkId)
       // Get netwrok address
-      const networkData = Repository.networks[networkId];
+      const networkData = Jobs.networks[networkId];
       if (networkData){
         console.log("networkData", networkData);
-        const abi = Repository.abi;
+        const abi = Jobs.abi;
         console.log("abi: ", abi);
         const address= networkData.address;
         console.log("address: ", address);
@@ -39,14 +39,14 @@ class ShowPromotions extends Component {
         this.setState({ contract });
         console.log("Contract", contract);
         try{
-          const repositories = await contract.methods.getAllRepos().call();
-          console.log("getAllRepos", repositories);
+          const jobs = await contract.methods.getAllJobs().call();
+          console.log("getAllJobs", jobs);
           
-          if(repositories){
-            this.setState({ repositories: repositories })
-            console.log("> STATE > All repositories", this.state.repositories );
+          if(jobs){
+            this.setState({ jobs: jobs })
+            console.log("All Jobs", this.state.jobs );
           } else{
-            console.log("No repositories recieved");
+            console.log("No Jobs recieved")
           }
         } catch(e){
           console.log("Error", e)
@@ -56,26 +56,29 @@ class ShowPromotions extends Component {
         window.alert("Sorry, the smart contract not deploy to the current network.")
       }
     }
-
+    
     constructor (props) {
       super(props);
       
       this.state = {
-        repositories:  new Array().fill().map((value, index) => ({ id: index, repoSlug: '' })),
+        jobs:  new Array().fill().map((value, index) => ({ id: index, owner: '', title: '', description: '', monthly: '', salary: '', live: false })),
       };
-      this.loadRepos();
+      this.loadJobs();
     }
     
   render() {
     return (
       <div className="repositoriesSection" >
-        <h2 className="promotionsTitle">All Repositories</h2>
-        {this.state.repositories.slice(0, 50).map(((repository) => (
-           <div key={repository.id} ><p className="repoDiv">{repository}</p></div>
+        <h2 className="promotionsTitle">All Jobs</h2>
+        {this.state.jobs.slice(0, 50).map(((job) => (
+           <div key={job.id} >
+             <h3 className="repoDiv">{job.title}</h3>
+             <p>{job.description}</p>
+             </div>
         )))} 
       </div>
     );
   }
 }
 
-export default ShowPromotions;
+export default JobsBoard;
