@@ -5,10 +5,13 @@ pragma experimental ABIEncoderV2;
 import "./Repository.sol";
 import "./GLDToken.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol"; 
 
 contract Jobs is Ownable {
+    using SafeMath for uint256;
     
     struct job{
+        uint id;
         address owner;
         string title;
         string description;
@@ -21,10 +24,11 @@ contract Jobs is Ownable {
     uint index;
     job[] public allJobs;
     // mapping repo slug to Repo
-    mapping (string => job) jobNames;
+    mapping (uint => job) jobsMap;
 
     constructor(address tokenAddress){
         token = GLDToken(tokenAddress);
+        index = 0;
     }
     
     // Create Promotion
@@ -34,19 +38,23 @@ contract Jobs is Ownable {
         require(token.transferFrom(msg.sender, address(this), _salary) == true, "Could not send tokens");
 
         // Create Job
-        jobNames[_title] = job(msg.sender, _title, _description, _monthly, _salary, true);
-        allJobs.push(jobNames[_title]);
+        jobsMap[index] = job(index, msg.sender, _title, _description, _monthly, _salary, true);
+        allJobs.push(jobsMap[index]);
+        index.add(1);
     }
 
     // Remove Promotion
-    function removeJob(string memory _projectSlug) public {
+    function removeJob(uint _id) public {
+       require(msg.sender == jobsMap[_id].owner);
        
-       
+        // Release Salary Stake 
+        require(token.transfer(msg.sender, jobsMap[_id].salary) == true, "Could not send tokens");
+        jobsMap[_id].live = false;
     }
 
     // Get One Jobs
-    function getJob(string memory _title) public view returns(job memory) {
-        return jobNames[_title];
+    function getJob(uint _id) public view returns(job memory) {
+        return jobsMap[_id];
     }
     // Get All Jobs
     function getAllJobs() public view returns(job[] memory) {

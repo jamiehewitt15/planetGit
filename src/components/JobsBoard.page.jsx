@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Web3 from 'web3';
+import { Card } from 'react-bootstrap';
 
 class JobsBoard extends Component {
     
@@ -71,11 +72,13 @@ class JobsBoard extends Component {
       <div className="repositoriesSection" >
         <h2 className="promotionsTitle">All Jobs</h2>
         {this.state.jobs.slice(0, 50).map(((job) => (
+          <Card>
            <div key={job.id} >
              <h3 className="repoDiv">{job.title}</h3>
              <p>{job.description}</p>
              <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
              </div>
+          </Card>
         )))} 
       </div>
     );
