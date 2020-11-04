@@ -49,12 +49,27 @@ contract('Jobs', (accounts)=>{
             // assert.notEqual(finalBalance, initialBalance);
             // assert.isAbove(initialBalance, finalBalance, 'Final balance is greater than middle balance');
         
-            const retunJob = await jobs.getJob(title);
+            // const retunJob = await jobs.getJob(title);
+            // console.log("retunJob", retunJob);
+            // assert.equal(retunJob.title, title);
+            // assert.equal(retunJob.description, description);
+            // assert.equal(retunJob.monthly, monthly);
+            // assert.equal(retunJob.salary, salary);
+        })
+        it('Removes a job', async () => {
+            const initialBalance = parseInt(await token.balanceOf(walletAddress));
+            const ID = 0;
+            await jobs.removeJob(ID);
+            const finalBalance = parseInt(await token.balanceOf(walletAddress));
+            // assert.notEqual(finalBalance, initialBalance);
+            // assert.isAbove(initialBalance, finalBalance, 'Final balance is greater than middle balance');
+        
+            const retunJob = await jobs.getJob(ID);
             console.log("retunJob", retunJob);
-            assert.equal(retunJob.title, title);
-            assert.equal(retunJob.description, description);
-            assert.equal(retunJob.monthly, monthly);
-            assert.equal(retunJob.salary, salary);
+            // assert.equal(retunJob.title, title);
+            // assert.equal(retunJob.description, description);
+            // assert.equal(retunJob.monthly, monthly);
+            // assert.equal(retunJob.salary, salary);
             
         })
 
