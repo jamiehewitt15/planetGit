@@ -71,17 +71,23 @@ class JobsBoard extends Component {
     return (
       <div className="repositoriesSection" >
         <h2 className="promotionsTitle">All Jobs</h2>
-        {this.state.jobs.slice(0, 50).map(((job) => (
-          <Card key={job.id.toString()}>
-           <div>
-             <h3 className="repoDiv">{job.title}</h3>
-             <p>{job.description}</p>
-             <p>Live: {job.live.toString()}</p>
-             <p>ID: {job.id.toString()}</p>
-             <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
-             </div>
-          </Card>
-        )))} 
+        {this.state.jobs.slice(0, 50).map(((job) => {
+          console.log("job.live: ", job.live);
+          if(job.live === true){
+            return (        
+              <Card key={parseInt(job.id)}>
+               <div>
+                 <h3 className="repoDiv">{job.title}</h3>
+                 <p>{job.description}</p>
+                 <p>Live: {job.live.toString()}</p>
+                 <p>ID: {parseInt(job.id)}</p>
+                 <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
+                 </div>
+              </Card>
+            )
+          } else return null
+        }
+         ))} 
       </div>
     );
   }

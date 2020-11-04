@@ -40,7 +40,7 @@ contract Jobs is Ownable {
         // Create Job
         jobsMap[index] = job(index, msg.sender, _title, _description, _monthly, _salary, true);
         allJobs.push(jobsMap[index]);
-        index.add(1);
+        index++;
     }
 
     // Remove Promotion
@@ -49,7 +49,8 @@ contract Jobs is Ownable {
        
         // Release Salary Stake 
         require(token.transfer(msg.sender, jobsMap[_id].salary) == true, "Could not send tokens");
-        jobsMap[_id].live = false;
+        allJobs[_id].live = false;
+        delete jobsMap[_id];
     }
 
     // Get One Jobs
