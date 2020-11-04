@@ -3,7 +3,16 @@
   "version": "1.0.1",
   "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
   "main": "index.js",
+  "bin": {
+    "planet": "node ./src/index.js",
+    "planet start": "node ./src/createUser.js",
+    "planet clone": "node ./src/clone.js",
+    "planet push": "node ./src/push.js",
+    "planet init": "node ./src/init.js",
+    "planet pull": "node ./src/pull.js"
+  },
   "scripts": {
+    "planet": "node ./src/index.js",
     "start": "node ./src/createUser.js",
     "clone": "node ./src/clone.js",
     "push": "node ./src/push.js",
@@ -26,8 +35,11 @@
   },
   "homepage": "https://github.com/jamiehewitt15/FTPackage#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
     "ethereumjs-tx": "^2.1.2",
     "express": "^4.17.1",
+    "figlet": "^1.5.0",
     "ipfs-http-client": "^47.0.1",
     "minimist": "^1.2.5",
     "node-fetch": "^2.6.0",

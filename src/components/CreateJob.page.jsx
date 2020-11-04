@@ -5,7 +5,7 @@ import Jobs from '../abis/Jobs.json';
 import Token from '../abis/GLDToken.json'
 import Web3 from 'web3';
 
-class ShowJobs extends Component {
+class CreateJob extends Component {
     
     async componentWillMount(){
       await this.loadWeb3();
@@ -137,4 +137,4 @@ class ShowJobs extends Component {
   }
 }
 
-export default ShowJobs;
+export default CreateJob;
