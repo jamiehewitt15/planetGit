@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card  } from 'react-bootstrap';
 import './App.css';
 import Promotions from '../abis/Promotions.json';
 import Web3 from 'web3';
@@ -75,12 +76,12 @@ class ShowPromotions extends Component {
         <tbody>
           <tr className="promotionsRow">
           {this.state.promotions.slice(0, 5).map(((promotion) => (
-            <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+            <td key={promotion.id} className="promotionsCell"><Card><Card.Body>{promotion.promotedRepo.repoName}</Card.Body></ Card></td>
           )))} 
           </tr>
           <tr className="promotionsRow">
           {this.state.promotions.slice(5, 10).map(((promotion) => (
-            <td key={promotion.id} className="promotionsCell">{promotion.promotedRepo.repoName}</td>
+            <td key={promotion.id} className="promotionsCell"><Card><Card.Body>{promotion.promotedRepo.repoName}</Card.Body></ Card></td>
           )))} 
           </tr>
         </tbody>

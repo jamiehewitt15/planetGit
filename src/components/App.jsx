@@ -92,9 +92,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+    <div>
         <Router>
         <Header account={this.state.account} userName={this.state.userName} />
+        
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
@@ -121,5 +122,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

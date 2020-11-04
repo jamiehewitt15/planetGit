@@ -14,6 +14,6 @@ Use Planet git to push your git repositories to IPFS and ethereum.
 
 # Installation
 ```
- npm install planetgit
+ npm install planetgit -g
 ```
 

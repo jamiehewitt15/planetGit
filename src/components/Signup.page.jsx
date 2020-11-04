@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Button  } from 'react-bootstrap';
 import './App.css';
 import Users from '../abis/Users.json';
 
@@ -113,11 +114,15 @@ class Signup extends Component {
         
       <h1>Create a User Account</h1>
       <p>Use <span className="logo">PLANET GIT</span> to push your git repo to IPFS & Ethereum!</p> <br />
-      <form onSubmit={this.onSubmit} className="form">
-          Username: <input type="text" id="usernameInput" name="usernameInput" className="form-left"/><br /><br />
-          Picture: <input type="file" id="filepicker" name="fileList" onChange={this.captureImg} className="form-left"/><br /><br />
-          <input type='submit'  />
-      </form>
+      <Form onSubmit={this.onSubmit} className="form">
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control as="textarea" rows={1} id="usernameInput" />
+        <Form.Label>Picture:</Form.Label>
+          <Form.File type="file" id="filepicker" name="fileList" onChange={this.captureImg} className="form-left"/><br /><br />
+          <Button type='submit'>Submit</Button>
+          </Form.Group>
+      </Form>
         <ul id="listing"></ul>
       </div>
     </div>
