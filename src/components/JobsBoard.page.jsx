@@ -62,7 +62,7 @@ class JobsBoard extends Component {
       super(props);
       
       this.state = {
-        jobs:  new Array().fill().map((value, index) => ({ id: index, owner: '', title: '', description: '', monthly: '', salary: '' })),
+        jobs:  new Array().fill().map((value, index) => ({ key: index, id: '', owner: '', title: '', description: '', monthly: '', salary: '' })),
       };
       this.loadJobs();
     }
@@ -72,10 +72,12 @@ class JobsBoard extends Component {
       <div className="repositoriesSection" >
         <h2 className="promotionsTitle">All Jobs</h2>
         {this.state.jobs.slice(0, 50).map(((job) => (
-          <Card>
-           <div key={job.id} >
+          <Card key={job.id.toString()}>
+           <div>
              <h3 className="repoDiv">{job.title}</h3>
              <p>{job.description}</p>
+             <p>Live: {job.live.toString()}</p>
+             <p>ID: {job.id.toString()}</p>
              <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
              </div>
           </Card>
