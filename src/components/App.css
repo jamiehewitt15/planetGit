@@ -68,6 +68,10 @@ table, th, td {
 .jobForm{
     width: 40%;
 }
+.jobInput{
+    display: block;
+    width: 250px;
+}
 .card {
     position: relative;
     display: flex;

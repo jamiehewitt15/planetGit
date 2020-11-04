@@ -15,7 +15,7 @@ contract GLDToken is ERC20, Ownable {
     uint tokenTarget;
 
     constructor() ERC20("Gold", "GLD") {
-        // _mint(msg.sender, 100000000000000000000); // ONLY FOR TESTING
+        _mint(msg.sender, 100000000000000000000); // ONLY FOR TESTING
 
         systemOwner = msg.sender;
         distribution        =    0;

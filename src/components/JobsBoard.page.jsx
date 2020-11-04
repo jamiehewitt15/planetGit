@@ -62,7 +62,7 @@ class JobsBoard extends Component {
       super(props);
       
       this.state = {
-        jobs:  new Array().fill().map((value, index) => ({ id: index, owner: '', title: '', description: '', monthly: '', salary: '', live: false })),
+        jobs:  new Array().fill().map((value, index) => ({ id: index, owner: '', title: '', description: '', monthly: '', salary: '' })),
       };
       this.loadJobs();
     }

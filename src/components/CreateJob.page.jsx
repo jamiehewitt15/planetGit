@@ -126,9 +126,9 @@ class ShowJobs extends Component {
         <p>You must stake the job salary in order to advertise the job.</p>
         <p>Your current balance is: {this.state.balance}</p>
         <form onSubmit={this.createJob} className="form jobForm">
-          Title: <input type="text" id="captureTitle" name="usernameInput" className="form-left"/><br /><br />
-          Description: <textarea type="textarea" id="captureDescription" rows={5} cols="30" name="usernameInput" className="form-left"/><br /><br />
-          Salary: <input type="number" id="captureSalary" name="fileList" className="form-left"/><br /><br />
+          Title: <input type="text" id="captureTitle" name="usernameInput" className="form-left jobInput"/><br /><br />
+          Description: <textarea type="textarea" id="captureDescription" rows={5} cols="30" name="usernameInput" className="form-left jobInput"/><br /><br />
+          Salary: <input type="number" id="captureSalary" name="fileList" className="form-left jobInput"/><br /><br />
           Is the salary per Month: <input type="checkbox" id="captureMonthly" value="true" name="usernameInput" className="form-left"/><br /><br />
           <input type='submit'  />
         </form>
