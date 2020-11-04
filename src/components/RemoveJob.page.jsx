@@ -87,7 +87,7 @@ class RemoveJob extends Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/jobs' />
+          return <Redirect to='/' />
         }
       }
 
