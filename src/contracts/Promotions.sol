@@ -10,6 +10,7 @@ contract Promotions is Repository{
     
     struct promotion{
         Repo promotedRepo;
+        string imgHash;
         uint pricePaid;
     }
 
@@ -30,18 +31,18 @@ contract Promotions is Repository{
     }
     
     // Create Promotion
-    function createPromotion(string memory _projectSlug, uint amount) public {
+    function createPromotion(string memory _projectSlug, string memory _imgHash, uint _amount) public {
         // Check amount
-        require(amount > price, "Value sent must be greater than price.");
+        require(_amount > price, "Value sent must be greater than price.");
 
         // send money
-        require(token.transferFrom(msg.sender, address(this), amount) == true, "Could not send tokens");
+        require(token.transferFrom(msg.sender, address(this), _amount) == true, "Could not send tokens");
 
         // Get Repo
         Repo memory promotedRepo = repo.getRepo(_projectSlug);
 
         // Create Promotion
-        promotions[_projectSlug] = promotion(promotedRepo, amount);
+        promotions[_projectSlug] = promotion(promotedRepo, _imgHash, _amount);
 
         // Find lowest paid promotion
         uint lowestIndex = 0;
