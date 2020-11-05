@@ -116,7 +116,7 @@ class RemoveJob extends Component {
         <p>Your current balance is: {this.state.balance}</p>
         <Form onSubmit={this.removeJob} className="form jobForm">
         <Form.Label>Job ID:</Form.Label>
-          <input type="text" id="captureID" name="usernameInput" className="form-left jobInput"/><br /><br />
+          <Form.Control type="number" id="captureID" name="usernameInput" className="form-left jobInput"/><br /><br />
           <Button type='submit'>Submit</Button>
         </Form>
       </div>

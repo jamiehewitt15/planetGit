@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  { Redirect } from 'react-router-dom'
+import { Form, Button  } from 'react-bootstrap';
 import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Token from '../abis/GLDToken.json'
@@ -125,13 +126,19 @@ class CreateJob extends Component {
         <p>Create a job advert</p>
         <p>You must stake the job salary in order to advertise the job.</p>
         <p>Your current balance is: {this.state.balance}</p>
-        <form onSubmit={this.createJob} className="form jobForm">
-          Title: <input type="text" id="captureTitle" name="usernameInput" className="form-left jobInput"/><br /><br />
-          Description: <textarea type="textarea" id="captureDescription" rows={5} cols="30" name="usernameInput" className="form-left jobInput"/><br /><br />
-          Salary: <input type="number" id="captureSalary" name="fileList" className="form-left jobInput"/><br /><br />
-          Is the salary per Month: <input type="checkbox" id="captureMonthly" value="true" name="usernameInput" className="form-left"/><br /><br />
-          <input type='submit'  />
-        </form>
+        <Form onSubmit={this.createJob} className="form jobForm">
+        <Form.Group>
+          <Form.Label>Title:</Form.Label>
+            <Form.Control type="text" id="captureTitle" name="usernameInput" className="form-left jobInput"/>
+          <Form.Label>Description:</Form.Label>
+            <Form.Control as="textarea" id="captureDescription" rows={5} className="form-left jobInput" />
+          <Form.Label>Salary:</Form.Label>
+            <Form.Control type="number" id="captureSalary" name="fileList" className="form-left jobInput"/>
+          <Form.Label>Is the salary per Month:</Form.Label>
+            <Form.Check type="checkbox" id="captureMonthly" value="true" name="usernameInput" className="form-left"/>
+          <Button type='submit'>Submit</Button>
+        </Form.Group>
+        </Form>
       </div>
     );
   }

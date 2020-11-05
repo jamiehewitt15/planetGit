@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import  { Redirect } from 'react-router-dom'
+import { Form, Button  } from 'react-bootstrap';
 import './App.css';
 import Promotions from '../abis/Promotions.json';
 import Token from '../abis/GLDToken.json'
 import Web3 from 'web3';
 
-class ShowPromotions extends Component {
+class CreatePromotions extends Component {
     
     async componentWillMount(){
       await this.loadWeb3();
@@ -130,14 +131,18 @@ class ShowPromotions extends Component {
         <p>Create a promoton</p>
         <p>The current price for promoting your project is: {this.state.price}</p>
         <p>Your current balance is: {this.state.balance}</p>
-        <form onSubmit={this.createPromotion} className="form">
-          Repo Slug: <input type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
-          Price: <input type="number" id="captureAmount" name="fileList" className="form-left"/><br /><br />
-          <input type='submit'  />
-        </form>
+        <Form onSubmit={this.createPromotion} className="form">
+        <Form.Group>
+          <Form.Label>Repo Slug:</Form.Label>
+            <Form.Control type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
+          <Form.Label>Price:</Form.Label>
+            <Form.Control type="number" id="captureAmount" name="fileList" className="form-left"/><br /><br />
+            <Button type='submit'>Submit</Button>
+        </Form.Group>
+        </Form>
       </div>
     );
   }
 }
 
-export default ShowPromotions;
+export default CreatePromotions;
