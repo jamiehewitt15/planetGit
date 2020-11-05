@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Web3 from 'web3';
-import { Card, Form, Button, Col } from 'react-bootstrap';
+import { Card, Form, } from 'react-bootstrap';
 
 class JobsBoard extends Component {
     
@@ -62,11 +62,7 @@ class JobsBoard extends Component {
       this.setState({
         searchInput: event.target.value
       })
-      console.log(this.state.searchInput)
     }
-
-    
-
 
     constructor (props) {
       super(props);
@@ -90,7 +86,6 @@ class JobsBoard extends Component {
           <Form.Control onChange={this.handleSearchInput} className="mb-2 searchBox" id="inlineFormInput" placeholder="Search" />
         </Form>
         {filteredJobs.slice(0, 50).map(((job) => {
-          console.log("job.live: ", job.live);
           if(job.live === true){
             return (        
               <Card key={parseInt(job.id)}>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form } from 'react-bootstrap';
 import './App.css';
 import Repository from '../abis/Repository.json';
 import Web3 from 'web3';
@@ -56,21 +57,37 @@ class ShowPromotions extends Component {
         window.alert("Sorry, the smart contract not deploy to the current network.")
       }
     }
+    
+    handleSearchInput = (event) => {
+      this.setState({
+        searchInput: event.target.value
+      })
+      console.log("searchInput", this.state.searchInput)
+    }
 
     constructor (props) {
       super(props);
       
       this.state = {
         repositories: [].fill().map((value, index) => ({ id: index, repoSlug: '' })),
+        searchInput: '',
       };
       this.loadRepos();
     }
     
   render() {
+    const filteredRepos = this.state.repositories.filter( repo => {
+      console.log("repo: ", repo)
+      return repo.toLocaleLowerCase().includes(this.state.searchInput.toLocaleLowerCase())
+    })
+    
     return (
       <div className="repositoriesSection" >
         <h2 className="promotionsTitle">All Repositories</h2>
-        {this.state.repositories.slice(0, 50).map(((repository) => (
+        <Form className="searchForm">
+          <Form.Control onChange={this.handleSearchInput} className="mb-2 searchBox" id="inlineFormInput" placeholder="Search" />
+        </Form>
+        {filteredRepos.slice(0, 50).map(((repository) => (
            <div key={repository.id} ><p className="repoDiv">{repository}</p></div>
         )))} 
       </div>
