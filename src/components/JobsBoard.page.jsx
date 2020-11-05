@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Web3 from 'web3';
-import { Card } from 'react-bootstrap';
+import { Card, Form, Button, Col } from 'react-bootstrap';
 
 class JobsBoard extends Component {
     
@@ -58,31 +58,49 @@ class JobsBoard extends Component {
       }
     }
     
+    handleSearchInput = (event) => {
+      this.setState({
+        searchInput: event.target.value
+      })
+      console.log(this.state.searchInput)
+    }
+
+    
+
+
     constructor (props) {
       super(props);
-      
       this.state = {
-        jobs:  new Array().fill().map((value, index) => ({ key: index, id: '', owner: '', title: '', description: '', monthly: '', salary: '' })),
+        jobs: [].fill().map((value, index) => ({ key: index, id: '', owner: '', title: '', description: '', monthly: '', salary: '' })),
+        searchInput: '',
       };
       this.loadJobs();
     }
     
   render() {
+
+    const filteredJobs = this.state.jobs.filter( job => {
+      return job.description.toLocaleLowerCase().includes(this.state.searchInput.toLocaleLowerCase())
+    })
+
     return (
       <div className="repositoriesSection" >
         <h2 className="promotionsTitle">All Jobs</h2>
-        {this.state.jobs.slice(0, 50).map(((job) => {
+        <Form className="searchForm">
+          <Form.Control onChange={this.handleSearchInput} className="mb-2 searchBox" id="inlineFormInput" placeholder="Search" />
+        </Form>
+        {filteredJobs.slice(0, 50).map(((job) => {
           console.log("job.live: ", job.live);
           if(job.live === true){
             return (        
               <Card key={parseInt(job.id)}>
-               <div>
-                 <h3 className="repoDiv">{job.title}</h3>
-                 <p>{job.description}</p>
-                 <p>Live: {job.live.toString()}</p>
-                 <p>ID: {parseInt(job.id)}</p>
-                 <p>Salary: {job.salary.toString()} <span className="logo">PLG</span></p>
-                 </div>
+                <Card.Body>
+                <Card.Title >{job.title}</Card.Title>
+                <Card.Text>{job.description}</Card.Text>
+                <Card.Text>Live: {job.live.toString()}</Card.Text>
+                <Card.Text>ID: {parseInt(job.id)}</Card.Text>
+                <Card.Text>Salary: {job.salary.toString()} <span className="logo">PLG</span></Card.Text>
+                </Card.Body>    
               </Card>
             )
           } else return null

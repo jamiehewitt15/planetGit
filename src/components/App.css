@@ -88,3 +88,14 @@ table, th, td {
 .btn-primary {
     margin: 5px;
 }
+.searchForm{
+    width: 300px;
+    margin: auto;
+}
+.searchBtn{
+    float: left;
+}
+.searchBox{
+    margin: auto;
+    width: 200px;
+}

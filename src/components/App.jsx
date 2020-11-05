@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Web3 from 'web3';
 import './App.css';
-import DirectoryListing from './directoryListing.jsx';
 import Header from './Header.jsx';
 import Users from '../abis/Users.json';
 /**
@@ -14,7 +13,6 @@ import Users from '../abis/Users.json';
  */
 import Home from './Home.page.jsx';
 import Signup from './Signup.page.jsx';
-import NewRepo from './NewRepo.page.jsx';
 import Repo from './Repo.page.jsx';
 import User from './User.jsx';
 import CreatePromotion from './CreatePromotion.page.jsx';
@@ -104,7 +102,6 @@ class App extends Component {
               <Route path="/repo/*"  component={() => <Repo account={this.state.account} />}  />
               <Route path="/user/:username"  component={() => <User account={this.state.account} />}  />
               <Route path="/signup" component={() => <Signup account={this.state.account} />} />
-              <Route path="/newrepo" component={() => <NewRepo account={this.state.account} />} />
               <Route path="/createpromotion" component={() => <CreatePromotion account={this.state.account} />} />
               <Route path="/createrepo" component={() => <CreateRepo account={this.state.account} />} />
               <Route path="/allrepos" component={() => <AllRepos account={this.state.account} />} />

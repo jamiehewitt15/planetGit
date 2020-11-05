@@ -62,7 +62,7 @@ class ShowPromotions extends Component {
       super(props);
       
       this.state = {
-        promotions:  new Array(10).fill().map((value, index) => ({ id: index, pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } })),
+        promotions: [10].fill().map((value, index) => ({ id: index, pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } })),
       };
       this.loadPromotions();
     }
