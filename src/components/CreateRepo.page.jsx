@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
+import { Form, Button  } from 'react-bootstrap';
 import './App.css';
 import Repository from '../abis/Repository.json';
 import Web3 from 'web3';
@@ -84,12 +85,17 @@ class CreateRepo extends Component {
         {this.renderRedirect()}
         <h1>Create a Repo</h1>
         <p>Create you repo here</p>
-        <form onSubmit={this.createRepo} className="form">
-          Repo Slug: <input type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
-          Repo Name: <input type="text" id="captureRepoName" name="fileList" className="form-left"/><br /><br />
-          Repo Hash: <input type="text" id="captureRepoHash" name="fileList" className="form-left"/><br /><br />
-          <input type='submit'  />
-        </form>
+        <Form onSubmit={this.createRepo} className="form">
+        <Form.Group controlId="createRepo">
+          <Form.Label>Repo Slug:</Form.Label>
+            <Form.Control type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
+          <Form.Label>Repo Name:</Form.Label>
+            <Form.Control type="text" id="captureRepoName" name="fileList" className="form-left"/><br /><br />
+          <Form.Label>Repo Hash:</Form.Label>
+            <Form.Control type="text" id="captureRepoHash" name="fileList" className="form-left"/><br /><br />
+          <Button type='submit'>Submit</Button>
+        </Form.Group>
+        </Form>
       </div>
     );
   }

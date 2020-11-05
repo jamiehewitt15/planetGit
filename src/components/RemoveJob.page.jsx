@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  { Redirect } from 'react-router-dom'
+import { Form, Button  } from 'react-bootstrap';
 import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Token from '../abis/GLDToken.json'
@@ -113,10 +114,11 @@ class RemoveJob extends Component {
         <h1>Remove a Job</h1>
         <p>Enter the ID to remove a job advert and refund your stake.</p>
         <p>Your current balance is: {this.state.balance}</p>
-        <form onSubmit={this.removeJob} className="form jobForm">
-          Job ID: <input type="text" id="captureID" name="usernameInput" className="form-left jobInput"/><br /><br />
-          <input type='submit'  />
-        </form>
+        <Form onSubmit={this.removeJob} className="form jobForm">
+        <Form.Label>Job ID:</Form.Label>
+          <input type="text" id="captureID" name="usernameInput" className="form-left jobInput"/><br /><br />
+          <Button type='submit'>Submit</Button>
+        </Form>
       </div>
     );
   }

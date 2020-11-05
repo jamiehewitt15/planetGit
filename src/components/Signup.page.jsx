@@ -115,13 +115,13 @@ class Signup extends Component {
       <h1>Create a User Account</h1>
       <p>Use <span className="logo">PLANET GIT</span> to push your git repo to IPFS & Ethereum!</p> <br />
       <Form onSubmit={this.onSubmit} className="form">
-      <Form.Group controlId="formBasicEmail">
+      <Form.Group controlId="signUpUser">
         <Form.Label>Username:</Form.Label>
         <Form.Control as="textarea" rows={1} id="usernameInput" />
         <Form.Label>Picture:</Form.Label>
           <Form.File type="file" id="filepicker" name="fileList" onChange={this.captureImg} className="form-left"/><br /><br />
           <Button type='submit'>Submit</Button>
-          </Form.Group>
+      </Form.Group>
       </Form>
         <ul id="listing"></ul>
       </div>
