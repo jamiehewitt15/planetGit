@@ -68,6 +68,7 @@ class ShowPromotions extends Component {
     }
     
   render() {
+    console.log("this.state.promotions:", this.state.promotions)
     return (
       <div className="promotionsSection" >
         <h2 className="promotionsTitle">Promotions</h2>
@@ -76,9 +77,10 @@ class ShowPromotions extends Component {
         <tbody>
           <tr className="promotionsRow">
           {this.state.promotions.slice(0, 5).map(((promotion) => (
+            
             <td key={promotion.id} className="promotionsCell">
               <Card>
-                <Card.Img variant="top" src={`{https://ipfs.infura.io/ipfs/${promotion.imgHash}}`} />
+                <Card.Img variant="top" src={`https://ipfs.infura.io/ipfs/${promotion.imgHash}`} className="promotionsImg" />
                 <Card.Body>{promotion.promotedRepo.repoName}</Card.Body>
               </ Card></td>
           )))} 
