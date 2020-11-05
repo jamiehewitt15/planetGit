@@ -62,7 +62,7 @@ class ShowPromotions extends Component {
       super(props);
       
       this.state = {
-        promotions: [10].fill().map((value, index) => ({ id: index, pricePaid: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } })),
+        promotions: [10].fill().map((value, index) => ({ id: index, pricePaid: '', imgHash: '', promotedRepo: { owner: '', repoHash: '', repoName: '' } })),
       };
       this.loadPromotions();
     }
@@ -76,12 +76,20 @@ class ShowPromotions extends Component {
         <tbody>
           <tr className="promotionsRow">
           {this.state.promotions.slice(0, 5).map(((promotion) => (
-            <td key={promotion.id} className="promotionsCell"><Card><Card.Body>{promotion.promotedRepo.repoName}</Card.Body></ Card></td>
+            <td key={promotion.id} className="promotionsCell">
+              <Card>
+                <Card.Img variant="top" src={`{https://ipfs.infura.io/ipfs/${promotion.imgHash}}`} />
+                <Card.Body>{promotion.promotedRepo.repoName}</Card.Body>
+              </ Card></td>
           )))} 
           </tr>
           <tr className="promotionsRow">
           {this.state.promotions.slice(5, 10).map(((promotion) => (
-            <td key={promotion.id} className="promotionsCell"><Card><Card.Body>{promotion.promotedRepo.repoName}</Card.Body></ Card></td>
+            <td key={promotion.id} className="promotionsCell">
+              <Card>
+                <Card.Img variant="top" src={`{https://ipfs.infura.io/ipfs/${promotion.imgHash}}`} />
+                <Card.Body>{promotion.promotedRepo.repoName}</Card.Body>
+              </ Card></td>
           )))} 
           </tr>
         </tbody>

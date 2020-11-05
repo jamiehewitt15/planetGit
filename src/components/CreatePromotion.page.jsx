@@ -6,6 +6,9 @@ import Promotions from '../abis/Promotions.json';
 import Token from '../abis/GLDToken.json'
 import Web3 from 'web3';
 
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
+
 class CreatePromotions extends Component {
     
     async componentWillMount(){
@@ -77,29 +80,48 @@ class CreatePromotions extends Component {
               console.log("error: ", error)
           }
     }
+
     createPromotion = async(event) => {
-        event.preventDefault();
-        const amount = document.getElementById("captureAmount").value;
-        const repoSlug = document.getElementById("captureRepoSlug").value;
-        console.log("amount: ", amount);
-        console.log("repoSlug: ", repoSlug);
-        try{
-            this.state.tokenContract.methods.approve(this.state.promotionAddress, amount).send({from: this.state.account})
-            .on('transactionHash', () => {
-                this.state.promotionContract.methods.createPromotion(repoSlug, amount).send({from: this.state.account})
-                .on('transactionHash', () => {
-                    this.setState({redirect: true})
-                })
-                .on('error', (error) => {
-                    console.log("Error: ", error)
-                })
-            })
-            .on('error', (error) => {
-                console.log("Error: ", error)
-            })
-        } catch(error){
-            console.log("error", error)
-        }
+      event.preventDefault();
+      const img = this.state.imgBuffer;
+      const postResponse = await ipfs.add(img);
+      const imgHash = postResponse.path;
+      
+      const amount = document.getElementById("captureAmount").value;
+      const repoSlug = document.getElementById("captureRepoSlug").value;
+      console.log("amount: ", amount);
+      console.log("repoSlug: ", repoSlug);
+      try{
+          this.state.tokenContract.methods.approve(this.state.promotionAddress, amount).send({from: this.state.account})
+          .on('transactionHash', () => {
+              this.state.promotionContract.methods.createPromotion(repoSlug, imgHash, amount).send({from: this.state.account})
+              .on('transactionHash', () => {
+                  this.setState({redirect: true})
+              })
+              .on('error', (error) => {
+                  console.log("Error: ", error)
+              })
+          })
+          .on('error', (error) => {
+              console.log("Error: ", error)
+          })
+      } catch(error){
+          console.log("error", error)
+      }
+    }
+
+    captureImg = (event) => {
+    event.preventDefault();
+    console.log('The file has been captured!');
+    const file = event.target.files[0];
+    console.log('This is the upload: ', file);
+    const reader = new window.FileReader();
+    reader.readAsArrayBuffer(file);
+    reader.onloadend = () => {
+        console.log('load end...');
+        console.log('Buffer: ', Buffer(reader.result));
+        this.setState({ imgBuffer: reader.result })
+      }
     }
 
     renderRedirect = () => {
@@ -120,6 +142,7 @@ class CreatePromotions extends Component {
           price: '',
           balance: '',
           redirect: false,
+          imgBuffer: '',
       };
     }
     
@@ -137,6 +160,7 @@ class CreatePromotions extends Component {
             <Form.Control type="text" id="captureRepoSlug" name="usernameInput" className="form-left"/><br /><br />
           <Form.Label>Price:</Form.Label>
             <Form.Control type="number" id="captureAmount" name="fileList" className="form-left"/><br /><br />
+            <Form.File type="file" id="filepicker" name="fileList" onChange={this.captureImg} className="form-left"/>
             <Button type='submit'>Submit</Button>
         </Form.Group>
         </Form>

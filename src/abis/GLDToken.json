@@ -441,7 +441,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1386,
+        "sourceUnit": 1391,
         "src": "61:51:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -452,7 +452,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1893,
+        "sourceUnit": 1898,
         "src": "115:55:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -463,7 +463,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1190,
+        "sourceUnit": 1195,
         "src": "172:52:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -476,10 +476,10 @@
               "id": 5,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1892,
+              "referencedDeclaration": 1897,
               "src": "249:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1892",
+                "typeIdentifier": "t_contract$_ERC20_$1897",
                 "typeString": "contract ERC20"
               }
             },
@@ -492,10 +492,10 @@
               "id": 7,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1189,
+              "referencedDeclaration": 1194,
               "src": "256:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1189",
+                "typeIdentifier": "t_contract$_Ownable_$1194",
                 "typeString": "contract Ownable"
               }
             },
@@ -505,20 +505,20 @@
           }
         ],
         "contractDependencies": [
-          1080,
-          1189,
-          1892,
-          1970
+          1085,
+          1194,
+          1897,
+          1975
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 133,
         "linearizedBaseContracts": [
           133,
-          1189,
-          1892,
-          1970,
-          1080
+          1194,
+          1897,
+          1975,
+          1085
         ],
         "name": "GLDToken",
         "nodeType": "ContractDefinition",
@@ -529,10 +529,10 @@
               "id": 9,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1385,
+              "referencedDeclaration": 1390,
               "src": "277:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1385",
+                "typeIdentifier": "t_contract$_SafeMath_$1390",
                 "typeString": "library SafeMath"
               }
             },
@@ -747,7 +747,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "482:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1065,10 +1065,10 @@
                   "name": "ERC20",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1892,
+                  "referencedDeclaration": 1897,
                   "src": "450:5:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20_$1892_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20_$1897_$",
                     "typeString": "type(contract ERC20)"
                   }
                 },
@@ -1145,7 +1145,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "854:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1214,7 +1214,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "894:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1357,7 +1357,7 @@
                               "lValueRequested": false,
                               "memberName": "div",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1315,
+                              "referencedDeclaration": 1320,
                               "src": "999:15:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1455,7 +1455,7 @@
                               "lValueRequested": false,
                               "memberName": "mul",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1298,
+                              "referencedDeclaration": 1303,
                               "src": "1047:15:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1556,7 +1556,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1218,
+                        "referencedDeclaration": 1223,
                         "src": "1104:16:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1602,7 +1602,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1138,
+                  "referencedDeclaration": 1143,
                   "src": "833:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2008,7 +2008,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1386,
+        "sourceUnit": 1391,
         "src": "61:51:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2019,7 +2019,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1893,
+        "sourceUnit": 1898,
         "src": "115:55:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2030,7 +2030,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 134,
-        "sourceUnit": 1190,
+        "sourceUnit": 1195,
         "src": "172:52:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2043,10 +2043,10 @@
               "id": 5,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1892,
+              "referencedDeclaration": 1897,
               "src": "249:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1892",
+                "typeIdentifier": "t_contract$_ERC20_$1897",
                 "typeString": "contract ERC20"
               }
             },
@@ -2059,10 +2059,10 @@
               "id": 7,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1189,
+              "referencedDeclaration": 1194,
               "src": "256:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1189",
+                "typeIdentifier": "t_contract$_Ownable_$1194",
                 "typeString": "contract Ownable"
               }
             },
@@ -2072,20 +2072,20 @@
           }
         ],
         "contractDependencies": [
-          1080,
-          1189,
-          1892,
-          1970
+          1085,
+          1194,
+          1897,
+          1975
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 133,
         "linearizedBaseContracts": [
           133,
-          1189,
-          1892,
-          1970,
-          1080
+          1194,
+          1897,
+          1975,
+          1085
         ],
         "name": "GLDToken",
         "nodeType": "ContractDefinition",
@@ -2096,10 +2096,10 @@
               "id": 9,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1385,
+              "referencedDeclaration": 1390,
               "src": "277:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1385",
+                "typeIdentifier": "t_contract$_SafeMath_$1390",
                 "typeString": "library SafeMath"
               }
             },
@@ -2314,7 +2314,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "482:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2632,10 +2632,10 @@
                   "name": "ERC20",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1892,
+                  "referencedDeclaration": 1897,
                   "src": "450:5:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20_$1892_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20_$1897_$",
                     "typeString": "type(contract ERC20)"
                   }
                 },
@@ -2712,7 +2712,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "854:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2781,7 +2781,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1768,
+                      "referencedDeclaration": 1773,
                       "src": "894:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2924,7 +2924,7 @@
                               "lValueRequested": false,
                               "memberName": "div",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1315,
+                              "referencedDeclaration": 1320,
                               "src": "999:15:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3022,7 +3022,7 @@
                               "lValueRequested": false,
                               "memberName": "mul",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1298,
+                              "referencedDeclaration": 1303,
                               "src": "1047:15:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3123,7 +3123,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1218,
+                        "referencedDeclaration": 1223,
                         "src": "1104:16:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3169,7 +3169,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1138,
+                  "referencedDeclaration": 1143,
                   "src": "833:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3625,12 +3625,12 @@
         }
       },
       "links": {},
-      "address": "0x5785Fee187f5edaa1DD60e724B1FAFad9188a491",
-      "transactionHash": "0x27e4ff6e8151d1cf405dd5f7e640159e86625288ad41f98f826fc874180ea1e1"
+      "address": "0x3f64CfA731E56a1c991B3A44D0A1f1e60D73BBb5",
+      "transactionHash": "0x985f1633f6b8280edc0adbf63b031ae15ef9375c4376b771ba5a191b6c97644c"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-11-05T08:09:19.521Z",
+  "updatedAt": "2020-11-05T10:40:36.975Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
