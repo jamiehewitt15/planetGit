@@ -61,7 +61,7 @@ contract Repository is Ownable {
     function getRepoName(string memory _projectSlug) public view returns(string memory) {
         return repoNames[_projectSlug].repoName;
     }
-   // Get Repo Name
+   // Get Repo Hash
     function getRepoHash(string memory _projectSlug) public onlyOwner view returns(string memory) {
         return repoNames[_projectSlug].repoHash;
     }
