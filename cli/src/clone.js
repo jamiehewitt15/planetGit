@@ -125,6 +125,7 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   //creating raw tranaction
   const rawTransaction = await {
     "from":accountAddress, 
+    "gasPrice": web3.utils.toHex(2000),
     "gasLimit":web3.utils.toHex(2100000),
     "to":contractAddress,
     "value":"0x0",
