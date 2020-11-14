@@ -15,7 +15,7 @@ contract('Users', (accounts)=>{
         user = await Users.deployed();
     })
 
-    describe('deployment', async()=> { 
+    describe('Deployment:', async()=> { 
         it('Deploys successfully', async () => {
             const address = user.address;
             // Test the smart contract has been deployed with a valid address
@@ -26,7 +26,7 @@ contract('Users', (accounts)=>{
         })
     })
 
-    describe('storage', async () => {
+    describe('Functions:', async () => {
         // Test uniqueUsername function
         it('Checks unique username', async () => {
             let username = 'johnTest0000000';

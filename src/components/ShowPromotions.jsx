@@ -71,7 +71,7 @@ class ShowPromotions extends Component {
     console.log("this.state.promotions:", this.state.promotions)
     return (
       <div className="promotionsSection" >
-        <h2 className="promotionsTitle">Promotions</h2>
+        <h2 className="promotionsTitle">Promoted projects:</h2>
        
         <table className="promotionsTable">
         <tbody>

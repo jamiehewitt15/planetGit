@@ -103,7 +103,8 @@ async function updateRepo(){
     const rawTransaction = await {
         "from":accountAddress, 
         "gasLimit":web3.utils.toHex(2100000),
-        "to":contractAddress,"value":"0x0",
+        "to":contractAddress,
+        "value":"0x0",
         "data":contract.methods.updateRepo(repoSlug, repoHash).encodeABI(), 
         "nonce":web3.utils.toHex(count)
         }
