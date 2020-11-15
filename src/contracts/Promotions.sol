@@ -47,25 +47,18 @@ contract Promotions is Repository{
         // Find lowest paid promotion
         uint lowestIndex = 0;
         uint lowestPaid = livePromotions[0].pricePaid;
-        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 0");
         for(uint i = 1; i < livePromotions.length; i++){
-            emit Test(msg.sender, price, _projectSlug, i, "Test 1");
             if(livePromotions[i].pricePaid < lowestPaid){
                 price = lowestPaid;
                 lowestIndex = i;
-                emit Test(msg.sender, price, _projectSlug, i, "Test 2");
             }
         }
         // Remove lowest paid promotion & Make New Promotion Live
-        emit Test(msg.sender, price, _projectSlug, lowestIndex, "Test 3");
-        Test2(promotions[_projectSlug]);
-        livePromotions[lowestIndex] = promotions[_projectSlug]; // promotion(promotedRepo, amount);
-        Test2(livePromotions[lowestIndex]);
+        livePromotions[lowestIndex] = promotions[_projectSlug]; 
     }
+
     // Remove Promotion
-    function removePromotion(string memory _projectSlug) public {
-       
-       
+    function removePromotion(string memory _projectSlug) public {   
     }
     // Get Price
     function getPrice() public view returns(uint) {
