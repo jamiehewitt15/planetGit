@@ -94,7 +94,7 @@ class JobsBoard extends Component {
                 <Card.Text>{job.description}</Card.Text>
                 <Card.Text>Live: {job.live.toString()}</Card.Text>
                 <Card.Text>ID: {parseInt(job.id)}</Card.Text>
-                <Card.Text>Salary: {job.salary.toString()} <span className="logo">PLG</span></Card.Text>
+                <Card.Text>Salary: {job.salary.toString()} <span className="logo">GLD</span></Card.Text>
                 </Card.Body>    
               </Card>
             )
