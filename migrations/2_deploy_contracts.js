@@ -29,7 +29,7 @@ module.exports = async function(deployer) {
   const promotions = await Promotions.deployed();
   console.log(">>> promotions Address: ", promotions.address);
   
-  // Deploying Promotions Contract
+  // Deploying Jobs Contract
   await deployer.deploy(Jobs, token.address);
   const jobs = await Jobs.deployed();
   console.log(">>> jobs Address: ", jobs.address);
