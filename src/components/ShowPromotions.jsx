@@ -89,7 +89,7 @@ class ShowPromotions extends Component {
           {this.state.promotions.slice(5, 10).map(((promotion) => (
             <td key={promotion.id} className="promotionsCell">
               <Card>
-                <Card.Img variant="top" src={`{https://ipfs.infura.io/ipfs/${promotion.imgHash}}`} />
+                <Card.Img variant="top" src={`https://ipfs.infura.io/ipfs/${promotion.imgHash}`} />
                 <Card.Body>{promotion.promotedRepo.repoName}</Card.Body>
               </ Card></td>
           )))} 
