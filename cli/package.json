@@ -13,11 +13,11 @@
   },
   "scripts": {
     "planet": "node ./src/index.js",
-    "start": "node ./src/createUser.js",
-    "clone": "node ./src/clone.js",
-    "push": "node ./src/push.js",
-    "init": "node ./src/init.js",
-    "pull": "node ./src/pull.js"
+    "planet start": "node ./src/createUser.js",
+    "planet clone": "node ./src/clone.js",
+    "planet push": "node ./src/push.js",
+    "planet init": "node ./src/init.js",
+    "planet pull": "node ./src/pull.js"
   },
   "repository": {
     "type": "git",
