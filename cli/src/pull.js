@@ -83,7 +83,7 @@ const loadContract = async (abi, contractAddress) => {
 async function mintReward(contractAddress, contract, projectSlug, nonce){
   console.log("Minting token reward")
   let privateKeyBuffer;
-  const privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
+  privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
   try {
       privateKeyBuffer = await Buffer.from(privateKey, 'hex');
       console.log("privateKeyBuffer", privateKeyBuffer)
@@ -95,20 +95,30 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   //creating raw tranaction
   const rawTransaction = await {
     "from":accountAddress, 
+    "gasPrice": web3.utils.toHex(2000),
     "gasLimit":web3.utils.toHex(2100000),
     "to":contractAddress,
     "value":"0x0",
     "data":contract.methods.mintReward(projectSlug, nonce).encodeABI(), 
     "nonce":web3.utils.toHex(count)
     }
-    console.log("rawTransaction", rawTransaction)
+    // console.log("rawTransaction", rawTransaction)
     try{
       //creating tranaction via ethereumjs-tx
-      const transaction = await new EthereumTx(rawTransaction);
+      const transaction = await new EthereumTx(rawTransaction, { chain: 'kovan' });
       //signing transaction with private key
       transaction.sign(privateKeyBuffer);
       //sending transacton via web3 module
       web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
+      .on('transactionHash', (hash) => {
+          console.log(chalk.cyan("\n\nPull finished\n"));
+          console.log(chalk.cyan("Transaction Hash:", hash));
+          shell.exit(0);
+          // getAll();
+      })
+      .on('error', (error) => {
+          console.log("Error: ", error)
+      })
     } catch(error){
       console.log("Error 5: ", error)
     }

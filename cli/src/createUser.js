@@ -92,20 +92,24 @@ async function createUser(){
     //creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
-        "gasLimit":web3.utils.toHex(2100000),
+        "gasPrice": web3.utils.toHex(200000),
+        "gasLimit":web3.utils.toHex(21000000),
         "to":contractAddress,"value":"0x0",
         "data":contract.methods.createUser(userName, imageHash).encodeABI(),
         "nonce":web3.utils.toHex(count)
         }
     // console.log("rawTransaction", rawTransaction);
     //creating tranaction via ethereumjs-tx
-    const transaction = await new EthereumTx(rawTransaction);
+    const transaction = await new EthereumTx(rawTransaction, { chain: 'kovan' });
     //signing transaction with private key
     transaction.sign(privateKeyBuffer);
     //sending transacton via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
-    .on('transactionHash', () => {
-        getAll();
+    .on('transactionHash', (hash) => {
+        console.log(chalk.cyan("\n\nCreate User finished:", userName));
+        console.log(chalk.cyan("\nTransaction Hash:", hash));
+        shell.exit(0);
+        // getAll();
     })
     .on('error', (error) => {
         console.log("Error: ", error)
@@ -136,7 +140,7 @@ async function run(){
     } catch(error){
         console.log("Error while creating user:", error)
     }
-    shell.exit(0);
+    
 }
 
 

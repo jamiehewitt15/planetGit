@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
@@ -8,12 +9,12 @@ let projectSlug;
 shell.ShellString(projectSlug).to('repoSlug.txt')
 // Ask for user input if arguments are missing
 if (!argv._[0]){
-  newFolder = readlineSync.question('Please enter the new folder name: ');
+  newFolder = readlineSync.question(chalk.yellow('\n\nPlease enter the new folder name: \n\n'));
 } else{
   newFolder = argv._[0].toString();
 }
 if (!argv._[1]){
-  projectSlug = readlineSync.question('Please enter the Slug of the repository you would like to clone: ').toString();
+  projectSlug = readlineSync.question(chalk.yellow('\n\nPlease enter the Slug of the repository you would like to clone: \n\n')).toString();
 } else{
   projectSlug = argv._[1]
 }
@@ -21,11 +22,11 @@ if (!argv._[1]){
 const cloneRepo = async(repoHash) => {
   const folder = newFolder.replace(/(\r\n|\n|\r)/gm, "");
   repoHash = repoHash.replace(/(\r\n|\n|\r)/gm, "");
-  console.log('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash, folder);
+  console.log(chalk.yellow('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash, folder));
   let clonecommand = `git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`;
   console.log("clonecommand", clonecommand)
   if (shell.exec(clonecommand).code !== 0) {
-    console.log("Waiting for IPFS daemon to start...")
+    console.log(chalk.yellow("Waiting for IPFS daemon to start..."))
     await sleep(4000);
     shell.echo('Trying again...');
     shell.exec(`git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`)
@@ -40,7 +41,7 @@ function sleep(ms) {
 
 const startClone = async(repoHash) => {
   if (!shell.which('git')) { // check if user has git installed
-    shell.echo('Sorry, this script requires git');
+    shell.echo(chalk.yellow('Sorry, this script requires git'));
     shell.exit(1);
   } else{
     if (shell.which('ipfs')) { // check if user has IPFS installed
@@ -49,8 +50,8 @@ const startClone = async(repoHash) => {
       await cloneRepo(repoHash);
       }
       else{ // Use public IPFS node
-      console.log("We recomend installing IPFS")
-      console.log("Attempting: requesting repo through INFURA public node")
+      console.log(chalk.yellow("We recomend installing IPFS"))
+      console.log(chalk.yellow("Attempting: requesting repo through INFURA public node"))
       shell.exec(`git clone https://${repoHash}.ipfs.infura-ipfs.io/ ${newFolder}`);
     }
   }
@@ -70,7 +71,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
 const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
-console.log("provider", provider)
+// console.log("provider", provider)
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
 const web3 = new Web3js(web3Provider);
@@ -100,6 +101,7 @@ const getHash = async () => {
               const mintContract = await loadContract(mintAbi, mintAddress);
               const nonce = web3.utils.randomHex(4);
               await mintReward(mintAddress, mintContract, projectSlug, nonce); // await mintContract.methods.mintReward(projectSlug, nonce);
+              console.log("Mint reward complete")
               await mintContract.events.Hash({
                 filter: {_from: accountAddress, nonce: nonce}, 
                 fromBlock: 0
@@ -109,7 +111,7 @@ const getHash = async () => {
                 })
                 .on('data', async function(event){
                     const returnHash = await event.returnValues._value;
-                    console.log("returnHash", returnHash)
+                    console.log(chalk.cyan("Transaction Hash 2:", returnHash));
                     await startClone(returnHash);
                     return returnHash;
                 })
@@ -120,7 +122,7 @@ const getHash = async () => {
 
 async function mintReward(contractAddress, contract, projectSlug, nonce){
   let privateKeyBuffer;
-  const privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
+  const privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
   try {
       privateKeyBuffer = await Buffer.from(privateKey, 'hex');
       console.log("privateKeyBuffer", privateKeyBuffer)
@@ -131,19 +133,28 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   //creating raw tranaction
   const rawTransaction = await {
     "from":accountAddress, 
-    "gasPrice": web3.utils.toHex(20000),
-    "gasLimit":web3.utils.toHex(2100000),
+    "gasPrice": web3.utils.toHex(1000000000),
+    "gasLimit":web3.utils.toHex(12499988),
     "to":contractAddress,
     "value":"0x0",
     "data":contract.methods.mintReward(projectSlug, nonce).encodeABI(), 
     "nonce":web3.utils.toHex(count)
     }
     //creating tranaction via ethereumjs-tx
-    const transaction = await new EthereumTx(rawTransaction);
+    const transaction = await new EthereumTx(rawTransaction, { chain: 'kovan' });
     //signing transaction with private key
     transaction.sign(privateKeyBuffer);
     //sending transacton via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
+    .on('transactionHash', (hash) => {
+        console.log(chalk.cyan("\n\nTransaction Hash 1:", hash));
+        return hash
+        // getAll();
+    })
+    .on('error', (error) => {
+        console.log(chalk.red("Error: ", error))
+        return error
+    })
 }
 
 async function run(){
