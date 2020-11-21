@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
@@ -36,45 +37,58 @@ async function setup(){
     const contract = await loadContract(contractAddress);
     let uniqueName;
     do {
-        userName = readlineSync.question('\n\nPlease enter a username:\n\n');
+        userName = readlineSync.question(
+            chalk.yellow(
+                '\n\nPlease enter a username:\n\n'
+              ));
         console.log("userName", userName);
         uniqueName = await contract.methods.uniqueUsername(userName).call();
         
         if (uniqueName === false) {
-            console.log("Sorry, that username is already taken. Please choose another one.")
+            console.log(
+                chalk.yellow(
+                    "Sorry, that username is already taken. Please choose another one."
+                  ))
         }
     } while (uniqueName !== true);
-    let newUser = readlineSync.question('\n\nDo you already have an ethereum account?\nEnter y or n\n\n');
+    let newUser = readlineSync.question(
+        chalk.yellow(
+            '\n\nDo you already have an ethereum account?\nEnter y or n\n\n'
+          )
+        );
     if(newUser === 'n'){
     const account = await web3.eth.accounts.create();
     accountAddress = account.address.toString();
     privateKey = account.privateKey.toString();
-    console.log("Your new Ethereum account address:", accountAddress);
-    console.log("Your new Ethereum account Private Key:", privateKey);
+    console.log(chalk.cyan("Your new Ethereum account address:", accountAddress));
+    console.log(chalk.cyan("Your new Ethereum account Private Key:", privateKey));
     newUser = readlineSync.question('\n\nPlease note these down somewhere secure\n\nYou will need to add Eth to you account before you can continue\n\n');
+    shell.exit(0);
     } else{
-        accountAddress = readlineSync.question('\n\nPlease enter you public address:\n\n');
-        privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
+        accountAddress = readlineSync.question(chalk.yellow('\n\nPlease enter you public address:\n\n'));
+        privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
     }
 }
 
 async function createUser(){
-    console.log("createUser")
+    console.log("Creating User...")
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
     console.log("accountAddress", accountAddress);
     // const privateKeyBuffer = Buffer.from(privateKey, 'hex');
     let privateKeyBuffer;
     try {
+        // console.log("privateKey", privateKey)
         privateKeyBuffer = await Buffer.from(privateKey, 'hex');
-        console.log("privateKeyBuffer", privateKeyBuffer)
+        // console.log("privateKeyBuffer", privateKeyBuffer)
     } catch (error) {
         console.log(">>> error 1", error)
     }
     // get transaction count, later will used as nonce
-    console.log("getTransactionCount")
+    // console.log("getTransactionCount")
     const count = await web3.eth.getTransactionCount(accountAddress);
-    console.log("getTransactionCount", count)
+    // console.log("getTransactionCount", count)
+
     //creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
@@ -83,7 +97,7 @@ async function createUser(){
         "data":contract.methods.createUser(userName, imageHash).encodeABI(),
         "nonce":web3.utils.toHex(count)
         }
-    console.log("rawTransaction", rawTransaction);
+    // console.log("rawTransaction", rawTransaction);
     //creating tranaction via ethereumjs-tx
     const transaction = await new EthereumTx(rawTransaction);
     //signing transaction with private key
@@ -115,7 +129,10 @@ async function run(){
     }
     try{
         await createUser();
-        console.log("createUser finished");
+        console.log(
+            chalk.cyan(
+                "createUser finished:", userName
+              ));
     } catch(error){
         console.log("Error while creating user:", error)
     }
