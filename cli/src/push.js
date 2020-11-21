@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const shell = require('shelljs');
 const ipfsClient = require('ipfs-http-client');
 const { globSource } = ipfsClient;

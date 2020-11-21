@@ -4,20 +4,18 @@
   "description": "A package to fetch URLs that contain JSON data and return the contents in a promise",
   "main": "index.js",
   "bin": {
-    "planet": "./src/index.js",
-    "planet start": "./src/createUser.js",
-    "planet clone": "./src/clone.js",
-    "planet push": "./src/push.js",
-    "planet init": "./src/init.js",
-    "planet pull": "./src/pull.js"
+    "planet-start": "./src/createUser.js",
+    "planet-clone": "./src/clone.js",
+    "planet-push": "./src/push.js",
+    "planet-init": "./src/init.js",
+    "planet-pull": "./src/pull.js"
   },
   "scripts": {
-    "planet": "node ./src/index.js",
-    "planet start": "node ./src/createUser.js",
-    "planet clone": "node ./src/clone.js",
-    "planet push": "node ./src/push.js",
-    "planet init": "node ./src/init.js",
-    "planet pull": "node ./src/pull.js"
+    "planet-start": "node ./src/createUser.js",
+    "planet-clone": "node ./src/clone.js",
+    "planet-push": "node ./src/push.js",
+    "planet-init": "node ./src/init.js",
+    "planet-pull": "node ./src/pull.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +35,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
+    "dotenv": "^8.2.0",
     "ethereumjs-tx": "^2.1.2",
     "express": "^4.17.1",
     "figlet": "^1.5.0",

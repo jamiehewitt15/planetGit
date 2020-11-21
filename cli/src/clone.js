@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
