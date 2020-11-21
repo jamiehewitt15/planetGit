@@ -7,7 +7,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
-const provider = `https://kovan.infura.io/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 console.log("provider", provider)
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
@@ -111,13 +111,13 @@ async function run(){
         await setup();
         console.log("Setup finished");
     } catch(error){
-        console("Error during setup:", error)
+        console.log("Error during setup:", error)
     }
     try{
         await createUser();
         console.log("createUser finished");
     } catch(error){
-        console("Error while creating user:", error)
+        console.log("Error while creating user:", error)
     }
     shell.exit(0);
 }
