@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 const shell = require('shelljs');
 const ipfsClient = require('ipfs-http-client');
 const { globSource } = ipfsClient;
@@ -11,13 +12,13 @@ const pushRepo = async() => {
   shell.exec(`git clone --bare ${pwdHome} ../tempPlanetGit`, {async:true, silent: true});
   try {
       await sleep(8000); // wait for IPFS Daemon to start
-      shell.cd('../tempPlanetGit');
+      shell.cd('../tempPlanetGit', {silent:true});
       shell.exec(`git update-server-info`);
       repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
       console.log("repoHash", repoHash);
   } catch (error) {
       await sleep(4000); // wait for IPFS Daemon to start
-      console.log("Waiting for IPFS to start")
+      console.log(chalk.yellow("Waiting for IPFS to start"))
       let file = await ipfs.add(globSource('./', { recursive: true, hidden: true }));
       repoHash = shell.exec(`ipfs files stat --hash `).stdout;
       console.log("repoHash", repoHash);
@@ -34,7 +35,7 @@ function sleep(ms) {
 
 const startPush = async() => {
   if (!shell.which('git')) { // check if user has git installed
-    shell.echo('Sorry, this script requires git');
+    shell.echo(chalk.red('Sorry, this script requires git'));
     shell.exit(1);
   } else{
     if (shell.which('ipfs')) { // check if user has IPFS installed
@@ -43,8 +44,8 @@ const startPush = async() => {
       await pushRepo();
       }
       else{ // Use public IPFS node
-      console.warn("We recomend installing IPFS");
-      console.warn("Attempting to access IPFS through INFURA public node");
+      console.warn(chalk.yellow("We recomend installing IPFS"));
+      console.warn(chalk.yellow("Attempting to access IPFS through INFURA public node"));
       ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
       await pushRepo();
     }
@@ -91,20 +92,20 @@ async function setup(){
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
     let uniqueSlug;
-    repoName = readlineSync.question('\n\nPlease enter a name for your repo:\n\n');
+    repoName = readlineSync.question(chalk.yellow('\n\nPlease enter a name for your repo:\n\n'));
     do {
-        repoSlug = readlineSync.question('\n\nPlease enter a unique slug for your repo:\nYour repo will be available at planetgit.com/repos/[slug]\n\n');
+        repoSlug = readlineSync.question(chalk.yellow('\n\nPlease enter a unique slug for your repo:\nYour repo will be available at planetgit.com/repos/[slug]\n\n'));
         uniqueSlug = await contract.methods.uniqueRepoSlug(repoSlug).call();
-        console.log("uniqueSlug", uniqueSlug);
+        console.log(chalk.cyan("Unique Slug:", uniqueSlug));
         if (uniqueSlug === false) {
-            console.log("Sorry, that slug is already taken. Please choose another one.")
+            console.log(chalk.yellow("Sorry, that slug is already taken. Please choose another one."))
         }
     } while (uniqueSlug !== true);
     shell.cd(pwdHome);
     shell.ShellString(repoSlug).to('repoSlug.txt')
-    accountAddress = readlineSync.question('\n\nPlease enter you public address:\n\n');
+    accountAddress = readlineSync.question(chalk.yellow('\n\nPlease enter you public address:\n\n'));
     shell.ShellString(accountAddress).to('accountAddress.txt')
-    privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
+    privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
 }
 
 async function createRepo(){
@@ -115,31 +116,36 @@ async function createRepo(){
     let privateKeyBuffer;
     try {
         privateKeyBuffer = await Buffer.from(privateKey, 'hex');
-        console.log("privateKeyBuffer", privateKeyBuffer)
+        // console.log("privateKeyBuffer", privateKeyBuffer)
     } catch (error) {
         console.log(">>> error 1", error)
     }
     // get transaction count, later will used as nonce
-    console.log("getTransactionCount")
+    // console.log("getTransactionCount")
     const count = await web3.eth.getTransactionCount(accountAddress);
     console.log("getTransactionCount", count)
     //creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
-        "gasLimit":web3.utils.toHex(2100000),
-        "to":contractAddress,"value":"0x0",
+        "gasPrice": web3.utils.toHex(2000),
+        "gasLimit": web3.utils.toHex(2100000),
+        "to":contractAddress,
+        "value":"0x0",
         "data":contract.methods.createRepo(repoSlug, repoName, repoHash).encodeABI(), 
         "nonce":web3.utils.toHex(count)
         }
-    console.log("rawTransaction", rawTransaction);
+    // console.log("rawTransaction", rawTransaction);
+
     //creating tranaction via ethereumjs-tx
-    const transaction = await new EthereumTx(rawTransaction);
+    const transaction = new EthereumTx(rawTransaction, { chain: 'kovan' })
     //signing transaction with private key
     transaction.sign(privateKeyBuffer);
     //sending transacton via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
-    .on('transactionHash', () => {
-        getAll();
+    .on('transactionHash', async (hash) => {
+        console.log("Transaction Hash: ", hash);
+        console.log(chalk.cyan("\n\ninit Repo finished\n\n"));
+        shell.exit(0);
     })
     .on('error', (error) => {
         console.log("Error: ", error)
@@ -154,13 +160,11 @@ async function getAll(){
 }
 
 async function run(){
+    console.log(chalk.cyan("start init"));
     await startPush();
-    console.log("startPush finished");
     console.log("Repo Hash:", repoHash);
     await setup();
     await createRepo();
-    console.log("createRepo finished");
-    shell.exit(0);
 }
 
 

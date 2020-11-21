@@ -36,11 +36,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "user": "node ./cli/src/createUser.js",
-    "clone": "node ./cli/src/clone.js",
-    "push": "node ./cli/src/push.js",
-    "init": "node ./cli/src/init.js",
-    "pull": "node ./cli/src/pull.js"
+    "planet-start": "node ./cli/src/createUser.js",
+    "planet-clone": "node ./cli/src/clone.js",
+    "planet-push": "node ./cli/src/push.js",
+    "planet-init": "node ./cli/src/init.js",
+    "planet-pull": "node ./cli/src/pull.js"
   },
   "eslintConfig": {
     "extends": "react-app"

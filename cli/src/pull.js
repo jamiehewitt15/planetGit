@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 const shell = require('shelljs');
 const readlineSync = require('readline-sync');
 const argv = require('minimist')(process.argv.slice(2));
@@ -14,7 +15,7 @@ const pullRepo = async(repoHash) => {
     shell.echo('Trying again...');
     shell.exec(`git pull http://127.0.0.1:8080/ipfs/${repoHash}`)
   }
-  console.log("Finished")
+  console.log(chalk.cyan("Finished"))
   shell.exit(0);
 }
 
@@ -24,16 +25,20 @@ function sleep(ms) {
 
 const startPull = async(repoHash) => {
   if (!shell.which('git')) { // check if user has git installed
-    shell.echo('Sorry, this script requires git');
+    shell.echo(chalk.red('Sorry, this script requires git'));
     shell.exit(1);
   } else{
     if (shell.which('ipfs')) { // check if user has IPFS installed
       shell.exec(`ipfs daemon`, {async:true, silent:true});
       await sleep(2000); // wait for IPFS Daemon to start
-      await pullRepo(repoHash);
+      try{
+        await pullRepo(repoHash);
+      } catch(error){
+        console.log("Error 4: ", error)
+      }
       }
       else{ // Use public IPFS node
-      console.log("We recomend installing IPFS")
+      console.log(chalk.yellow("We recomend installing IPFS"))
       console.log("Attempting: requesting repo through INFURA public node")
       shell.exec(`git pull https://${repoHash}.ipfs.infura-ipfs.io/`);
     }
@@ -76,8 +81,9 @@ const loadContract = async (abi, contractAddress) => {
 }
 
 async function mintReward(contractAddress, contract, projectSlug, nonce){
+  console.log("Minting token reward")
   let privateKeyBuffer;
-  const privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
+  const privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
   try {
       privateKeyBuffer = await Buffer.from(privateKey, 'hex');
       console.log("privateKeyBuffer", privateKeyBuffer)
@@ -85,20 +91,27 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
       console.log(">>> error 1", error)
   }
   const count = await web3.eth.getTransactionCount(accountAddress);
+  console.log("Transaction Count:", count)
   //creating raw tranaction
   const rawTransaction = await {
     "from":accountAddress, 
     "gasLimit":web3.utils.toHex(2100000),
-    "to":contractAddress,"value":"0x0",
+    "to":contractAddress,
+    "value":"0x0",
     "data":contract.methods.mintReward(projectSlug, nonce).encodeABI(), 
     "nonce":web3.utils.toHex(count)
     }
-    //creating tranaction via ethereumjs-tx
-    const transaction = await new EthereumTx(rawTransaction);
-    //signing transaction with private key
-    transaction.sign(privateKeyBuffer);
-    //sending transacton via web3 module
-    web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
+    console.log("rawTransaction", rawTransaction)
+    try{
+      //creating tranaction via ethereumjs-tx
+      const transaction = await new EthereumTx(rawTransaction);
+      //signing transaction with private key
+      transaction.sign(privateKeyBuffer);
+      //sending transacton via web3 module
+      web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
+    } catch(error){
+      console.log("Error 5: ", error)
+    }
 }
 
 
@@ -107,10 +120,14 @@ const getHash = async () => {
   // const repositoryContract = await loadContract(repositoryAbi, repositoryAddress);
   const mintAddress = await loadContractAddress(mintNetworks);
   const mintContract = await loadContract(mintAbi, mintAddress);
-  const nonce = web3.utils.randomHex(4);
-  await mintReward(mintAddress, mintContract, repoSlug, nonce); // await mintContract.methods.mintReward(projectSlug, nonce);
+  const eventID = web3.utils.randomHex(4);
+  try{
+    await mintReward(mintAddress, mintContract, repoSlug, eventID); // await mintContract.methods.mintReward(projectSlug, nonce);
+  } catch(error){
+    console.log("Error 2: ", error)
+  }
   await mintContract.events.Hash({
-    filter: {_from: accountAddress, nonce: nonce}, 
+    filter: {_from: accountAddress, nonce: eventID}, 
     fromBlock: 0
     })
     .on("connected", function(subscriptionId){
@@ -119,7 +136,12 @@ const getHash = async () => {
     .on('data', async function(event){
         const returnHash = await event.returnValues._value;
         console.log("returnHash", returnHash);
-        await startPull(returnHash);
+        try{
+          await startPull(returnHash);
+        } catch (error){
+          console.log("error 3: ", error)
+        }
+        
         // return returnHash;
     })
     .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
@@ -129,7 +151,14 @@ const getHash = async () => {
 
 
 async function run(){
-  await getHash();
+  try{
+    await getHash();
+    console.log(chalk.cyan("Pull Finished"))
+  } catch(error){
+    console.log("error 1: ", error)
+  }
+ 
+  
 }
 
 run();
