@@ -8,7 +8,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
-const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const provider = `wss://kovan.infura.io/ws/v3/d436dc4ffe4a45ba96a30c9b1c6b63ac` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 console.log("provider", provider)
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
@@ -93,7 +93,7 @@ async function createUser(){
     const rawTransaction = await {
         "from":accountAddress, 
         "gasPrice": web3.utils.toHex(200000),
-        "gasLimit":web3.utils.toHex(21000000),
+        "gasLimit":web3.utils.toHex(12487794),
         "to":contractAddress,"value":"0x0",
         "data":contract.methods.createUser(userName, imageHash).encodeABI(),
         "nonce":web3.utils.toHex(count)

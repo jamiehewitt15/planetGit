@@ -61,7 +61,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
-const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const provider = `wss://kovan.infura.io/ws/v3/d436dc4ffe4a45ba96a30c9b1c6b63ac` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
 const web3 = new Web3js(web3Provider);

@@ -24,7 +24,7 @@ const cloneRepo = async(repoHash) => {
   repoHash = repoHash.replace(/(\r\n|\n|\r)/gm, "");
   console.log(chalk.yellow('Cloning into: ', 'http://127.0.0.1:8080/ipfs/' + repoHash, folder));
   let clonecommand = `git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`;
-  console.log("clonecommand", clonecommand)
+  
   if (shell.exec(clonecommand).code !== 0) {
     console.log(chalk.yellow("Waiting for IPFS daemon to start..."))
     await sleep(4000);
@@ -70,7 +70,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
-const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const provider = `wss://kovan.infura.io/ws/v3/d436dc4ffe4a45ba96a30c9b1c6b63ac` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 // console.log("provider", provider)
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
@@ -79,7 +79,16 @@ const web3 = new Web3js(web3Provider);
 // const { abi: repositoryAbi , networks: repositoryNetworks  } = require('../abis/Repository.json');
 const { abi: mintAbi , networks: mintNetworks  } = require('../abis/MintReward.json');
 
-let accountAddress = shell.cat("accountAddress.txt").stdout;
+let accountAddress = '';
+try{
+  accountAddress = shell.cat("accountAddress.txt").stdout;
+} catch(error){
+
+}
+if(accountAddress === ''){
+  accountAddress = readlineSync.question(chalk.yellow('\n\nPlease enter you public address:\n\n'));
+}
+
 let privateKey = '';
 
 const loadContractAddress = async (networks) => {
@@ -101,7 +110,8 @@ const getHash = async () => {
               const mintContract = await loadContract(mintAbi, mintAddress);
               const nonce = web3.utils.randomHex(4);
               await mintReward(mintAddress, mintContract, projectSlug, nonce); // await mintContract.methods.mintReward(projectSlug, nonce);
-              console.log("Mint reward complete")
+              console.log(chalk.yellow("\n\nMint Reward Transaction Sent"))
+              console.log(chalk.yellow("Awaiting mining..."))
               await mintContract.events.Hash({
                 filter: {_from: accountAddress, nonce: nonce}, 
                 fromBlock: 0

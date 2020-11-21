@@ -56,7 +56,7 @@ const EthereumTx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 const IFURA_API_KEY_KOVAN = process.env.IFURA_API_KEY_KOVAN;
-const provider = `wss://kovan.infura.io/ws/v3/${IFURA_API_KEY_KOVAN}` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
+const provider = `wss://kovan.infura.io/ws/v3/d436dc4ffe4a45ba96a30c9b1c6b63ac` // Local: 'HTTP://127.0.0.1:7545' // Main-net: 'https://mainnet.infura.io/v3/68e8a21ed26448299c8e325638bd9085';
 
 
 const web3Provider = new Web3js.providers.WebsocketProvider(provider);
@@ -86,17 +86,15 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
   try {
       privateKeyBuffer = await Buffer.from(privateKey, 'hex');
-      console.log("privateKeyBuffer", privateKeyBuffer)
   } catch (error) {
       console.log(">>> error 1", error)
   }
   const count = await web3.eth.getTransactionCount(accountAddress);
-  console.log("Transaction Count:", count)
   //creating raw tranaction
   const rawTransaction = await {
     "from":accountAddress, 
-    "gasPrice": web3.utils.toHex(2000),
-    "gasLimit":web3.utils.toHex(2100000),
+    "gasPrice": web3.utils.toHex(1000000000),
+    "gasLimit":web3.utils.toHex(12487794),
     "to":contractAddress,
     "value":"0x0",
     "data":contract.methods.mintReward(projectSlug, nonce).encodeABI(), 
@@ -111,9 +109,8 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
       //sending transacton via web3 module
       web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
       .on('transactionHash', (hash) => {
-          console.log(chalk.cyan("\n\nPull finished\n"));
           console.log(chalk.cyan("Transaction Hash:", hash));
-          shell.exit(0);
+          return
           // getAll();
       })
       .on('error', (error) => {
@@ -133,6 +130,8 @@ const getHash = async () => {
   const eventID = web3.utils.randomHex(4);
   try{
     await mintReward(mintAddress, mintContract, repoSlug, eventID); // await mintContract.methods.mintReward(projectSlug, nonce);
+    console.log(chalk.yellow("\n\nMint Reward Transaction Sent"))
+    console.log(chalk.yellow("Awaiting mining..."))
   } catch(error){
     console.log("Error 2: ", error)
   }
