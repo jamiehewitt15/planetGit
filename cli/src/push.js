@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 const shell = require('shelljs');
 const ipfsClient = require('ipfs-http-client');
 const { globSource } = ipfsClient;
@@ -8,20 +9,20 @@ let repoHash = '';
 
 const pushRepo = async() => {
   let pwd = shell.pwd().stdout;
-  console.log("pwd: ", pwd)
+  //console.log("pwd: ", pwd)
   shell.exec(`cd ../..`);
   pwd = shell.pwd().stdout;
   shell.exec(`git clone --bare ${pwd} ../tempPlanetGit`);
   shell.cd('../tempPlanetGit');
   pwd = shell.pwd().stdout;
-  console.log("pwd: ", pwd)
+  //console.log("pwd: ", pwd)
   shell.exec(`git update-server-info`);
   repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
-  console.log("repoHash", repoHash);
+  console.log(chalk.yellow("repoHash", repoHash));
   shell.cd('../');
   shell.pwd();
   shell.rm('-rf', './tempPlanetGit');
-  console.log("Finished")
+  console.log(chalk.cyan("\n\nRepository uploaded to IPFS\n\n"))
 }
 
 function sleep(ms) {
@@ -87,14 +88,14 @@ const loadContract = async (contractAddress) => {
 async function setup(){
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
-    privateKey = readlineSync.question('\n\nPlease enter you private key:\n\n');
+    privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
 }
 
 async function updateRepo(){
-    console.log("updateRepo")
+    console.log(chalk.yellow("\n\nUpdate Repo"))
     const contractAddress = await loadContractAddress();
     const contract = await loadContract(contractAddress);
-    console.log("accountAddress", accountAddress);
+    console.log(chalk.yellow("accountAddress", accountAddress));
     let privateKeyBuffer;
     try {
         privateKeyBuffer = await Buffer.from(privateKey, 'hex');
@@ -102,12 +103,12 @@ async function updateRepo(){
         console.log(">>> error 1", error)
     }
     // get transaction count to used as nonce
-    console.log("getTransactionCount")
+    
     const count = await web3.eth.getTransactionCount(accountAddress);
     // creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
-        "gasPrice": web3.utils.toHex(2000),
+        "gasPrice": web3.utils.toHex(20000),
         "gasLimit":web3.utils.toHex(2000000),
         "to":contractAddress,
         "value":"0x0",
@@ -115,13 +116,16 @@ async function updateRepo(){
         "nonce":web3.utils.toHex(count)
         }
     // creating tranaction via ethereumjs-tx
-    const transaction = await new EthereumTx(rawTransaction);
+    const transaction = await new EthereumTx(rawTransaction, { chain: 'kovan' });
     //signing transaction with private key
     transaction.sign(privateKeyBuffer);
     //sending transacton to ethereum via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
-    .on('transactionHash', () => {
-        getAll();
+    .on('transactionHash', (hash) => {
+      console.log(chalk.cyan("\n\nRepo hash uploaded to ethereum."));
+      console.log(chalk.cyan("Transaction hash:", hash));
+      console.log(chalk.cyan("Finished\n\n"));
+      shell.exit(0);
     })
     .on('error', (error) => {
         console.log("Error: ", error)
@@ -136,13 +140,11 @@ async function getAll(){
 }
 
 async function run(){
+  console.log(chalk.yellow("\n\nPush started\n\n"));
     await startPush();
-    console.log("startPush finished");
-    console.log("Repo Hash:", repoHash);
+    console.log(chalk.cyan("Repo Hash:", repoHash));
     await setup();
     await updateRepo();
-    console.log("updateRepo finished");
-    shell.exit(0);
 }
 
 run();
