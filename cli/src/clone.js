@@ -144,7 +144,7 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   const rawTransaction = await {
     "from":accountAddress, 
     "gasPrice": web3.utils.toHex(1000000000),
-    "gasLimit":web3.utils.toHex(12499988),
+    "gasLimit":web3.utils.toHex(12487748),
     "to":contractAddress,
     "value":"0x0",
     "data":contract.methods.mintReward(projectSlug, nonce).encodeABI(), 
