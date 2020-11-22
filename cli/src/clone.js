@@ -31,7 +31,7 @@ const cloneRepo = async(repoHash) => {
     shell.echo('Trying again...');
     shell.exec(`git clone http://127.0.0.1:8080/ipfs/${repoHash} ${folder}`)
   }
-  console.log("Finished");
+  console.log(chalk.green("\n\nFinished\n\n"));
   shell.exit(0);
 }
 
@@ -40,6 +40,8 @@ function sleep(ms) {
 }
 
 const startClone = async(repoHash) => {
+  console.log(chalk.cyan("\n\nRepository Hash:", repoHash));
+  console.log(chalk.yellow("Starting clone"));
   if (!shell.which('git')) { // check if user has git installed
     shell.echo(chalk.yellow('Sorry, this script requires git'));
     shell.exit(1);
@@ -80,11 +82,11 @@ const web3 = new Web3js(web3Provider);
 const { abi: mintAbi , networks: mintNetworks  } = require('../abis/MintReward.json');
 
 let accountAddress = '';
-try{
-  accountAddress = shell.cat("accountAddress.txt").stdout;
-} catch(error){
+// try{
+//   accountAddress = shell.cat("accountAddress.txt").stdout;
+// } catch(error){
 
-}
+// }
 if(accountAddress === ''){
   accountAddress = readlineSync.question(chalk.yellow('\n\nPlease enter you public address:\n\n'));
 }
@@ -109,7 +111,7 @@ const getHash = async () => {
               const mintAddress = await loadContractAddress(mintNetworks);
               const mintContract = await loadContract(mintAbi, mintAddress);
               const nonce = web3.utils.randomHex(4);
-              await mintReward(mintAddress, mintContract, projectSlug, nonce); // await mintContract.methods.mintReward(projectSlug, nonce);
+              await mintReward(mintAddress, mintContract, projectSlug, nonce)
               console.log(chalk.yellow("\n\nMint Reward Transaction Sent"))
               console.log(chalk.yellow("Awaiting mining..."))
               await mintContract.events.Hash({
@@ -120,8 +122,7 @@ const getHash = async () => {
                     console.log(">>> subscriptionId: ", subscriptionId);
                 })
                 .on('data', async function(event){
-                    const returnHash = await event.returnValues._value;
-                    console.log(chalk.cyan("Transaction Hash 2:", returnHash));
+                    const returnHash = await event.returnValues._value;                    
                     await startClone(returnHash);
                     return returnHash;
                 })
@@ -135,7 +136,7 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
   const privateKey = readlineSync.question(chalk.yellow('\n\nPlease enter you private key:\n\n'));
   try {
       privateKeyBuffer = await Buffer.from(privateKey, 'hex');
-      console.log("privateKeyBuffer", privateKeyBuffer)
+      // console.log("privateKeyBuffer", privateKeyBuffer)
   } catch (error) {
       console.log(">>> error 1", error)
   }
@@ -157,7 +158,7 @@ async function mintReward(contractAddress, contract, projectSlug, nonce){
     //sending transacton via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
     .on('transactionHash', (hash) => {
-        console.log(chalk.cyan("\n\nTransaction Hash 1:", hash));
+        console.log(chalk.cyan("\n\nTransaction Hash:", hash));
         return hash
         // getAll();
     })

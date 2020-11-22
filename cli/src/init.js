@@ -143,7 +143,7 @@ async function createRepo(){
     //sending transacton via web3 module
     web3.eth.sendSignedTransaction('0x'+transaction.serialize().toString('hex'))
     .on('transactionHash', async (hash) => {
-        console.log("Transaction Hash: ", hash);
+        console.log(chalk.cyan("Transaction Hash: ", hash));
         console.log(chalk.cyan("\n\ninit Repo finished\n\n"));
         shell.exit(0);
     })
