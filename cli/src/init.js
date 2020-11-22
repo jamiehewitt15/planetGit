@@ -26,7 +26,7 @@ const pushRepo = async() => {
   shell.cd('../');
   shell.pwd();
   shell.rm('-rf', './tempPlanetGit');
-  console.log("Finished")
+  console.log(chalk.cyan("Repository uploaded to IPFS\n\n"))
 }
 
 function sleep(ms) {
@@ -127,8 +127,8 @@ async function createRepo(){
     //creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
-        "gasPrice": web3.utils.toHex(2000),
-        "gasLimit": web3.utils.toHex(2100000),
+        "gasPrice": web3.utils.toHex(1550000000),
+        "gasLimit": web3.utils.toHex(12487794),
         "to":contractAddress,
         "value":"0x0",
         "data":contract.methods.createRepo(repoSlug, repoName, repoHash).encodeABI(), 

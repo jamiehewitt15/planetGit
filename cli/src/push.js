@@ -108,7 +108,7 @@ async function updateRepo(){
     // creating raw tranaction
     const rawTransaction = await {
         "from":accountAddress, 
-        "gasPrice": web3.utils.toHex(20000),
+        "gasPrice": web3.utils.toHex(200000),
         "gasLimit":web3.utils.toHex(2000000),
         "to":contractAddress,
         "value":"0x0",
