@@ -35,7 +35,7 @@ contract Promotions is Repository{
         // Check amount
         require(_amount > price, "Value sent must be greater than price.");
 
-        // send money
+        // send payment in GLD Tokens
         require(token.transferFrom(msg.sender, address(this), _amount) == true, "Could not send tokens");
 
         // Get Repo

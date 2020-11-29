@@ -14,8 +14,6 @@ const pushRepo = async() => {
   pwd = shell.pwd().stdout;
   shell.exec(`git clone --bare ${pwd} ../tempPlanetGit`);
   shell.cd('../tempPlanetGit');
-  pwd = shell.pwd().stdout;
-  //console.log("pwd: ", pwd)
   shell.exec(`git update-server-info`);
   repoHash = shell.exec(`ipfs add -r -Q .`).stdout;
   console.log(chalk.yellow("repoHash", repoHash));

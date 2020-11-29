@@ -30,7 +30,7 @@ const startPull = async(repoHash) => {
   } else{
     if (shell.which('ipfs')) { // check if user has IPFS installed
       shell.exec(`ipfs daemon`, {async:true, silent:true});
-      await sleep(2000); // wait for IPFS Daemon to start
+      await sleep(4000); // wait for IPFS Daemon to start
       try{
         await pullRepo(repoHash);
       } catch(error){
@@ -38,7 +38,7 @@ const startPull = async(repoHash) => {
       }
       }
       else{ // Use public IPFS node
-      console.log(chalk.yellow("We recomend installing IPFS"))
+      console.log(chalk.yellow("We recommend installing IPFS"))
       console.log("Attempting: requesting repo through INFURA public node")
       shell.exec(`git pull https://${repoHash}.ipfs.infura-ipfs.io/`);
     }
