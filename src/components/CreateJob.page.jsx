@@ -5,6 +5,7 @@ import './App.css';
 import Jobs from '../abis/Jobs.json';
 import Token from '../abis/GLDToken.json'
 import Web3 from 'web3';
+const web3 = window.web3;
 
 class CreateJob extends Component {
     
@@ -27,7 +28,7 @@ class CreateJob extends Component {
 
     async loadBlockchainData(){
         // Get smart contract network
-        const web3 = window.web3;
+        
         const networkId = await web3.eth.net.getId();
         console.log("networkId", networkId)
         // Get netwrok address
@@ -72,7 +73,8 @@ class CreateJob extends Component {
         const title = document.getElementById("captureTitle").value;
         const description = document.getElementById("captureDescription").value;
         const monthly = document.getElementById("captureMonthly").value;
-        const salary = document.getElementById("captureSalary").value;
+        let salary = document.getElementById("captureSalary").value;
+        salary = web3.toWei(salary);
         
         console.log("title: ", title);
         console.log("description: ", description);
