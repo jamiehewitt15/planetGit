@@ -74,7 +74,7 @@ class JobsBoard extends Component {
     }
     
   render() {
-
+    const web3 = window.web3;  
     const filteredJobs = this.state.jobs.filter( job => {
       return job.description.toLocaleLowerCase().includes(this.state.searchInput.toLocaleLowerCase())
     })
@@ -86,6 +86,8 @@ class JobsBoard extends Component {
           <Form.Control onChange={this.handleSearchInput} className="mb-2 searchBox" id="inlineFormInput" placeholder="Search" />
         </Form>
         {filteredJobs.slice(0, 50).map(((job) => {
+          let salary = web3.utils.fromWei(job.salary.toString(), 'ether')
+          console.log("salary: ", salary)
           if(job.live === true){
             return (        
               <Card key={parseInt(job.id)}>
@@ -94,7 +96,7 @@ class JobsBoard extends Component {
                 <Card.Text>{job.description}</Card.Text>
                 <Card.Text>Live: {job.live.toString()}</Card.Text>
                 <Card.Text>ID: {parseInt(job.id)}</Card.Text>
-                <Card.Text>Salary: {job.salary.toString()} <span className="logo">GLD</span></Card.Text>
+                <Card.Text>Salary: {salary} <span className="logo">GLD</span></Card.Text>
                 </Card.Body>    
               </Card>
             )
