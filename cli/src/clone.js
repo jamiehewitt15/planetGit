@@ -114,21 +114,21 @@ const getHash = async () => {
               await mintReward(mintAddress, mintContract, projectSlug, nonce)
               console.log(chalk.yellow("\n\nMint Reward Transaction Sent"))
               console.log(chalk.yellow("Awaiting mining..."))
-              await mintContract.events.Hash({
-                filter: {_from: accountAddress, nonce: nonce}, 
-                fromBlock: 0
-                })
-                .on("connected", function(subscriptionId){
-                    console.log(">>> subscriptionId: ", subscriptionId);
-                })
-                .on('data', async function(event){
-                    const returnHash = await event.returnValues._value;                    
-                    await startClone(returnHash);
-                    return returnHash;
-                })
-                .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
-                    console.log(">>> Error: ", error);
-                });
+    await mintContract.events.Hash({
+      filter: {_from: accountAddress, nonce: nonce}, 
+      fromBlock: 0
+      })
+      .on("connected", function(subscriptionId){
+          console.log(">>> subscriptionId: ", subscriptionId);
+      })
+      .on('data', async function(event){
+          const returnHash = await event.returnValues._value;                    
+          await startClone(returnHash);
+          return returnHash;
+      })
+      .on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
+          console.log(">>> Error: ", error);
+      });
 }
 
 async function mintReward(contractAddress, contract, projectSlug, nonce){

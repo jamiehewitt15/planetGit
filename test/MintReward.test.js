@@ -74,9 +74,9 @@ contract('MintReward', (accounts)=>{
             repoHash = '21X243OJNOI12092189443RNJK24R0';
             repoSlug = 'projectname1';
             await repo.createRepo(repoSlug, repoName, repoHash);
-            // console.log("count", count);
-            const nonce = web3.utils.randomHex(4); // web3.utils.numberToHex(count);
-            // const nonce = String(nonceHex)
+            
+            const nonce = web3.utils.randomHex(4); 
+            
             console.log("*nonce1", nonce);
             // Get Repo Hash
             await mintReward.mintReward(repoSlug, nonce);
