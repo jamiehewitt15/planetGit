@@ -77,7 +77,6 @@ contract('MintReward', (accounts)=>{
             
             const nonce = web3.utils.randomHex(4); 
             
-            console.log("*nonce1", nonce);
             // Get Repo Hash
             await mintReward.mintReward(repoSlug, nonce);
            
@@ -109,7 +108,6 @@ contract('MintReward', (accounts)=>{
             // create nonce
             
             const nonce2 = web3.utils.randomHex(4); 
-            console.log("* nonce2", nonce2);
             // Mint Reward
             await mintReward.mintReward(repoSlug2, nonce2);
             // Get Repo Hash
