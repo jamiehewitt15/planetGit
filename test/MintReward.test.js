@@ -133,12 +133,12 @@ contract('MintReward', (accounts)=>{
             // Call balanceOf function
             const initialBalance = (await token.balanceOf(walletAddress)).toString();
             const currentReward = await token.getReward();
-            // create nonce
-            const nonce3 = web3.utils.randomHex(4); 
+            // create id
+            const id3 = web3.utils.randomHex(4); 
             // Mint Reward
-            await mintReward.mintReward(repoSlug, nonce3);
+            await mintReward.mintReward(repoSlug, id3);
             const finalBalance = (await token.balanceOf(walletAddress)).toString();
-            // initialBalance.should.not.be.bignumber.equal(finalBalance);
+            
             assert.notEqual(initialBalance, finalBalance);
             assert.isAbove(parseInt(finalBalance), parseInt(initialBalance), 'final balance is greater than initial balance');
         })    
